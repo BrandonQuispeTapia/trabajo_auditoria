@@ -1,0 +1,185 @@
+% =====================================================================
+%  6. ANÁLISIS DE HALLAZGOS  <- LA SECCIÓN QUE MÁS CALIFICA
+%  Responsable: INTEGRANTE 4
+%  Extensión objetivo: 8 a 10 páginas — aprox. 3.000 palabras + Tabla 3
+%  Fuentes: HRIA + CAO/IFC + estudio de salud PHR/Michigan + monitoreo COPAE
+%
+%  ESTRUCTURA OBLIGATORIA:
+%    (a) Primero la MATRIZ DE NO CONFORMIDADES (Tabla 3), completa.
+%    (b) Después, en prosa, el desarrollo de los 3 o 4 hallazgos más
+%        relevantes (uno por subsección de 6.3 a 6.6).
+%  La matriz completa, si no cabe, va al Anexo B y aquí queda un extracto.
+%
+%  CÓMO CLASIFICAR (usa los comandos \NCmayor, \NCmenor y \OBS):
+%    - NC mayor  = incumplimiento de un requisito con impacto sistémico o
+%                  que afecta derechos fundamentales (p. ej. ausencia de
+%                  consulta previa).
+%    - NC menor  = incumplimiento puntual, no sistémico, subsanable.
+%    - Observación = no hay incumplimiento demostrado, pero hay un riesgo
+%                  o una oportunidad de mejora.
+%  Declara este criterio POR ESCRITO en 6.1: un auditor siempre explicita
+%  su regla de clasificación antes de aplicarla.
+% =====================================================================
+
+\section{Análisis de hallazgos}
+
+% ---------------------------------------------------------------------
+\subsection{Criterio de clasificación de los hallazgos}
+% Extensión: ~0,75 página / 280 palabras
+
+% TODO: - Explica que la HRIA no clasificó sus hallazgos como no
+%         conformidades (no era una auditoría de sistema de gestión), y que
+%         por tanto la clasificación de este informe es una ADAPTACIÓN PROPIA
+%         construida sobre las definiciones de ISO 19011:2018.
+%         Reconocerlo es rigor metodológico, no debilidad.
+%       - Define las tres categorías (NC mayor, NC menor, observación) y la
+%         regla que usaste para asignarlas.
+%       - Define qué cuentas como «evidencia objetiva» en un análisis
+%         documental: cita textual del informe de auditoría, dato de
+%         monitoreo, o pronunciamiento de un órgano oficial.
+%       Fuente: \cite{iso2018iso19011}
+
+% ---------------------------------------------------------------------
+\subsection{Matriz de no conformidades}
+% Extensión: la Tabla 3 (2 a 3 páginas apaisadas) + ~250 palabras de lectura
+
+% TODO (antes de la tabla): un párrafo que anuncie cuántos hallazgos se
+%   identificaron en total y cómo se distribuyen por eje y por clasificación
+%   (p. ej. «se identificaron N hallazgos, de los cuales X son NC mayores...»).
+% TODO (después de la tabla): un párrafo que lea la tabla en voz alta:
+%   qué eje concentra más NC mayores y qué significa eso.
+
+% --- TABLA 3: Matriz de no conformidades -----------------------------
+% Va en página APAISADA (landscape) porque tiene 7 columnas.
+% Se usa longtable porque con seguridad ocupará más de una página.
+% RELLENA UNA FILA POR HALLAZGO, organizadas por los SIETE EJES de la HRIA:
+%   1. Consulta          -> la mina se permitió sin consulta previa, libre e
+%      informada conforme al Convenio 169. Recomendación: detener adquisición
+%      de tierras, exploración y expansión hasta consultar debidamente. [NC mayor]
+%   2. Ambiente          -> riesgos de drenaje ácido de roca (ARD) y de
+%      calidad de agua; se recomendó reforzar el monitoreo (incluida la AMAC,
+%      Asociación de Monitoreo Ambiental Comunitario) y la planificación del
+%      cierre.
+%   3. Trabajo           -> la empresa habría desalentado activamente la
+%      formación de un sindicato; problemas de seguridad y salud ocupacional.
+%   4. Adquisición de tierras -> equidad, transparencia y derechos colectivos.
+%   5. Inversión económica y social -> aportes reconocidos (empleo, ingresos)
+%      pero mitigación insuficiente de los impactos negativos.
+%   6. Seguridad         -> riesgo para la seguridad personal de residentes
+%      por presencia de seguridad privada armada y fuerzas públicas; se
+%      recomendó adoptar los VPSHR.
+%   7. Acceso a remediación -> mecanismos de queja débiles.
+%
+%\begin{landscape}
+%\begin{footnotesize}
+%\begin{longtable}{@{}L{1.8cm} L{4cm} L{4cm} L{3cm} L{1.8cm} L{4cm} L{2cm}@{}}
+%  \caption{Matriz de no conformidades identificadas en la auditoría socioambiental de la Mina Marlin}
+%  \label{tab:matriz-nc} \\
+%  \toprule
+%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
+%  \midrule
+%  \endfirsthead
+%  \multicolumn{7}{l}{\footnotesize\textit{Tabla \ref{tab:matriz-nc} (continuación)}} \\
+%  \toprule
+%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
+%  \midrule
+%  \endhead
+%  \bottomrule
+%  \multicolumn{7}{l}{\footnotesize Nota. Elaboración propia a partir de \textcite{oncommonground2010hria}.} \\
+%  \endlastfoot
+%  Consulta & & & Convenio 169 {OIT}, art. 6 & \NCmayor & & \\
+%  Ambiente & & & & & & \\
+%  Trabajo & & & & & & \\
+%  Tierras & & & {IFC} {PS}5 & & & \\
+%  Inversión & & & & & & \\
+%  Seguridad & & & {VPSHR} & & & \\
+%  Remediación & & & {IFC} {PS}1 & & & \\
+%\end{longtable}
+%\end{footnotesize}
+%\end{landscape}
+
+% ---------------------------------------------------------------------
+\subsection{Hallazgo central 1: ausencia de consulta previa, libre e informada}
+% Extensión: ~2 páginas / 750 palabras
+
+% TODO: Es el hallazgo más grave y el que sostiene todo el caso. Desarrolla:
+%   - El hecho: la mina se permitió sin un proceso de consulta previa
+%     adecuado conforme al Convenio 169 de la OIT.
+%   - El criterio: Convenio 169 \cite{oit1989convenio169} + IFC PS7.
+%   - La recomendación de la auditoría: detener la adquisición de tierras,
+%     la exploración y cualquier expansión hasta consultar debidamente.
+%   - La validación externa: la Comisión de Expertos de la OIT (CEACR)
+%     llamó en 2010 a suspender actividades hasta cumplir la consulta.
+%   - El efecto en cadena: la consulta comunitaria de Sipacapa de 2005 y la
+%     posterior judicialización.
+%   Fuente: \cite{oncommonground2010hria}
+
+% ---------------------------------------------------------------------
+\subsection{Hallazgo central 2: riesgos ambientales sobre el agua y drenaje ácido de roca}
+% Extensión: ~2 páginas / 750 palabras
+
+% TODO: - El hecho: riesgos de drenaje ácido de roca (ARD) y afectación de la
+%         calidad del agua en las cuencas de los ríos Tzalá, Quivichil y Cuilco.
+%       - La recomendación: reforzar el monitoreo —incluida la AMAC— y la
+%         planificación del cierre.
+%       - LA EVIDENCIA ESTÁ EN CONFLICTO. Presenta las dos posiciones sin
+%         resolverlas artificialmente (esto se retoma en 7.3):
+%         (a) El estudio de \textcite{basu2010metales}, coordinado por
+%             Physicians for Human Rights, halló niveles más altos de
+%             mercurio, cobre, arsénico y zinc en orina, y de plomo en
+%             sangre, en residentes cercanos a la mina frente a personas que
+%             vivían a siete kilómetros. El propio estudio advirtió que no
+%             estaba claro si la magnitud de esas elevaciones representaba
+%             una amenaza significativa para la salud. NO OMITAS ESA
+%             ADVERTENCIA: citar solo la primera mitad sería tendencioso.
+%         (b) El monitoreo de COPAE reportó arsénico, cobre, aluminio y
+%             manganeso por encima de estándares aguas abajo del reservorio
+%             de relaves. \cite{copaesfmonitoreo}
+%         (c) La empresa y algunos monitoreos oficiales sostuvieron que no
+%             había contaminación atribuible a la operación.
+%       - Antecedente técnico: la revisión independiente del EIA por el
+%         hidrogeólogo Robert Moran (2004) ya había advertido deficiencias.
+%         \cite{moran2004review}
+
+% ---------------------------------------------------------------------
+\subsection{Hallazgo central 3: seguridad privada armada y riesgo para las personas}
+% Extensión: ~1,5 páginas / 550 palabras
+
+% TODO: - El hecho: riesgo para la seguridad personal de los residentes
+%         derivado de la presencia de seguridad privada armada y de fuerzas
+%         públicas en el entorno de la operación.
+%       - El criterio: Voluntary Principles on Security and Human Rights,
+%         cuya adopción fue precisamente la recomendación.
+%         \cite{vpshr2000principios}
+%       - Conecta con el PS4 de la IFC (salud y seguridad de la comunidad).
+%       - Este es el eje donde la dimensión «social» de la auditoría es más
+%         nítida y donde menos se parece a una auditoría ISO tradicional.
+
+% ---------------------------------------------------------------------
+\subsection{Hallazgo central 4: debilidad del mecanismo de acceso a remediación}
+% Extensión: ~1,25 páginas / 450 palabras
+
+% TODO: - El hecho: mecanismos de queja débiles.
+%       - Por qué es estructural y no menor: sin un mecanismo de reclamo
+%         eficaz, todos los demás hallazgos quedan sin vía de corrección
+%         interna, y el conflicto migra necesariamente a instancias externas
+%         (CAO/IFC, CIDH, tribunales). Es decir, este hallazgo EXPLICA la
+%         escalada del caso.
+%       - Criterio: tercer pilar del marco Ruggie («Remediar») + IFC PS1.
+%       - Enlaza con la sección 8.3, donde el plan de mejora debe proponer un
+%         mecanismo de quejas conforme a los criterios de eficacia.
+
+% ---------------------------------------------------------------------
+\subsection{Síntesis de hallazgos y respuesta de la empresa}
+% Extensión: ~0,75 página / 280 palabras
+
+% TODO: - Recuento por eje y por clasificación.
+%       - Respuesta de la empresa: Goldcorp se comprometió a emitir una
+%         respuesta pública y un plan de acción detallado frente a las
+%         recomendaciones, con actualizaciones publicadas en 2010, 2011 y
+%         2017, integrando los aprendizajes a sus políticas globales.
+%       - Deja planteada la pregunta que abre la sección 7: ¿ese plan de
+%         acción cerró efectivamente las no conformidades?
+%       Fuentes: \cite{oncommonground2010hria}, \cite{goldcorp2023marlin}
+
+\pendiente{desarrollar la sección 6 (8--10 páginas) + Tabla 3 completa}

@@ -1,0 +1,51 @@
+% =====================================================================
+%  COMANDOS Y ATAJOS PROPIOS DEL INFORME
+%  Objetivo: escribir siempre igual los nombres largos y las unidades,
+%  para que el documento quede uniforme aunque lo redacten 5 personas.
+% =====================================================================
+
+% --- Tipos de columna para tablas ------------------------------------
+% L{3cm} = columna de ancho fijo alineada a la izquierda con salto de línea
+% C{3cm} = ídem centrada       R{3cm} = ídem alineada a la derecha
+% Se usan sobre todo en la matriz de no conformidades (Tabla 3).
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+% Y = como X de tabularx pero con el texto sin justificar (evita huecos feos)
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% --- Nombres recurrentes ---------------------------------------------
+% Escribe \mina en lugar de teclear el nombre completo cada vez.
+\newcommand{\mina}{Mina Marlin}
+\newcommand{\titular}{Montana Exploradora de Guatemala, S.\,A.}
+\newcommand{\auditora}{On Common Ground Consultants Inc.}
+\newcommand{\hria}{\textit{Human Rights Assessment of Goldcorp's Marlin Mine}}
+
+% --- Unidades y notación técnica -------------------------------------
+% Evita que se escriba «g/t» de tres formas distintas en el mismo informe.
+\newcommand{\gt}{g/t}                        % ley: gramos por tonelada
+\newcommand{\ozAu}{oz Au}                    % onzas de oro
+\newcommand{\ozAg}{oz Ag}                    % onzas de plata
+\newcommand{\msnm}{m\,s.\,n.\,m.}            % metros sobre el nivel del mar
+\newcommand{\tdia}{t/día}                    % toneladas por día
+
+% --- Clasificación de hallazgos (ISO 19011) --------------------------
+% Úsalos en la columna «Clasificación» de la matriz de no conformidades
+% para que las tres categorías se vean siempre igual.
+\newcommand{\NCmayor}{\textbf{NC mayor}}
+\newcommand{\NCmenor}{NC menor}
+\newcommand{\OBS}{Observación}
+
+% --- Marcador de pendiente -------------------------------------------
+% \pendiente{texto} imprime una nota visible en el PDF mientras se redacta.
+% CUANDO EL INFORME ESTÉ TERMINADO: comenta la primera definición y
+% descomenta la segunda para que los pendientes desaparezcan del PDF final.
+\newcommand{\pendiente}[1]{\textcolor{red}{\small[PENDIENTE: #1]}}
+%\renewcommand{\pendiente}[1]{}
+
+% --- Cita textual destacada ------------------------------------------
+% APA: las citas de más de 40 palabras van en bloque, sin comillas y
+% con sangría. \citalarga{texto}{referencia} lo hace automáticamente.
+\newenvironment{citalarga}
+  {\begin{quote}\singlespacing\small}
+  {\end{quote}\normalsize}

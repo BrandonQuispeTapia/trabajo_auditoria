@@ -1,0 +1,72 @@
+% =====================================================================
+%  INFORME ACADÉMICO — EVI. 6
+%  Auditoría socioambiental de la Mina Marlin
+%  (Montana Exploradora de Guatemala, S.A. / Goldcorp), San Marcos, Guatemala
+%
+%  Compilador: pdfLaTeX      Motor bibliográfico: Biber
+%  Repositorio: https://github.com/BrandonQuispeTapia/trabajo_auditoria.git
+%
+%  ATENCIÓN AL GRUPO: este archivo y config/preambulo.tex los toca UNA
+%  SOLA PERSONA. Cada integrante edita únicamente su archivo de secciones/.
+% =====================================================================
+
+\documentclass[12pt,a4paper]{article}
+
+% --- Configuración (no editar sin avisar al grupo) -------------------
+\input{config/preambulo}
+\input{config/comandos}
+
+\begin{document}
+
+% --- Portada ---------------------------------------------------------
+% La numeración romana empieza AQUÍ, en la portada (que cuenta como página i
+% aunque el número no se imprima). Si la portada quedara fuera de la
+% numeración romana, sería «página 1 arábiga» igual que la primera página del
+% cuerpo, y hyperref generaría dos anclas con el mismo nombre.
+\pagenumbering{roman}
+\input{config/portada}
+
+% --- Preliminares (índices y resumen) --------------------------------
+\setcounter{page}{2}
+
+\tableofcontents
+\newpage
+
+\listoffigures
+\listoftables
+\newpage
+
+% Resumen ejecutivo — SE ESCRIBE AL FINAL, entre todos
+\input{secciones/00_resumen}
+\newpage
+
+% --- Cuerpo del informe (numeración arábiga) -------------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{secciones/01_introduccion}      % Todos (al final, en conjunto)
+\input{secciones/02_objetivos}         % Todos (al final, en conjunto)
+\input{secciones/03_marco_teorico}     % Integrante 1
+\input{secciones/04_unidad_minera}     % Integrante 2
+\input{secciones/05_auditoria}         % Integrante 3
+\input{secciones/06_hallazgos}         % Integrante 4
+\input{secciones/07_analisis_critico}  % Integrante 4
+\input{secciones/08_plan_mejora}       % Integrante 5
+\input{secciones/09_conclusiones}      % Integrante 5
+\input{secciones/10_recomendaciones}   % Integrante 5
+
+% --- Referencias (APA 7, generadas por Biber) ------------------------
+% \nocite{*} fuerza que TODAS las entradas de referencias.bib aparezcan en
+% la lista, aunque todavía no estén citadas en el texto. Es útil mientras se
+% redacta: el grupo ve la bibliografía completa desde el primer día.
+% >>> COMENTAR ESTA LÍNEA ANTES DE LA ENTREGA FINAL <<<
+% APA exige que la lista contenga solo las obras efectivamente citadas.
+\nocite{*}
+
+\newpage
+\printbibliography[heading=bibintoc,title={Referencias}]
+
+% --- Anexos ----------------------------------------------------------
+\input{secciones/11_anexos}            % Integrante 2 y 4
+
+\end{document}

@@ -1,0 +1,117 @@
+% =====================================================================
+%  PREÁMBULO — paquetes y configuración global
+%  El \documentclass va en main.tex, NO aquí.
+%  Stack probado en Overleaf: compilador pdfLaTeX + motor Biber.
+% =====================================================================
+
+% --- Codificación de entrada y de fuente -----------------------------
+% utf8 permite escribir acentos y ñ directamente en los .tex.
+% T1 evita que las palabras con acento se partan mal al final de línea.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Tipografía: Times New Roman -------------------------------------
+% mathptmx sustituye la fuente por Times (requisito típico de informes
+% universitarios). Si la universidad exige ARIAL, hay que cambiar el
+% compilador a XeLaTeX y usar fontspec con \setmainfont{Arial}.
+\usepackage{mathptmx}
+
+% --- Márgenes --------------------------------------------------------
+% 3 cm a la izquierda (para el anillado/empastado), 2,5 cm el resto.
+\usepackage[a4paper,left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+% --- Idioma español --------------------------------------------------
+% es-tabla        -> los flotantes se rotulan «Tabla», no «Cuadro».
+% es-nodecimaldot -> no fuerza la coma decimal en modo matemático.
+% es-lcroman      -> numera los preliminares en romanos MINÚSCULOS (i, ii,
+%                    iii), que es la convención académica. Sin esta opción,
+%                    babel-spanish los pone en mayúsculas (I, II, III).
+\usepackage[spanish,es-tabla,es-nodecimaldot,es-lcroman]{babel}
+
+% --- Interlineado ----------------------------------------------------
+% ÚNICO lugar donde se controla el interlineado de todo el documento.
+% \onehalfspacing = 1,5 líneas (el que estamos usando).
+% Si el docente pidiera interlineado doble, cambia a \doublespacing.
+% Si necesitas comprimir para entrar en un límite de páginas, \singlespacing.
+\usepackage{setspace}
+\onehalfspacing
+
+% --- Imágenes --------------------------------------------------------
+% graphicspath evita tener que escribir la ruta completa en \includegraphics:
+% basta con \includegraphics{mapa_ubicacion.png}.
+\usepackage{graphicx}
+\graphicspath{{imagenes/}{imagenes/mapas/}{imagenes/diagramas/}{imagenes/fotos/}{imagenes/logos/}}
+
+% --- Tablas ----------------------------------------------------------
+% booktabs  -> líneas horizontales de calidad (\toprule, \midrule, \bottomrule).
+% longtable -> tablas que se parten en varias páginas (la matriz de no
+%              conformidades del Anexo B seguro la necesita).
+% tabularx  -> columnas de ancho automático que ajustan al ancho de página.
+% multirow  -> celdas que ocupan varias filas.
+% array     -> tipos de columna personalizados (ver config/comandos.tex).
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+
+% --- Leyendas de tablas y figuras ------------------------------------
+% Norma APA / uso académico: el rótulo de la TABLA va ARRIBA y el de la
+% FIGURA va ABAJO. Aquí se fija ese comportamiento para todo el documento.
+\usepackage{caption}
+\captionsetup[table]{position=top,labelsep=period,font=small,labelfont=bf}
+\captionsetup[figure]{position=bottom,labelsep=period,font=small,labelfont=bf}
+
+% --- Listas ----------------------------------------------------------
+% enumitem permite controlar sangrías y separación de itemize/enumerate.
+\usepackage{enumitem}
+\setlist{itemsep=2pt,parsep=0pt,topsep=4pt}
+
+% --- Posicionamiento de flotantes ------------------------------------
+% float habilita el especificador [H] = «aquí exactamente, sin discutir».
+\usepackage{float}
+
+% --- Páginas apaisadas -----------------------------------------------
+% pdflscape gira una página completa en el PDF. Imprescindible para la
+% Tabla 3 (matriz de no conformidades) y la Tabla 4 (plan de acción).
+\usepackage{pdflscape}
+
+% --- Color (necesario para los enlaces de hyperref) ------------------
+\usepackage{xcolor}
+\definecolor{azuloscuro}{RGB}{0,51,102}
+
+% =====================================================================
+%  BIBLIOGRAFÍA — biblatex en estilo APA 7 con motor Biber
+% =====================================================================
+% csquotes es OBLIGATORIO antes de biblatex (gestiona las comillas).
+\usepackage{csquotes}
+\usepackage[backend=biber,style=apa,sortlocale=es_ES,natbib=true]{biblatex}
+% Traduce al español los elementos fijos de las citas («y», «et al.», «s. f.»).
+\DeclareLanguageMapping{spanish}{spanish-apa}
+% Archivo con TODAS las referencias del informe.
+\addbibresource{referencias.bib}
+
+% =====================================================================
+%  HYPERREF — SIEMPRE EL ÚLTIMO PAQUETE EN CARGARSE
+% =====================================================================
+% Convierte en enlaces clicables el índice, las referencias cruzadas y
+% las URLs, y genera los marcadores (bookmarks) del PDF.
+\usepackage[
+  colorlinks=true,
+  linkcolor=azuloscuro,     % enlaces internos (índice, \ref)
+  citecolor=azuloscuro,     % citas bibliográficas
+  urlcolor=azuloscuro,      % URLs externas
+  bookmarks=true,
+  bookmarksnumbered=true,
+  breaklinks=true,
+  % plainpages=false hace que las anclas del PDF usen el número de página tal
+  % como se imprime (i, ii, 1, 2...). Junto con el \pagenumbering{roman} que
+  % main.tex activa desde la portada, evita anclas duplicadas.
+  plainpages=false,
+  pdftitle={Auditoría socioambiental de la Mina Marlin — Informe EVI. 6},
+  pdfsubject={Auditoría ambiental},
+  pdfkeywords={auditoría socioambiental, Mina Marlin, Goldcorp, ISO 14001, ISO 19011, PHVA}
+]{hyperref}
+% Rompe las URLs largas de la bibliografía para que no se salgan del margen.
+\usepackage{url}
+\urlstyle{same}

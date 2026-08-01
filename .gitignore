@@ -1,0 +1,57 @@
+# =====================================================================
+#  Artefactos de compilación de LaTeX
+#  NOTA: el PDF de salida NO se ignora — lo queremos versionado para la
+#  entrega. Ver la última sección de este archivo.
+# =====================================================================
+
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.xdv
+
+# Otros temporales frecuentes de LaTeX
+*.idx
+*.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+*.brf
+*.bbl-SAVE-ERROR
+*.bcf-SAVE-ERROR
+
+# Carpeta de compilación
+build/
+
+# Paquete minted (por si se añade resaltado de código)
+_minted*/
+
+# =====================================================================
+#  Sistema operativo
+# =====================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =====================================================================
+#  Editores
+# =====================================================================
+.vscode/
+*.swp
+*~
+
+# =====================================================================
+#  EL PDF SÍ SE VERSIONA
+#  main.pdf NO está ignorado: es el entregable. Si alguien lo añade a
+#  este archivo por costumbre, quítalo.
+# =====================================================================
