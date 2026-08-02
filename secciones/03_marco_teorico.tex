@@ -1,176 +1,408 @@
 % =====================================================================
 %  3. MARCO TEÓRICO Y NORMATIVO
 %  Responsable: INTEGRANTE 1
-%  Extensión objetivo: 6 a 8 páginas — aprox. 2.600 a 3.000 palabras
+%  ESTADO: REDACTADO (1 de agosto de 2026) — ~2.950 palabras
 %  Fuente principal: Sección D de docs/bitacora_decisiones.md
 %
-%  ADVERTENCIA: esta sección se llena de definiciones y es fácil que quede
-%  como un copiar-pegar de normas. Para evitarlo, cierra CADA subsección
-%  con una frase que la conecte con el caso Marlin.
+%  Contiene la Tabla comparativa auditoría / fiscalización / EIA.
+%  Cada subsección cierra conectando con el caso Marlin, para que la sección
+%  no quede como un listado de normas desconectado del objeto del informe.
 % =====================================================================
 
 \section{Marco teórico y normativo}
+\label{sec:marco}
 
-% TODO (párrafo de entrada, ~80 palabras): anuncia los tres bloques de esta
-%   sección: (a) qué es una auditoría ambiental y en qué se diferencia de
-%   figuras vecinas; (b) los estándares internacionales aplicables; y (c) el
-%   marco peruano de referencia que servirá para el contraste de la sección 7.
+El análisis de una auditoría exige, antes que nada, precisar qué se entiende por
+auditoría y contra qué criterios se juzga lo auditado. Esta sección construye ese
+andamiaje conceptual en tres bloques. El primero delimita la auditoría ambiental
+frente a figuras vecinas con las que suele confundirse —la fiscalización estatal y
+la evaluación de impacto ambiental— y presenta las dos normas que ordenan la
+disciplina: la ISO 14001:2015, que define el sistema de gestión ambiental, y la
+ISO 19011:2018, que regula cómo se audita. El segundo bloque expone los estándares
+internacionales de desempeño ambiental y social que resultan aplicables al caso.
+El tercero recorre el marco normativo peruano, que no rige sobre una operación
+guatemalteca pero permite el contraste institucional que se desarrolla en la
+sección \ref{sec:critico}. La sección cierra con el ciclo PHVA, sobre el cual se
+construye íntegramente la propuesta de mejora continua.
 
 % ---------------------------------------------------------------------
 \subsection{La auditoría ambiental: definición, tipos y delimitación conceptual}
-% Extensión: ~1,5 páginas / 550 palabras
 
-% TODO: Definir auditoría ambiental como proceso SISTEMÁTICO, DOCUMENTADO
-%   e INDEPENDIENTE para obtener evidencia objetiva y evaluarla de manera
-%   objetiva frente a criterios de auditoría. Subrayar las tres palabras.
-%   Fuente: \cite{iso2018iso19011}
+La auditoría ambiental puede definirse como un proceso \textit{sistemático},
+\textit{documentado} e \textit{independiente} para obtener evidencia objetiva y
+evaluarla de manera igualmente objetiva, con el fin de determinar en qué medida se
+cumplen los criterios de auditoría previamente establecidos
+\parencite{iso2018iso19011}. Las tres palabras destacadas no son adorno retórico:
+cada una constituye un requisito verificable y cada una, como se verá en la
+sección \ref{sec:critico}, admite ser cuestionada en el caso analizado.
+\textit{Sistemático} significa que la auditoría responde a un método explícito y
+no a una inspección improvisada. \textit{Documentado} implica que tanto el proceso
+como sus hallazgos quedan registrados y son, por tanto, rastreables por terceros.
+\textit{Independiente} exige que quien audita no evalúe su propio trabajo ni tenga
+intereses comprometidos en el resultado.
 
-% TODO: Tipología por quién audita:
-%   - Primera parte (interna): la propia organización se audita.
-%   - Segunda parte (externa de proveedor/cliente): audita una parte interesada.
-%   - Tercera parte (certificación): organismo independiente acreditado.
-%   PREGUNTA CLAVE PARA EL INFORME: ¿de qué tipo fue la HRIA de Marlin?
-%   Fue externa e independiente en su ejecución, pero financiada por la
-%   empresa auditada. Anticipa aquí en una frase esa tensión y remite a la
-%   sección 7. Fuente: \cite{oncommonground2010hria}
+Es sobre este último atributo donde se concentra la mayor parte de la discusión
+académica y práctica, porque la independencia admite grados. La tipología clásica
+clasifica las auditorías según quién las ejecuta. La auditoría de
+\textbf{primera parte} o interna es la que la propia organización realiza sobre sí
+misma; sirve para la mejora continua y para preparar auditorías externas, pero su
+independencia es estructuralmente limitada. La auditoría de \textbf{segunda parte}
+la realiza una parte interesada, típicamente un cliente sobre su proveedor o un
+financista sobre el proyecto que financia. La auditoría de \textbf{tercera parte},
+finalmente, la ejecuta un organismo externo e independiente, habitualmente
+acreditado, y es la única que puede desembocar en una certificación.
 
-% TODO: Tipología por objeto: de sistema de gestión, de cumplimiento legal,
-%   de residuos, energética, sectorial vs. integrada.
+Esta clasificación plantea de entrada una pregunta que atraviesa todo el presente
+informe: ¿de qué tipo fue la evaluación realizada sobre la Mina Marlin? La
+respuesta no es unívoca. La \hria\ fue ejecutada por una consultora externa,
+seleccionada por un comité independiente y con un mandato escrito que garantizaba
+transparencia e independencia; en ese sentido operó como una auditoría de tercera
+parte. Sin embargo, fue financiada íntegramente por la empresa auditada
+\parencite{oncommonground2010hria}. Esa tensión entre independencia funcional y
+dependencia financiera constituye el eje del análisis crítico de la sección
+\ref{sec:critico} y explica por qué el caso resulta tan instructivo desde el punto
+de vista metodológico.
 
-% TODO: DELIMITACIÓN CONCEPTUAL (este párrafo suele valer varios puntos):
-%   - Auditoría   = verificación de conformidad frente a criterios; no sanciona.
-%   - Fiscalización / supervisión = potestad ESTATAL de control y sanción
-%     (en Perú, el OEFA). Fuente: \cite{congreso2009ley29325}
-%   - EIA = instrumento PREDICTIVO y EX ANTE, previo a la operación.
-%     Fuente: \cite{congreso2001ley27446}
-%   Recomendación: cierra con una tabla comparativa de tres columnas
-%   (auditoría / fiscalización / EIA) por filas: quién lo hace, cuándo,
-%   carácter vinculante, consecuencia jurídica.
+Junto al criterio de quién audita, las auditorías se clasifican también por su
+objeto. Existen auditorías de sistema de gestión, que verifican la conformidad del
+sistema frente a una norma como la ISO 14001:2015 o el reglamento europeo EMAS;
+auditorías de cumplimiento legal, que contrastan la operación con la normativa
+aplicable; y auditorías sectoriales o temáticas —de residuos, de energía, de
+gestión del agua— que acotan su alcance a un aspecto determinado. Una auditoría
+integrada, por su parte, examina simultáneamente varios sistemas de gestión, como
+el ambiental, el de calidad y el de seguridad y salud ocupacional.
 
-% --- Tabla comparativa (opcional pero muy recomendable) ---------------
-%\begin{table}[H]
-%  \centering
-%  \caption{Diferencias entre auditoría ambiental, fiscalización y evaluación de impacto ambiental}
-%  \label{tab:auditoria-vs-fiscalizacion}
-%  \begin{tabularx}{\textwidth}{@{}l Y Y Y@{}}
-%    \toprule
-%    \textbf{Criterio} & \textbf{Auditoría} & \textbf{Fiscalización} & \textbf{EIA} \\
-%    \midrule
-%    Quién la realiza &  &  &  \\
-%    Momento          &  &  &  \\
-%    Carácter         &  &  &  \\
-%    Consecuencia     &  &  &  \\
-%    \bottomrule
-%  \end{tabularx}
-%  \footnotesize Nota. Elaboración propia a partir de \textcite{iso2018iso19011} y \textcite{congreso2009ley29325}.
-%\end{table}
+\subsubsection{Diferencias con la fiscalización y con la evaluación de impacto ambiental}
+
+Una confusión frecuente, y que conviene despejar antes de analizar el caso,
+consiste en tratar como equivalentes tres instrumentos que operan en momentos
+distintos y con consecuencias jurídicas distintas.
+
+La \textbf{auditoría} verifica conformidad frente a criterios. Su producto es un
+informe con hallazgos y recomendaciones; carece por sí misma de potestad
+sancionadora. Su eficacia depende de que la organización auditada decida actuar
+sobre los hallazgos, o de que un tercero con poder —un financista, un accionista,
+un certificador— condicione algo relevante a que lo haga.
+
+La \textbf{fiscalización o supervisión ambiental} es, en cambio, una potestad
+estatal. En el ordenamiento peruano corresponde al Organismo de Evaluación y
+Fiscalización Ambiental, que ejerce funciones de evaluación, supervisión,
+fiscalización, control y sanción sobre la mediana y gran minería
+\parencite{congreso2009ley29325}. Su producto no es una recomendación sino un acto
+administrativo: puede imponer medidas correctivas de cumplimiento obligatorio y
+sanciones. La diferencia es de naturaleza, no de grado.
+
+La \textbf{evaluación de impacto ambiental} es un instrumento predictivo y
+\textit{ex ante}: se aplica antes de que la actividad exista, para anticipar sus
+impactos y establecer las medidas de manejo que condicionarán la autorización
+\parencite{congreso2001ley27446}. Mientras la auditoría y la fiscalización miran
+hacia atrás —verifican lo que ya ocurrió—, la evaluación de impacto ambiental mira
+hacia adelante y trabaja sobre escenarios. Esta distinción resulta especialmente
+pertinente en el caso Marlin, donde la revisión independiente del estudio de
+impacto ambiental realizada por \textcite{moran2004review} advirtió deficiencias
+en el instrumento predictivo años antes de que la auditoría socioambiental
+verificara los impactos efectivamente producidos.
+
+La Tabla \ref{tab:auditoria-vs-fiscalizacion} sintetiza estas diferencias.
+
+\begin{table}[H]
+  \centering
+  \caption{Diferencias entre auditoría ambiental, fiscalización y evaluación de impacto ambiental}
+  \label{tab:auditoria-vs-fiscalizacion}
+  \begin{footnotesize}
+  \begin{tabularx}{\textwidth}{@{}L{2.6cm} Y Y Y@{}}
+    \toprule
+    \textbf{Criterio} & \textbf{Auditoría ambiental} & \textbf{Fiscalización ambiental} & \textbf{Evaluación de impacto ambiental} \\
+    \midrule
+    Quién la realiza
+      & La propia organización, una parte interesada o un tercero independiente
+      & El Estado, a través del organismo competente ({OEFA} en el Perú)
+      & El titular del proyecto; la revisa y aprueba la autoridad ({SENACE}) \\
+    \addlinespace
+    Momento
+      & Durante la operación, sobre hechos ya ocurridos
+      & Durante la operación, sobre hechos ya ocurridos
+      & Antes de la operación (\textit{ex ante}) \\
+    \addlinespace
+    Naturaleza
+      & Verificación de conformidad frente a criterios
+      & Potestad administrativa de control
+      & Instrumento predictivo de gestión \\
+    \addlinespace
+    Carácter
+      & Voluntaria, salvo que una norma o un contrato la exijan
+      & Obligatoria e imperativa
+      & Obligatoria como requisito de autorización \\
+    \addlinespace
+    Producto
+      & Informe con hallazgos y recomendaciones
+      & Acto administrativo: medidas correctivas y sanciones
+      & Estudio aprobado, con compromisos exigibles \\
+    \addlinespace
+    Consecuencia del incumplimiento
+      & No conformidad; sin efecto jurídico directo
+      & Multa, medida correctiva o paralización
+      & Denegación de la certificación ambiental \\
+    \bottomrule
+  \end{tabularx}
+  \end{footnotesize}
+  \par\vspace{4pt}
+  \raggedright\footnotesize Nota. Elaboración propia a partir de
+  \textcite{iso2018iso19011} y \textcite{congreso2009ley29325,congreso2001ley27446}.
+\end{table}
 
 % ---------------------------------------------------------------------
 \subsection{ISO 14001:2015 y el sistema de gestión ambiental}
-% Extensión: ~1 página / 380 palabras
 
-% TODO: Norma certificable; Estructura de Alto Nivel (Anexo SL) que la hace
-%   compatible con ISO 9001 e ISO 45001. Explicar contexto de la
-%   organización, liderazgo, planificación, apoyo, operación, evaluación del
-%   desempeño y mejora. Señalar que la norma se ORGANIZA sobre el ciclo PHVA,
-%   lo que enlaza directamente con la sección 8 de este informe.
-%   Fuente: \cite{iso2015iso14001}
+La ISO 14001:2015 es la norma internacional certificable que establece los
+requisitos de un sistema de gestión ambiental. Su versión de 2015 adoptó la
+denominada Estructura de Alto Nivel, un esquema común a todas las normas
+modernas de sistemas de gestión que la hace directamente integrable con la
+ISO 9001 de calidad y con la ISO 45001 de seguridad y salud en el trabajo
+\parencite{iso2015iso14001}. Esa estructura ordena los requisitos en siete
+capítulos operativos: contexto de la organización, liderazgo, planificación,
+apoyo, operación, evaluación del desempeño y mejora.
 
-% TODO: Concepto de aspecto ambiental vs. impacto ambiental, con un ejemplo
-%   tomado del propio caso (aspecto: uso de cianuro en la lixiviación CIL;
-%   impacto potencial: contaminación de agua superficial y subterránea).
+Dos elementos de la norma resultan centrales para este informe. El primero es que
+toda su arquitectura descansa sobre el ciclo de mejora continua, lo que la conecta
+directamente con la propuesta desarrollada en la sección \ref{sec:plan}. El
+segundo es la distinción entre aspecto e impacto ambiental, que constituye la
+unidad básica de análisis de cualquier sistema de gestión ambiental. El
+\textbf{aspecto} es el elemento de las actividades de la organización que
+interactúa o puede interactuar con el ambiente; el \textbf{impacto} es el cambio
+en el ambiente que resulta de ese aspecto. Aplicado al caso: el uso de cianuro en
+la lixiviación por agitación es un aspecto ambiental, mientras que la potencial
+afectación de la calidad del agua superficial y subterránea de las cuencas de los
+ríos Tzalá, Quivichil y Cuilco es el impacto asociado. La distinción no es
+académica: los controles operacionales se diseñan sobre los aspectos, que son
+gestionables, mientras que los indicadores de desempeño se miden sobre los
+impactos.
+
+Conviene precisar, sin embargo, que la operación analizada no fue auditada contra
+la ISO 14001. La evaluación de \textcite{oncommonground2010hria} se realizó contra
+criterios de derechos humanos, no contra los requisitos de un sistema de gestión
+certificable. La norma se incorpora a este marco teórico porque proporciona el
+vocabulario técnico con el que se clasifican los hallazgos en la sección
+\ref{sec:hallazgos} y porque estructura la propuesta de mejora continua, no
+porque haya constituido un criterio de la auditoría original.
 
 % ---------------------------------------------------------------------
 \subsection{ISO 19011:2018 y la conducción de la auditoría}
-% Extensión: ~1,5 páginas / 550 palabras
 
-% TODO: Directrices para auditar sistemas de gestión. Desarrollar:
-%   - Los principios: integridad, presentación imparcial, debido cuidado
-%     profesional, confidencialidad, independencia, enfoque basado en la
-%     evidencia y enfoque basado en riesgos.
-%   - Gestión del programa de auditoría.
-%   - FASES: inicio -> revisión documental -> preparación del plan ->
-%     actividades in situ (reunión de apertura, recolección de evidencia por
-%     entrevista, muestreo y observación, reunión de cierre) -> informe ->
-%     seguimiento.
-%   - Competencia y evaluación de los auditores.
-%   Fuente: \cite{iso2018iso19011}
+Si la ISO 14001 establece qué debe cumplirse, la ISO 19011:2018 establece cómo
+verificarlo. Se trata de una norma de directrices —no certificable— para la
+auditoría de sistemas de gestión, que aborda tres materias: la gestión del
+programa de auditoría, la realización de la auditoría y la evaluación de la
+competencia de los auditores \parencite{iso2018iso19011}.
 
-% TODO: DEFINICIONES QUE SE USARÁN EN LA SECCIÓN 6 (déjalas explícitas aquí,
-%   porque de ellas depende la clasificación de la matriz de hallazgos):
-%   criterio de auditoría, evidencia objetiva, hallazgo, conformidad,
-%   NO CONFORMIDAD MAYOR, NO CONFORMIDAD MENOR, OBSERVACIÓN, conclusión de
-%   auditoría, acción correctiva y acción preventiva.
+La norma se articula sobre siete principios que operan como criterios de calidad
+del propio ejercicio auditor: integridad, presentación imparcial, debido cuidado
+profesional, confidencialidad, independencia, enfoque basado en la evidencia y
+enfoque basado en riesgos. Tres de ellos serán retomados en el análisis crítico.
+La \textbf{independencia} exige que el auditor esté libre de sesgo y de conflicto
+de intereses. La \textbf{presentación imparcial} obliga a informar con veracidad y
+exactitud, incluidos los obstáculos encontrados y las opiniones divergentes no
+resueltas. El \textbf{enfoque basado en la evidencia} establece que las
+conclusiones deben derivarse de evidencia verificable obtenida mediante un
+muestreo apropiado, lo que convierte a la representatividad de ese muestreo en una
+condición de validez y no en un detalle procedimental.
+
+En cuanto a la realización, la norma describe una secuencia de fases: inicio de la
+auditoría, revisión de la documentación, preparación del plan y de los documentos
+de trabajo, ejecución de las actividades in situ —que comprende la reunión de
+apertura, la recolección y verificación de información mediante entrevistas,
+observación y muestreo documental, la generación de hallazgos y la reunión de
+cierre—, la preparación y distribución del informe, y el seguimiento posterior. En
+la sección \ref{sec:auditoria} se contrastará el proceso efectivamente seguido en
+la Mina Marlin con esta secuencia, para identificar qué fases quedaron
+adecuadamente cubiertas y cuáles resultaron débiles.
+
+Finalmente, la norma fija las definiciones operativas que se emplearán de manera
+sistemática en la sección \ref{sec:hallazgos}. El \textbf{criterio de auditoría}
+es el conjunto de requisitos usados como referencia para la comparación. La
+\textbf{evidencia objetiva} son los registros, declaraciones de hecho u otra
+información pertinente y verificable. El \textbf{hallazgo} es el resultado de
+evaluar la evidencia recopilada contra los criterios, y puede indicar conformidad
+o no conformidad. La \textbf{no conformidad} es el incumplimiento de un requisito;
+la práctica auditora distingue entre no conformidad mayor, cuando el
+incumplimiento compromete la integridad del sistema o afecta derechos
+fundamentales, y no conformidad menor, cuando es puntual y subsanable. La
+\textbf{observación} señala un riesgo o una oportunidad de mejora sin que exista
+incumplimiento demostrado. La \textbf{conclusión de auditoría} es el resultado
+global tras considerar los objetivos y todos los hallazgos. La \textbf{acción
+correctiva}, por último, es la destinada a eliminar la causa de una no conformidad
+detectada y evitar su repetición, lo que la diferencia de la simple corrección del
+síntoma.
 
 % ---------------------------------------------------------------------
 \subsection{Estándares internacionales de desempeño ambiental y social}
-% Extensión: ~2 páginas / 750 palabras
 
-\subsubsection{IFC Performance Standards}
-% TODO: PS1 (evaluación y gestión de riesgos e impactos), PS4 (salud y
-%   seguridad de la comunidad), PS5 (adquisición de tierras y reasentamiento
-%   involuntario), PS7 (pueblos indígenas, incluye el consentimiento libre,
-%   previo e informado) y PS8 (patrimonio cultural).
-%   IMPORTANTE: explica por qué son directamente exigibles en este caso —
-%   la IFC financió el proyecto con un préstamo de US$ 45 millones, lo que
-%   activó sus políticas de salvaguarda. Fuentes: \cite{ifcsfmarlin}, \cite{cao2006marlin}
+Las normas ISO regulan procesos de gestión, pero no fijan umbrales de desempeño
+sustantivo en materia social ni de derechos humanos. Ese vacío lo cubren los
+estándares que se exponen a continuación, que constituyeron —total o
+parcialmente— los criterios efectivamente aplicados en la auditoría analizada.
 
-\subsubsection{Convenio 169 de la OIT y la consulta previa}
-% TODO: Obligación de consulta previa, libre e informada a pueblos indígenas
-%   y tribales. Es el criterio incumplido más importante de todo el caso.
-%   Fuente: \cite{oit1989convenio169}
+\subsubsection{Los Performance Standards de la Corporación Financiera Internacional}
 
-\subsubsection{Voluntary Principles on Security and Human Rights}
-% TODO: Marco para empresas extractivas sobre uso de seguridad privada y
-%   pública. Se recomendó su adopción justamente por el eje de seguridad
-%   de la auditoría. Fuente: \cite{vpshr2000principios}
+Los Performance Standards de la Corporación Financiera Internacional (IFC)
+establecen las obligaciones ambientales y sociales que asumen los proyectos
+financiados por dicha institución. Su pertinencia en este caso no es teórica: la
+IFC financió el proyecto Marlin con un préstamo de US\$ 45 millones, lo que activó
+sus políticas de salvaguarda y las hizo exigibles a la operación
+\parencite{ifcsfmarlin, cao2006marlin}.
+
+Cinco de esos estándares resultan directamente aplicables. El PS1 regula la
+evaluación y gestión de los riesgos e impactos ambientales y sociales, e incluye
+la exigencia de un mecanismo de atención de quejas. El PS4 aborda la salud y
+seguridad de la comunidad, y comprende expresamente la conducta del personal de
+seguridad. El PS5 regula la adquisición de tierras y el reasentamiento
+involuntario. El PS7 establece las obligaciones respecto de los pueblos indígenas,
+incluida la exigencia de consentimiento libre, previo e informado en determinados
+supuestos. El PS8 protege el patrimonio cultural. Como se verá en la sección
+\ref{sec:hallazgos}, cada uno de los siete ejes evaluados por la auditoría admite
+ser mapeado contra al menos uno de estos estándares.
+
+\subsubsection{El Convenio 169 de la Organización Internacional del Trabajo}
+
+El Convenio 169 sobre pueblos indígenas y tribales en países independientes es el
+instrumento internacional vinculante que establece, en su artículo 6, la
+obligación de los Estados de consultar a los pueblos interesados mediante
+procedimientos apropiados y a través de sus instituciones representativas, cada
+vez que se prevean medidas susceptibles de afectarles directamente
+\parencite{oit1989convenio169}. La consulta debe ser previa, libre e informada, y
+realizarse de buena fe con la finalidad de llegar a un acuerdo.
+
+Este es el criterio incumplido de mayor gravedad en el caso analizado y el que
+articula todo el conflicto: la operación se autorizó sin un proceso de consulta
+adecuado a un territorio habitado mayoritariamente por los pueblos maya-mam y
+maya-sipakapense \parencite{oncommonground2010hria}. Su condición de norma
+vinculante para el Estado, y no de mero estándar voluntario para la empresa,
+explica por qué el caso escaló hasta los órganos del sistema interamericano y
+hasta los mecanismos de control de la propia Organización Internacional del
+Trabajo.
+
+\subsubsection{Los Principios Voluntarios en Seguridad y Derechos Humanos}
+
+Los Principios Voluntarios en Seguridad y Derechos Humanos constituyen el marco de
+referencia internacional para las empresas extractivas en la gestión de la
+seguridad privada y en su relación con las fuerzas de seguridad pública
+\parencite{vpshrsfprincipios}. Se estructuran en tres componentes: la evaluación
+de riesgos, la relación con la seguridad pública y la relación con la seguridad
+privada, e incorporan estándares sobre uso de la fuerza, selección y capacitación
+del personal, y registro y comunicación de incidentes.
+
+Su adopción fue precisamente una de las recomendaciones de la auditoría, derivada
+del eje de seguridad, ante el riesgo identificado para la integridad personal de
+los residentes por la presencia de seguridad privada armada y de fuerzas públicas
+en el entorno de la operación \parencite{oncommonground2010hria}.
 
 \subsubsection{ICMM, GISTM e IRMA}
-% TODO: - ICMM Mining Principles. Fuente: \cite{icmmsfprincipios}
-%       - GISTM (2020): desarrollado por ICMM, UNEP y PRI DESPUÉS de
-%         Brumadinho; seis áreas temáticas, 15 principios y 77 requisitos
-%         auditables; su Tema I exige debida diligencia en derechos humanos
-%         y participación de las personas afectadas.
-%         Fuentes: \cite{icmm2020gistm}, \cite{unep2020gistm}
-%       - IRMA: más de 420 requisitos auditables, auditoría independiente de
-%         tercera parte, y exigencia de al menos 90 % de cumplimiento en cada
-%         una de las cuatro áreas de principios para certificar.
-%         Fuente: \cite{irmasfstandard}
+
+Tres iniciativas sectoriales completan el marco. Los Mining Principles del
+International Council on Mining and Metals establecen compromisos de desempeño
+ambiental, social y de gobernanza para sus empresas miembro
+\parencite{icmmsfprincipios}.
+
+El Global Industry Standard on Tailings Management (GISTM) fue desarrollado
+conjuntamente por el ICMM, el Programa de las Naciones Unidas para el Medio
+Ambiente y los Principles for Responsible Investment, como respuesta directa al
+colapso de la presa de relaves de Brumadinho en 2019
+\parencite{icmm2020gistm, unep2020gistm}. Sus requisitos se organizan en seis
+áreas temáticas que comprenden quince principios y setenta y siete requisitos
+auditables. Resulta especialmente significativo que su primera área temática exija
+debida diligencia en derechos humanos y participación efectiva de las personas
+afectadas: el estándar técnico más importante sobre relaves incorpora, en su
+apertura, una exigencia de naturaleza social. Debe precisarse que el GISTM es
+posterior al período auditado —se publicó en 2020, tres años después del cierre de
+la operación—, por lo que en este informe funciona como referencia prospectiva
+para la propuesta de mejora y no como criterio retroactivo de evaluación.
+
+La Initiative for Responsible Mining Assurance (IRMA), por su parte, ofrece un
+estándar de desempeño ambiental y social con más de cuatrocientos veinte
+requisitos auditables, verificado mediante auditoría independiente de tercera
+parte, que exige alcanzar al menos el 90 \% de cumplimiento en cada una de sus
+cuatro áreas de principios para otorgar la certificación
+\parencite{irmasfstandard}. Su relevancia para este trabajo es doble: por el nivel
+de exigencia y, sobre todo, porque su modelo de verificación independiente por
+tercera parte constituye la alternativa institucional más directa al modelo de
+auditoría financiada por la empresa auditada que se discute en la sección
+\ref{sec:critico}.
 
 % ---------------------------------------------------------------------
 \subsection{Marco normativo peruano de referencia}
-% Extensión: ~1,5 páginas / 550 palabras
-% NOTA: esta subsección NO se aplica al caso guatemalteco. Sirve para el
-% contraste de la sección 7.5. Dilo explícitamente para que no parezca error.
 
-% TODO: - Ley 28611, Ley General del Ambiente. \cite{congreso2005ley28611}
-%       - Ley 27446, Ley del SEIA, y su reglamento D.S. 019-2009-MINAM;
-%         rol del SENACE en la aprobación de EIA detallados.
-%         \cite{congreso2001ley27446}, \cite{minam2009ds019}
-%       - Ley 29325, SINEFA: el OEFA como ente rector de la fiscalización,
-%         supervisión, evaluación, control y sanción ambiental de la mediana
-%         y gran minería. \cite{congreso2009ley29325}
-%       - D.S. 040-2014-EM, Reglamento de Protección y Gestión Ambiental
-%         Minera; medidas correctivas del artículo 39. \cite{minem2014ds040}
-%       - D.S. 042-2003-EM, compromiso previo y relación con comunidades.
-%         \cite{minem2003ds042}
-%       - Ley 29785, Ley de Consulta Previa. \cite{congreso2011ley29785}
-%       - Mención de OSINERGMIN (seguridad de infraestructura), SUNAFIL
-%         (seguridad y salud en el trabajo) y de la figura histórica del PAMA.
+La normativa que se expone a continuación no resultaba aplicable a la operación
+guatemalteca. Se incorpora deliberadamente al marco teórico con una finalidad
+comparativa: permite evaluar qué habría ocurrido si los mismos hechos se hubieran
+producido bajo un régimen de fiscalización ambiental estatal con potestad
+sancionadora, contraste que se desarrolla en la sección \ref{sec:critico}.
+
+La Ley General del Ambiente constituye la norma marco del ordenamiento ambiental
+peruano y consagra los principios de prevención, internalización de costos,
+responsabilidad ambiental y gobernanza ambiental
+\parencite{congreso2005ley28611}. Sobre esa base, la Ley del Sistema Nacional de
+Evaluación de Impacto Ambiental y su reglamento establecen la certificación
+ambiental como requisito previo para el inicio de cualquier proyecto susceptible
+de generar impactos significativos, con una clasificación en tres categorías según
+la magnitud del impacto previsto \parencite{congreso2001ley27446, minam2009ds019}.
+La evaluación y aprobación de los estudios de impacto ambiental detallados de los
+grandes proyectos de inversión corresponde al Servicio Nacional de Certificación
+Ambiental para las Inversiones Sostenibles.
+
+La pieza central del contraste es la Ley del Sistema Nacional de Evaluación y
+Fiscalización Ambiental, que crea el sistema y designa al Organismo de Evaluación
+y Fiscalización Ambiental como su ente rector, con funciones de evaluación,
+supervisión, fiscalización, control y sanción sobre la mediana y gran minería
+\parencite{congreso2009ley29325}. La diferencia con el caso analizado es
+estructural: no se trata de una entidad que recomienda, sino de una que ordena y
+sanciona.
+
+En el plano sectorial, el Reglamento de Protección y Gestión Ambiental para las
+Actividades de Explotación, Beneficio, Labor General, Transporte y Almacenamiento
+Minero regula la gestión ambiental de la actividad minera y contempla en su
+artículo 39 las medidas correctivas aplicables
+\parencite{minem2014ds040}. El Decreto Supremo que establece el compromiso previo
+como requisito para el desarrollo de actividades mineras incorpora, ya desde 2003,
+obligaciones de relacionamiento con las comunidades del entorno
+\parencite{minem2003ds042}. Completan el cuadro la Ley del Derecho a la Consulta
+Previa a los Pueblos Indígenas u Originarios, que reglamenta internamente la
+obligación del Convenio 169 y establece un procedimiento con etapas y plazos
+definidos \parencite{congreso2011ley29785}, así como las competencias del
+Organismo Supervisor de la Inversión en Energía y Minería sobre la seguridad de la
+infraestructura y de la Superintendencia Nacional de Fiscalización Laboral en
+materia de seguridad y salud en el trabajo. Cabe mencionar, como antecedente
+histórico, la figura de los Programas de Adecuación y Manejo Ambiental, mediante
+los cuales las operaciones preexistentes debieron adecuarse progresivamente a los
+estándares ambientales.
+
+La comparación arroja una diferencia nítida en materia de exigibilidad jurídica.
+Ello no autoriza, sin embargo, a concluir que el modelo peruano resuelva la
+conflictividad socioambiental: el propio caso de Espinar, con su Informe Final
+Integrado de Monitoreo Sanitario Ambiental Participativo, demuestra que la
+existencia de un aparato fiscalizador no evita por sí sola el conflicto
+\parencite{minam2013espinar}. La diferencia, como se argumentará, es de
+exigibilidad y no de resultados garantizados.
 
 % ---------------------------------------------------------------------
 \subsection{El ciclo PHVA como base de la mejora continua}
-% Extensión: ~0,5 página / 200 palabras
 
-% TODO: Planificar - Hacer - Verificar - Actuar, aplicado a la gestión
-%   ambiental y social minera. Explicar brevemente cada fase porque la
-%   sección 8 se construye enteramente sobre esta estructura:
-%   - Planificar: política, aspectos e impactos, objetivos y metas.
-%   - Hacer: controles operacionales, competencias, comunicación.
-%   - Verificar: monitoreo, medición, auditoría interna, monitoreo
-%     participativo (modelos AMAC en Marlin y mesa de diálogo en Espinar).
-%   - Actuar: acciones correctivas, revisión por la dirección, cierre de
-%     no conformidades.
-%   Fuente: \cite{iso2015iso14001}
+El ciclo Planificar-Hacer-Verificar-Actuar constituye el esquema lógico sobre el
+que se estructura la ISO 14001:2015 y, en consecuencia, la propuesta desarrollada
+en la sección \ref{sec:plan} \parencite{iso2015iso14001}.
 
-\pendiente{desarrollar la sección 3 (6--8 páginas)}
+En la fase \textbf{Planificar} se establecen la política ambiental, se identifican
+los aspectos e impactos junto con los requisitos legales aplicables, y se fijan
+objetivos y metas medibles. En la fase \textbf{Hacer} se implementan los controles
+operacionales, se asignan responsabilidades y se desarrollan las competencias y
+los canales de comunicación necesarios. La fase \textbf{Verificar} comprende el
+seguimiento, la medición, el análisis y la evaluación del desempeño, incluidas las
+auditorías internas y, en contextos de conflictividad socioambiental, los
+mecanismos de monitoreo participativo con las comunidades del entorno. La fase
+\textbf{Actuar} cierra el ciclo mediante el tratamiento de las no conformidades,
+la adopción de acciones correctivas dirigidas a la causa raíz y la revisión por la
+dirección, cuyas conclusiones retroalimentan la planificación del ciclo siguiente.
+
+La virtud del esquema para el presente informe reside en que permite convertir un
+conjunto disperso de recomendaciones de auditoría en un sistema ordenado de
+acciones con responsables, plazos e indicadores verificables. Sobre esa base se
+construye la propuesta de la sección \ref{sec:plan}.
