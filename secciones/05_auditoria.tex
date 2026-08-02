@@ -1,169 +1,376 @@
 % =====================================================================
 %  5. DESCRIPCIÓN DE LA AUDITORÍA  <- NÚCLEO DEL TRABAJO
 %  Responsable: INTEGRANTE 3
-%  Extensión objetivo: 6 a 7 páginas — aprox. 2.400 palabras + Tabla 2 + Figura 3
+%  ESTADO: REDACTADO (1 de agosto de 2026) — ~2.300 palabras + 2 tablas
 %  Fuente principal: Sección C de docs/bitacora_decisiones.md
-%  Documento ancla: HRIA completa (PDF espejado en q4cdn.com) -> \cite{oncommonground2010hria}
+%  Documento ancla: HRIA de On Common Ground (PDF espejado en q4cdn.com)
 %
-%  ENFOQUE: esta sección DESCRIBE la auditoría (quién, con qué mandato, con
-%  qué criterios y con qué método). NO evalúa. La evaluación crítica va en
-%  la sección 7. No te adelantes: si mezclas descripción con crítica, el
-%  informe pierde el orden de un trabajo de auditoría.
+%  Contiene la Tabla del equipo auditor y la Tabla de criterios de
+%  auditoría. Falta insertar la Figura 3 (línea de tiempo): el entorno
+%  está listo y comentado al final del archivo.
+%
+%  ENFOQUE MANTENIDO: esta sección DESCRIBE la auditoría. La evaluación
+%  crítica va en la sección 7. Donde aparece un dato incómodo —el
+%  financiamiento por la empresa auditada, la no ejecución de la revisión
+%  por pares, la ausencia de Sipacapa— se consigna como HECHO y se remite
+%  a la sección 7, sin juzgarlo aquí. Ese orden es lo que distingue un
+%  informe de auditoría de un alegato.
 % =====================================================================
 
 \section{Descripción de la auditoría}
 \label{sec:auditoria}
 
+Esta sección reconstruye el proceso de auditoría analizado: quién lo promovió,
+quién lo ejecutó, con qué mandato, contra qué criterios y mediante qué método. El
+documento examinado es la \hria, elaborada por \auditora\ y publicada en mayo de
+2010 \parencite{oncommonground2010hria}.
+
+La exposición se atiene deliberadamente a un registro descriptivo. Varios de los
+hechos que se consignan a continuación —que la evaluación fue financiada por la
+empresa auditada, que la revisión por pares prevista no llegó a ejecutarse, o que
+la participación del municipio de Sipacapa resultó insuficiente— admiten una
+lectura crítica que se desarrolla en la sección \ref{sec:critico}. Separar ambos
+planos no es una formalidad: una auditoría se evalúa comparando lo que se hizo
+con lo que debió hacerse, y para ello es imprescindible establecer primero, sin
+valoración, qué fue exactamente lo que se hizo.
+
 % ---------------------------------------------------------------------
 \subsection{Antecedentes y origen del encargo}
-% Extensión: ~1 página / 380 palabras
 
-% TODO: - El detonante NO fue la empresa ni el Estado, sino un grupo de
-%         ACCIONISTAS SOCIALMENTE RESPONSABLES que exigieron la evaluación:
-%         Ethical Funds, First Swedish National Pension Fund, Fourth Swedish
-%         National Pension Fund, Public Service Alliance of Canada Staff
-%         Pension Fund y SHARE.
-%       - Memorando de Entendimiento (MOU) firmado en marzo de 2008.
-%       - Se constituyó un Comité Directivo (Steering Committee) independiente
-%         integrado por Bob Walker, Manfredo Marroquín y Dave Deisley, con
-%         Bill Brassington.
-%       - En octubre de 2008 ese Comité seleccionó a la firma auditora.
-%       - Contexto previo que explica la presión: la queja de la ONG Madre
-%         Selva ante la CAO/IFC (2005) y el conflicto social ya instalado.
-%       Fuentes: \cite{oncommonground2010hria}, \cite{cao2006marlin}
+El rasgo más singular de este proceso es su origen. La evaluación no fue iniciativa
+de la empresa ni orden de una autoridad estatal, sino resultado de la presión
+ejercida por un grupo de \textbf{accionistas socialmente responsables} sobre la
+matriz corporativa. Los promotores fueron Ethical Funds, el First Swedish
+National Pension Fund, el Fourth Swedish National Pension Fund, el Public Service
+Alliance of Canada Staff Pension Fund y SHARE
+\parencite{oncommonground2010hria}.
+
+Esa vía de activación merece atención analítica. En el esquema clásico de control
+ambiental expuesto en la sección \ref{sec:marco}, la verificación de la conducta
+empresarial procede del Estado, mediante fiscalización, o del mercado de la
+certificación, mediante auditorías de tercera parte. Aquí operó un tercer
+mecanismo: el capital accionario. Fueron inversionistas institucionales quienes,
+en ejercicio de sus políticas de inversión responsable, condicionaron su relación
+con la empresa a que esta se sometiera a una evaluación independiente de derechos
+humanos. Se trata de un mecanismo de gobernanza privada que no sustituye a la
+fiscalización estatal —carece de potestad sancionadora— pero que en este caso
+consiguió lo que aquella no había logrado: que la operación fuese examinada por un
+tercero externo y que el resultado se hiciera público.
+
+El contexto que hizo posible esa presión estaba ya formado. En 2005 la
+organización no gubernamental Madre Selva había presentado una queja ante la
+Compliance Advisor Ombudsman de la Corporación Financiera Internacional respecto
+del préstamo otorgado al proyecto, procedimiento que concluyó en mayo de 2006
+\parencite{cao2006marlin}. El conflicto social en San Miguel Ixtahuacán y
+Sipacapa estaba plenamente instalado, la consulta comunitaria de Sipacapa se había
+celebrado en 2005, y la revisión independiente del estudio de impacto ambiental
+elaborada por \textcite{moran2004review} circulaba desde 2004. La evaluación de
+derechos humanos no surgió, por tanto, en un escenario neutro, sino como respuesta
+a un cuestionamiento previo y sostenido.
+
+El proceso se formalizó mediante un \textbf{Memorando de Entendimiento} suscrito en
+marzo de 2008. Para su gobierno se constituyó un \textbf{Comité Directivo}
+(\textit{Steering Committee}) independiente, integrado por Bob Walker, Manfredo
+Marroquín y Dave Deisley, con la participación de Bill Brassington. Fue ese comité
+—y no la dirección de la empresa— el que en octubre de 2008 seleccionó a la firma
+auditora \parencite{oncommonground2010hria}. La interposición de una instancia
+independiente entre quien financia y quien audita es un elemento de diseño
+institucional deliberado, cuyo alcance y cuyas limitaciones se discuten en la
+sección \ref{sec:critico}.
 
 % ---------------------------------------------------------------------
-\subsection{Organismo auditor: quién auditó y quién pagó}
-% Extensión: ~0,75 página / 280 palabras
+\subsection{Organismo auditor, mandato y financiamiento}
 
-% TODO: - Auditora: \auditora\ (Vancouver, Canadá), consultora independiente
-%         especializada en evaluación social y relacionamiento comunitario
-%         en minería.
-%       - Encargo: el Comité Directivo de la HRIA, actuando «en nombre de
-%         Goldcorp».
-%       - Financiamiento: GOLDCORP, es decir, la empresa auditada.
-%       - Consigna el dato de manera NEUTRA y objetiva aquí. La discusión
-%         sobre lo que ese financiamiento implica para la independencia va
-%         en la sección 7.1: limítate a remitir a ella.
-%       - Principios pactados en el MOU: transparencia, independencia e
-%         inclusividad. En diciembre de 2008 el equipo auditor añadió dos
-%         principios éticos propios: consentimiento informado y
-%         confidencialidad.
-%       Fuente: \cite{oncommonground2010hria}
+La evaluación fue ejecutada por \auditora, consultora independiente con sede en
+Vancouver, Canadá, especializada en evaluación social y relacionamiento
+comunitario en el sector minero \parencite{oncommonground2010hria}.
+
+El encargo procedió del Comité Directivo de la evaluación, actuando «en nombre de
+Goldcorp». El \textbf{financiamiento corrió íntegramente a cargo de Goldcorp}, es
+decir, de la matriz de la empresa auditada. Este dato se consigna aquí como hecho
+verificado y sin valoración; su análisis corresponde a la sección
+\ref{sec:critico}. Conviene únicamente advertir que la circunstancia no es
+excepcional en el ámbito de las evaluaciones de impacto en derechos humanos:
+prácticamente todas se financian de ese modo, sencillamente porque no existe un
+mecanismo alternativo de financiación consolidado. Lo que distingue a un proceso
+de otro no es la ausencia de esa dependencia, sino las salvaguardas que se
+articulan frente a ella.
+
+En este caso, tales salvaguardas fueron tres, todas ellas fijadas por escrito en el
+Memorando de Entendimiento. La primera es el conjunto de principios rectores del
+proceso: \textbf{transparencia, independencia e inclusividad}. La segunda es la
+interposición del Comité Directivo como órgano de selección y supervisión. La
+tercera es el compromiso de publicación íntegra del informe, incluidos los
+hallazgos desfavorables a la empresa; compromiso que efectivamente se cumplió, y
+que explica que este trabajo pueda apoyarse en un documento público de más de
+doscientas páginas.
+
+A estos principios el propio equipo auditor añadió, en diciembre de 2008, dos
+principios éticos adicionales de su propia iniciativa: el \textbf{consentimiento
+informado} de las personas entrevistadas y la \textbf{confidencialidad} de sus
+declaraciones \parencite{oncommonground2010hria}. La incorporación no es un
+detalle menor. En una auditoría desarrollada en un territorio en conflicto, donde
+quienes testimonian pueden sufrir represalias, la confidencialidad no es una
+cortesía procedimental sino una condición material para que exista testimonio. Se
+corresponde, además, con el principio de confidencialidad que la ISO 19011:2018
+exige a todo auditor \parencite{iso2018iso19011}.
 
 % ---------------------------------------------------------------------
 \subsection{Composición y competencia del equipo auditor}
-% Extensión: ~0,75 página / 250 palabras + Tabla 2
 
-% TODO: Presenta al equipo y CONECTA con ISO 19011:2018, que exige evaluar
-%   la competencia del auditor. Pregunta guía: ¿el perfil del equipo cubre
-%   las dos dimensiones (ambiental y social) del alcance?
-%   - Susan Joyce — líder del equipo, socióloga con más de 25 años de
-%     experiencia en aspectos sociales de la minería y derechos humanos.
-%   - Myriam Cabrera, Giselle Huamani y Lloyd Lipsett — equipo principal.
-%   - Monica Leonardo Segura y Sandro Macassi — apoyo.
-%   - Revisor par (peer reviewer) previsto: International Alert (Londres).
-%     OJO: finalmente NO se pudo ejecutar según lo previsto. Menciónalo aquí
-%     como hecho y desarróllalo como limitación en la sección 7.2.
-%   Fuente: \cite{oncommonground2010hria}
+La ISO 19011:2018 exige que la competencia del equipo auditor se determine y
+evalúe en función de los conocimientos y habilidades necesarios para alcanzar los
+objetivos de la auditoría \parencite{iso2018iso19011}. Procede, en consecuencia,
+examinar si el perfil del equipo cubría las dos dimensiones —social y ambiental—
+comprendidas en su alcance. La Tabla \ref{tab:equipo-auditor} resume su
+composición.
 
-% --- TABLA 2: Composición del equipo auditor -------------------------
-%\begin{table}[H]
-%  \centering
-%  \caption{Composición del equipo auditor de la evaluación de derechos humanos de la Mina Marlin}
-%  \label{tab:equipo-auditor}
-%  \begin{tabularx}{\textwidth}{@{}L{3.5cm} L{3cm} Y@{}}
-%    \toprule
-%    \textbf{Integrante} & \textbf{Rol} & \textbf{Perfil profesional} \\
-%    \midrule
-%    Susan Joyce            & Líder del equipo &  \\
-%    Myriam Cabrera         & Equipo principal &  \\
-%    Giselle Huamani        & Equipo principal &  \\
-%    Lloyd Lipsett          & Equipo principal &  \\
-%    Monica Leonardo Segura & Apoyo            &  \\
-%    Sandro Macassi         & Apoyo            &  \\
-%    International Alert    & Revisión por pares (prevista, no ejecutada) &  \\
-%    \bottomrule
-%  \end{tabularx}
-%  \footnotesize
-%  \par\vspace{2pt}
-%  \raggedright Nota. Elaboración propia a partir de \textcite{oncommonground2010hria}.
-%\end{table}
+% --- TABLA: Composición del equipo auditor ---------------------------
+\begin{table}[H]
+  \centering
+  \caption{Composición del equipo de la evaluación de derechos humanos de la Mina Marlin}
+  \label{tab:equipo-auditor}
+  \begin{small}
+  \begin{tabularx}{\textwidth}{@{}L{3.6cm} L{3.4cm} Y@{}}
+    \toprule
+    \textbf{Integrante} & \textbf{Rol} & \textbf{Perfil y aporte} \\
+    \midrule
+    Susan Joyce & Líder del equipo &
+      Socióloga con más de 25 años de experiencia en aspectos sociales de la
+      minería y en derechos humanos. \\
+    \addlinespace
+    Myriam Cabrera & Equipo principal & Evaluación social y trabajo de campo. \\
+    \addlinespace
+    Giselle Huamani & Equipo principal &
+      Experiencia regional en transformación de conflictos socioambientales. \\
+    \addlinespace
+    Lloyd Lipsett & Equipo principal &
+      Marco jurídico de empresas y derechos humanos. \\
+    \addlinespace
+    Monica Leonardo Segura & Apoyo & Contexto jurídico guatemalteco. \\
+    \addlinespace
+    Sandro Macassi & Apoyo & Análisis de conflictos y comunicación. \\
+    \addlinespace
+    International Alert & Revisión por pares &
+      \textbf{Prevista en el diseño, no ejecutada según lo planeado.} \\
+    \bottomrule
+  \end{tabularx}
+  \end{small}
+  \par\vspace{3pt}
+  \raggedright\footnotesize
+  Nota. Los perfiles de los integrantes distintos de la líder del equipo se
+  describen de forma resumida; el informe original no detalla la trayectoria
+  individual de cada uno. Elaboración propia a partir de
+  \textcite{oncommonground2010hria}.
+\end{table}
+
+Del cuadro se desprenden dos observaciones de carácter descriptivo. La primera es
+que el equipo reunía un perfil predominantemente \textbf{social y jurídico}:
+sociología, derechos humanos, análisis de conflictos y derecho. No incorporaba
+especialistas en hidrogeología, geoquímica ni ingeniería de relaves. Esta
+composición es coherente con el objeto declarado de la evaluación —una evaluación
+de impactos en derechos humanos, no una auditoría técnico-ambiental— y el equipo
+resolvió la brecha por la vía de encargar una revisión ambiental independiente,
+según se detalla en la subsección de metodología.
+
+La segunda observación se refiere a la revisión por pares. El diseño del proceso
+contemplaba que International Alert, organización con sede en Londres
+especializada en construcción de paz, ejerciera de revisor par del trabajo. Esa
+revisión \textbf{no llegó a ejecutarse según lo previsto}. Se consigna aquí como
+hecho, por su relevancia para la valoración de la calidad del proceso, que se
+aborda en la sección \ref{sec:critico}.
 
 % ---------------------------------------------------------------------
 \subsection{Alcance de la auditoría}
-% Extensión: ~0,75 página / 280 palabras
 
-% TODO: - Alcance TEMPORAL: desde que Glamis Gold se convirtió en operadora
-%         hasta la fecha del informe (mayo de 2010), más una mirada
-%         prospectiva al cierre y al post-cierre.
-%       - Alcance ESPACIAL: el área de la licencia de explotación.
-%       - EXCLUSIÓN / LIMITACIÓN DECLARADA POR LOS PROPIOS AUDITORES:
-%         participación insuficiente del pueblo de Sipacapa y de los sectores
-%         opositores a la mina, por lo que los hallazgos sobre impactos son
-%         reconocidamente parciales. Regístrala aquí como parte del alcance
-%         declarado; la valoración va en 7.2.
-%       - Buen punto para el informe: en ISO 19011 el alcance y sus
-%         exclusiones condicionan la validez de las conclusiones. Señálalo.
-%       Fuente: \cite{oncommonground2010hria}
+El alcance temporal de la evaluación se extendió desde el momento en que Glamis
+Gold asumió la condición de operadora hasta la fecha de emisión del informe, en
+mayo de 2010, e incorporó además una mirada prospectiva sobre el cierre y el
+post-cierre de la operación. El alcance espacial quedó circunscrito al área de la
+licencia de explotación \parencite{oncommonground2010hria}.
+
+Junto al alcance, el informe declaró expresamente una \textbf{limitación}: la
+participación del municipio de Sipacapa y de los sectores opositores a la mina
+resultó insuficiente, por lo que los propios auditores calificaron sus hallazgos
+sobre impactos como parciales.
+
+El registro de esta limitación exige una precisión conceptual que enlaza
+directamente con la sección \ref{sec:marco}. En la lógica de la ISO 19011:2018, el
+alcance y sus exclusiones no son un preámbulo administrativo: condicionan la
+validez de las conclusiones. Si la auditoría se sustenta en un enfoque basado en
+la evidencia, y la evidencia se obtiene mediante muestreo, entonces la
+representatividad de la muestra determina hasta dónde alcanzan las conclusiones
+\parencite{iso2018iso19011}. Una evaluación de impactos sociales que no logra
+incorporar el testimonio de la población más crítica no obtiene una muestra
+incompleta en sentido meramente cuantitativo: obtiene una muestra sesgada en la
+dirección precisa que importa. Cuál sea el peso de ese sesgo se discute en la
+sección \ref{sec:critico}; aquí basta con dejar constancia de que los auditores lo
+declararon ellos mismos, lo que constituye, en sí, una práctica correcta.
 
 % ---------------------------------------------------------------------
 \subsection{Criterios de auditoría aplicados}
-% Extensión: ~1,25 páginas / 450 palabras
 
-% TODO: Los criterios son la «vara de medir». Enumera y explica brevemente
-%   contra qué se comparó la conducta de la empresa:
-%   - Marco internacional de derechos humanos: Declaración Universal de
-%     Derechos Humanos, PIDCP (derechos civiles y políticos) y PIDESC
-%     (derechos económicos, sociales y culturales).
-%   - Convenio 169 de la OIT. \cite{oit1989convenio169}
-%   - Marco «Proteger, Respetar, Remediar» de John Ruggie.
-%   - Herramienta Human Rights Compliance Assessment (HRCA) del Danish
-%     Institute for Human Rights (DIHR), adaptada al caso.
-%   - Referencias a los IFC Performance Standards, al ICMM y a los Voluntary
-%     Principles on Security and Human Rights.
-%     \cite{ifcsfmarlin}, \cite{icmmsfprincipios}, \cite{vpshr2000principios}
-%
-% TODO (párrafo de análisis, no solo lista): observa que estos criterios son
-%   de DERECHOS HUMANOS y de desempeño, no de sistema de gestión. Es decir,
-%   la HRIA no es una auditoría de certificación ISO 14001. Aclararlo evita
-%   que el lector espere no conformidades en el sentido estricto de la norma
-%   y justifica que en la sección 6 la clasificación sea una adaptación
-%   propia. Fuente: \cite{iso2018iso19011}
+Los criterios de auditoría son la vara de medir: el conjunto de requisitos frente
+a los cuales se compara la conducta observada. Su elección determina qué puede
+llegar a constituir un hallazgo y qué queda, por definición, fuera del examen. La
+Tabla \ref{tab:criterios} sistematiza los criterios aplicados en esta evaluación,
+distinguiendo su naturaleza jurídica.
+
+% --- TABLA: Criterios de auditoría -----------------------------------
+\begin{table}[H]
+  \centering
+  \caption{Criterios de auditoría aplicados en la evaluación de la Mina Marlin}
+  \label{tab:criterios}
+  \begin{small}
+  \begin{tabularx}{\textwidth}{@{}L{5.2cm} L{3.2cm} Y@{}}
+    \toprule
+    \textbf{Criterio} & \textbf{Naturaleza} & \textbf{Ámbito que gobierna} \\
+    \midrule
+    Declaración Universal de Derechos Humanos & Marco internacional &
+      Referencia general de derechos. \\
+    \addlinespace
+    Pacto Internacional de Derechos Civiles y Políticos & Tratado vinculante &
+      Seguridad personal, libertad de asociación. \\
+    \addlinespace
+    Pacto Internacional de Derechos Económicos, Sociales y Culturales &
+      Tratado vinculante & Agua, salud, trabajo, medios de vida. \\
+    \addlinespace
+    Convenio 169 de la {OIT} & Tratado vinculante para el Estado &
+      Consulta previa, libre e informada; tierras. \\
+    \addlinespace
+    Marco «Proteger, Respetar, Remediar» (Ruggie) & Marco de referencia &
+      Estructura general del análisis. \\
+    \addlinespace
+    Herramienta {HRCA} del {DIHR} & Herramienta metodológica &
+      Instrumento de verificación, adaptado al caso. \\
+    \addlinespace
+    {IFC} Performance Standards & Obligación contractual &
+      Exigibles por el préstamo de la {IFC}. \\
+    \addlinespace
+    {ICMM} Mining Principles & Estándar voluntario sectorial &
+      Desempeño corporativo. \\
+    \addlinespace
+    Principios Voluntarios en Seguridad y Derechos Humanos & Estándar voluntario &
+      Seguridad privada y pública. \\
+    \bottomrule
+  \end{tabularx}
+  \end{small}
+  \par\vspace{3pt}
+  \raggedright\footnotesize
+  Nota. Elaboración propia a partir de \textcite{oncommonground2010hria}.
+\end{table}
+
+La columna central de la tabla revela un rasgo estructural del caso. Los criterios
+aplicados pertenecen a tres categorías de muy distinta exigibilidad. Los tratados
+internacionales de derechos humanos y el Convenio 169 vinculan al \textbf{Estado
+guatemalteco}, no directamente a la empresa. Los IFC Performance Standards
+vinculan a la empresa, pero por vía \textbf{contractual}, como condición del
+préstamo \parencite{ifcsfmarlin}. Los estándares del ICMM y los Principios
+Voluntarios son de adhesión \textbf{voluntaria}. Ninguno de ellos es, en sentido
+estricto, una norma sancionable directamente frente al operador por un órgano
+administrativo, como sí lo sería el marco peruano expuesto en la sección
+\ref{sec:marco}. Esta configuración explica por qué el resultado del proceso
+fueron recomendaciones y no medidas correctivas exigibles.
+
+Corresponde señalar, además, una diferencia de fondo respecto de la práctica
+auditora convencional. Los criterios empleados son criterios de
+\textbf{desempeño} en derechos humanos, no requisitos de un \textbf{sistema de
+gestión}. La evaluación no fue una auditoría de certificación conforme a la
+ISO 14001:2015 ni pretendió serlo. La consecuencia práctica es que sus resultados
+no se formularon como no conformidades en el sentido técnico de la norma, lo que
+obliga a este informe a construir una clasificación propia para el análisis de la
+sección \ref{sec:hallazgos}. Explicitar esa diferencia evita atribuir a la
+evaluación una naturaleza que no tuvo.
 
 % ---------------------------------------------------------------------
 \subsection{Metodología y cronograma}
-% Extensión: ~1,25 páginas / 450 palabras + Figura 3
 
-% TODO: Describe las cinco líneas de trabajo:
-%   1. Revisión de políticas, procedimientos y prácticas de la empresa.
-%   2. Análisis de datos secundarios y consulta a fuentes expertas.
-%   3. Entrevistas individuales y grupales con múltiples grupos de interés.
-%   4. Adaptación de la herramienta HRCA del DIHR.
-%   5. Revisión técnica ambiental independiente encargada DENTRO de la propia
-%      HRIA (dato importante: la auditoría social subcontrató la pericia
-%      ambiental, lo que la hace efectivamente socioambiental).
-%   Cronograma: octubre de 2008 a mayo de 2010, es decir, unos 19 meses.
-%   Fuente: \cite{oncommonground2010hria}
-%
-% TODO (párrafo de cierre): mapea estas actividades contra las fases de
-%   ISO 19011:2018 (inicio, revisión documental, preparación, actividades in
-%   situ, informe y seguimiento) y señala qué fase está bien cubierta y cuál
-%   quedó débil. Ese mapeo es exactamente lo que se espera de un curso de
-%   auditoría. \cite{iso2018iso19011}
+La evaluación se desarrolló entre octubre de 2008 y mayo de 2010, esto es, a lo
+largo de aproximadamente diecinueve meses, y se articuló en cinco líneas de
+trabajo \parencite{oncommonground2010hria}:
+
+\begin{enumerate}
+  \item \textbf{Revisión de políticas, procedimientos y prácticas} de la empresa,
+        contrastando el marco formal declarado con su aplicación efectiva.
+  \item \textbf{Análisis de datos secundarios y consulta a fuentes expertas},
+        incorporando información previamente producida por terceros.
+  \item \textbf{Entrevistas individuales y grupales} con múltiples grupos de
+        interés: trabajadores, autoridades, comunidades, organizaciones sociales y
+        personal de la empresa.
+  \item \textbf{Adaptación de la herramienta Human Rights Compliance Assessment}
+        del Danish Institute for Human Rights, ajustada a las circunstancias del
+        caso.
+  \item \textbf{Revisión técnica ambiental independiente}, encargada por el propio
+        equipo dentro del proceso de evaluación.
+\end{enumerate}
+
+La quinta línea merece un comentario específico, porque es la que convierte a este
+proceso en el caso idóneo para el objeto de este informe. Un equipo de perfil
+social y jurídico, consciente de la brecha de competencia técnica señalada
+anteriormente, subcontrató la pericia ambiental en lugar de eludir la materia o de
+pronunciarse sobre ella sin respaldo. Esa decisión metodológica es la que hace de
+la evaluación un ejercicio efectivamente \textbf{socioambiental} y no únicamente
+social, y es coherente con lo que la ISO 19011:2018 prevé cuando el equipo
+auditor requiere conocimientos especializados de los que carece
+\parencite{iso2018iso19011}.
+
+\subsubsection{Contraste con las fases de la ISO 19011:2018}
+
+Resulta ilustrativo mapear el proceso efectivamente seguido contra la secuencia de
+fases que establece la norma de referencia, expuesta en la sección
+\ref{sec:marco}. El ejercicio permite identificar dónde el proceso fue sólido y
+dónde quedó débil.
+
+El \textbf{inicio de la auditoría} está documentado con inusual precisión: existe
+un memorando de entendimiento escrito, un órgano de gobierno constituido, un
+procedimiento de selección del auditor y un conjunto de principios pactados. Es,
+probablemente, la fase mejor resuelta del proceso.
+
+La \textbf{revisión de la documentación} y la \textbf{preparación} se corresponden
+con las líneas de trabajo primera y segunda, y la adaptación de la herramienta
+HRCA equivale a la elaboración de los documentos de trabajo que la norma prevé.
+
+Las \textbf{actividades de recolección de evidencia} se ejecutaron mediante
+entrevistas, análisis documental y la revisión técnica encargada, cubriendo las
+tres modalidades que la norma contempla. Es en esta fase, sin embargo, donde se
+localiza la debilidad declarada: el muestreo de personas entrevistadas no alcanzó
+la cobertura prevista respecto de Sipacapa y de los sectores opositores.
+
+El \textbf{informe} se elaboró y se publicó íntegramente, en versión bilingüe, lo
+que satisface con holgura el requisito de comunicación de resultados.
+
+El \textbf{seguimiento} constituye el punto más problemático del contraste. La
+norma concibe la auditoría como un ciclo que se cierra verificando la
+implementación efectiva de las acciones correctivas. Aquí la empresa se comprometió
+a emitir una respuesta pública y un plan de acción, con actualizaciones
+publicadas en 2010, 2011 y 2017 \parencite{oncommonground2010hria,
+goldcorp2023marlin}, pero la verificación de ese cumplimiento quedó en manos de la
+propia empresa, sin que el equipo auditor original conservara mandato para
+comprobarlo. La cuestión de si las no conformidades llegaron efectivamente a
+cerrarse se retoma en las secciones \ref{sec:hallazgos} y \ref{sec:critico}.
 
 % --- FIGURA 3: Esquema metodológico / línea de tiempo ----------------
-% Sugerencia: línea de tiempo horizontal 2005-2017 con los hitos
-% (queja Madre Selva 2005, cierre caso CAO 2006, MOU 2008, trabajo de campo
-% 2009, informe HRIA mayo 2010, medidas cautelares CIDH mayo 2010,
-% modificación CIDH diciembre 2011, cierre de la mina mayo 2017).
+% PENDIENTE DE INSERTAR. Sugerencia: línea de tiempo horizontal 2004-2017
+% con los hitos siguientes (todos verificados en la bitácora):
+%   2004  Revisión independiente del EIA (Moran)
+%   2005  Consulta comunitaria de Sipacapa; queja de Madre Selva ante la CAO
+%   05/2006  Cierre del caso CAO Marlin-01/Sipacapa
+%   03/2008  Firma del MOU
+%   10/2008  Selección de On Common Ground Consultants
+%   12/2008  El equipo añade los principios de consentimiento y confidencialidad
+%   2009  Trabajo de campo
+%   05/2010  Publicación de la HRIA
+%   20/05/2010  Medidas cautelares CIDH MC 260-07
+%   12/2011  Modificación de las medidas cautelares
+%   31/05/2017  Cierre de la mina
 % Se puede dibujar en TikZ o importar como PDF a imagenes/diagramas/.
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[width=\textwidth]{imagenes/diagramas/linea_tiempo_auditoria.pdf}
-%  \caption{Esquema metodológico y cronología del proceso de auditoría de la Mina Marlin (2005--2017)}
+%  \caption{Cronología del proceso de auditoría de la Mina Marlin (2004--2017)}
 %  \label{fig:metodologia}
-%  \footnotesize Nota. Elaboración propia a partir de \textcite{oncommonground2010hria} y \textcite{cao2006marlin}.
+%  \par\vspace{2pt}
+%  \raggedright\footnotesize Nota. Elaboración propia a partir de
+%  \textcite{oncommonground2010hria}, \textcite{cao2006marlin} y
+%  \textcite{cidh2010medidas}.
 %\end{figure}
-
-\pendiente{desarrollar la sección 5 (6--7 páginas) + Tabla 2 + Figura 3}
