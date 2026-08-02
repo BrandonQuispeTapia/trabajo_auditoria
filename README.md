@@ -79,6 +79,16 @@ pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
   En `config/comandos.tex` hay una línea comentada que hace desaparecer los marcadores
   `\pendiente` del PDF final.
 
+## Estado de la redacción
+
+Se redacta **capítulo por capítulo**, no de una sola vez.
+
+| Capítulo | Estado |
+|---|---|
+| 3. Marco teórico y normativo | ✅ Redactado (~3.100 palabras, Tabla 1) |
+| 4. Descripción de la unidad minera | ✅ Redactado (~3.100 palabras, Tablas 2 y 3; faltan Figuras 1 y 2) |
+| 1, 2, 5–11 | ⬜ Esqueleto con `% TODO` y objetivos de extensión |
+
 ## Estado de la bibliografía
 
 `referencias.bib` está organizado en seis bloques. Los bloques 1 a 5 corresponden a la
