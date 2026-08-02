@@ -5,15 +5,15 @@ Informe académico en LaTeX sobre la auditoría socioambiental de la **Mina Marl
 
 ## Integrantes
 
-| # | Apellidos y nombres | Código | Secciones a cargo | Archivo `.tex` |
-|---|---|---|---|---|
-| 1 | _(completar)_ | | Marco teórico y normativo | `secciones/03_marco_teorico.tex` |
-| 2 | _(completar)_ | | Unidad minera, mapas y figuras | `secciones/04_unidad_minera.tex` |
-| 3 | _(completar)_ | | Descripción de la auditoría | `secciones/05_auditoria.tex` |
-| 4 | _(completar)_ | | Hallazgos y análisis crítico | `secciones/06_hallazgos.tex`, `secciones/07_analisis_critico.tex` |
-| 5 | _(completar)_ | | Plan PHVA, conclusiones y bibliografía | `secciones/08_plan_mejora.tex`, `secciones/09_conclusiones.tex`, `referencias.bib` |
+- Cesar Diego Flores Callata
+- Gianluis Fabricio Canqui Dueñas
+- Jhean Kennedy Zarate Quispe
+- Juan Diego Enriquez Ticona
+- John Emerson Asqui Cartagena
+- José Ignacio Cueva Condori
 
-**Docente:** _(completar)_ · **Curso:** _(completar)_ · **Ciudad y año:** Puno, 2026
+**Docente:** Ing. Carlos Paul Hancco Ramos · **Curso:** Gestión Ambiental en Minería
+**Universidad:** Nacional del Altiplano, Facultad de Ingeniería de Minas · **Puno, 2026**
 
 ## El caso
 
@@ -101,14 +101,16 @@ Todas las URL de la bibliografía fueron comprobadas el 2 de agosto de 2026.
 | 10. Recomendaciones | 569 | Por destinatario |
 | Anexos A–E | 1.007 | Cartografía, distribución de hallazgos, cronología, fichas y glosario |
 
-### Lo único que falta
+### Estado de la entrega
 
-**Los nombres y códigos de los seis integrantes**, en `config/portada.tex`.
-Es literalmente lo único pendiente. El resto de la carátula (universidad,
-facultad, escuela, curso y docente) ya está rellenado.
+**No queda nada pendiente.** Carátula completa con logo e integrantes, las cinco
+figuras insertadas, cero marcadores `TODO` o `\pendiente`, `\nocite{*}`
+desactivado y las 30 referencias con enlace comprobado.
 
-Opcionalmente, el **logo de la UNAP**: guárdalo en `imagenes/logos/logo_unap.png`
-y descomenta las dos líneas señaladas al principio de `config/portada.tex`.
+> Si el docente exige el formato «APELLIDOS, Nombres» o los códigos de matrícula
+> en la carátula, se cambian en `config/portada.tex`. Al hacerlo hay que volver a
+> comprobar que la carátula sigue cabiendo en una sola página: con el logo va
+> justa.
 
 ### Figuras
 
