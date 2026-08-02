@@ -342,51 +342,18 @@ del alcance de ese código. Confundir ambas cosas —una certificación específ
 con una garantía general— es precisamente el tipo de inferencia que una auditoría
 debe evitar.
 
-% --- FIGURA 2: Diagrama de flujo del proceso (dibujada en TikZ) ------
+% --- FIGURA 2: Diagrama de flujo del proceso -------------------------
 \begin{figure}[H]
   \centering
-  \begin{tikzpicture}[
-      node distance=6mm and 9mm,
-      etapa/.style={draw,rounded corners=2pt,minimum width=3.5cm,minimum height=1.0cm,
-                    align=center,font=\small,fill=grisclaro},
-      critica/.style={etapa,fill=white,very thick},
-      prod/.style={draw,rounded corners=6pt,minimum width=3.5cm,minimum height=0.9cm,
-                   align=center,font=\small\bfseries},
-      fl/.style={-{Stealth[length=2mm]},thick}
-    ]
-    \node[etapa] (tri) {Trituración};
-    \node[etapa,below=of tri] (mol) {Molienda SAG y de bolas\\[-2pt]{\scriptsize 85 \% pasante malla 200}};
-    \node[critica,below=of mol] (cil) {Lixiviación con cianuro\\[-2pt]{\scriptsize tipo CIL}};
-    \node[etapa,below=of cil] (dec) {Decantación\\[-2pt]{\scriptsize en contracorriente}};
-    \node[etapa,below=of dec] (mc)  {Precipitación Merrill-Crowe\\[-2pt]{\scriptsize con zinc}};
-    \node[prod,below=of mc] (dore) {Fundición a doré (Au--Ag)};
-
-    \draw[fl] (tri) -- (mol);
-    \draw[fl] (mol) -- (cil);
-    \draw[fl] (cil) -- (dec);
-    \draw[fl] (dec) -- (mc);
-    \draw[fl] (mc)  -- (dore);
-
-    % Rama de relaves
-    \node[critica,right=22mm of dec] (inco)
-      {Destrucción de cianuro\\[-2pt]{\scriptsize proceso INCO}};
-    \node[etapa,below=of inco] (tsf)
-      {Depósito de relaves\\[-2pt]{\scriptsize desde 2013, filtrados}};
-    \draw[fl] (dec) -- node[above,font=\scriptsize] {sólidos} (inco);
-    \draw[fl] (inco) -- (tsf);
-
-    % Leyenda
-    \node[font=\scriptsize,align=left,anchor=north west]
-      at ($(tsf.south west)+(-0.2,-0.5)$)
-      {Los recuadros de borde grueso señalan las dos etapas de mayor\\
-       significancia ambiental: el uso de cianuro y su destrucción\\
-       previa al depósito de relaves.};
-  \end{tikzpicture}
+  \includegraphics[width=\textwidth]{imagenes/diagramas/flujo_proceso.jpg}
   \caption{Diagrama de flujo del proceso metalúrgico de la Mina Marlin}
   \label{fig:flujo-proceso}
   \par\vspace{2pt}
   \raggedright\footnotesize Nota. Elaboración propia a partir de
-  \textcite{sec2011ni43101}.
+  \textcite{sec2011ni43101}. La etapa 7 (destrucción de cianuro) es la barrera
+  de contención del riesgo químico del circuito; la certificación bajo el
+  International Cyanide Management Code cubre el cianuro, no el drenaje ácido
+  de roca, que tiene origen geoquímico distinto y exige controles propios.
 \end{figure}
 
 % ---------------------------------------------------------------------
