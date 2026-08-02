@@ -1,186 +1,482 @@
 % =====================================================================
 %  6. ANÁLISIS DE HALLAZGOS  <- LA SECCIÓN QUE MÁS CALIFICA
 %  Responsable: INTEGRANTE 4
-%  Extensión objetivo: 8 a 10 páginas — aprox. 3.000 palabras + Tabla 3
+%  ESTADO: REDACTADO (1 de agosto de 2026) — ~3.700 palabras + matriz completa
 %  Fuentes: HRIA + CAO/IFC + estudio de salud PHR/Michigan + monitoreo COPAE
 %
-%  ESTRUCTURA OBLIGATORIA:
-%    (a) Primero la MATRIZ DE NO CONFORMIDADES (Tabla 3), completa.
-%    (b) Después, en prosa, el desarrollo de los 3 o 4 hallazgos más
-%        relevantes (uno por subsección de 6.3 a 6.6).
-%  La matriz completa, si no cabe, va al Anexo B y aquí queda un extracto.
+%  LA MATRIZ (Tabla 6) ESTÁ COMPLETA, con diez hallazgos sobre los siete
+%  ejes de la auditoría. Va en página apaisada y usa longtable.
 %
-%  CÓMO CLASIFICAR (usa los comandos \NCmayor, \NCmenor y \OBS):
-%    - NC mayor  = incumplimiento de un requisito con impacto sistémico o
-%                  que afecta derechos fundamentales (p. ej. ausencia de
-%                  consulta previa).
-%    - NC menor  = incumplimiento puntual, no sistémico, subsanable.
-%    - Observación = no hay incumplimiento demostrado, pero hay un riesgo
-%                  o una oportunidad de mejora.
-%  Declara este criterio POR ESCRITO en 6.1: un auditor siempre explicita
-%  su regla de clasificación antes de aplicarla.
+%  DECISIONES METODOLÓGICAS QUE CONVIENE NO DESHACER:
+%
+%  1) El eje ambiental se DESDOBLA en tres hallazgos distintos: la
+%     insuficiencia del monitoreo y de la línea base (que sí es
+%     demostrable), la afectación efectiva del agua (que NO lo es, porque
+%     la evidencia está en conflicto) y la planificación del cierre.
+%     Meterlos en una sola fila obligaría a clasificar como incumplimiento
+%     algo que no está probado, o a rebajar algo que sí lo está.
+%
+%  2) La columna «Estado de cierre» dice «no verificable» en la mayoría de
+%     las filas. NO es una laguna del trabajo: es el hallazgo de la
+%     sección 6.7. La empresa publicó actualizaciones de su plan de acción
+%     en 2010, 2011 y 2017, pero no consta verificación independiente del
+%     cierre de cada recomendación.
+%
+%  3) Se usa el condicional al describir el hallazgo laboral («habría
+%     desalentado») porque así lo formula la fuente. No lo conviertas en
+%     afirmación categórica sin ir al informe original.
 % =====================================================================
 
 \section{Análisis de hallazgos}
 \label{sec:hallazgos}
 
+Esta sección sistematiza los resultados de la auditoría analizada y los convierte
+en hallazgos clasificados. Se organiza en tres movimientos: primero se declara la
+regla de clasificación empleada; después se presenta la matriz completa de
+hallazgos sobre los siete ejes evaluados; y finalmente se desarrollan en prosa los
+cuatro hallazgos de mayor gravedad, aquellos que explican por sí solos la
+trayectoria del caso.
+
 % ---------------------------------------------------------------------
 \subsection{Criterio de clasificación de los hallazgos}
-% Extensión: ~0,75 página / 280 palabras
 
-% TODO: - Explica que la HRIA no clasificó sus hallazgos como no
-%         conformidades (no era una auditoría de sistema de gestión), y que
-%         por tanto la clasificación de este informe es una ADAPTACIÓN PROPIA
-%         construida sobre las definiciones de ISO 19011:2018.
-%         Reconocerlo es rigor metodológico, no debilidad.
-%       - Define las tres categorías (NC mayor, NC menor, observación) y la
-%         regla que usaste para asignarlas.
-%       - Define qué cuentas como «evidencia objetiva» en un análisis
-%         documental: cita textual del informe de auditoría, dato de
-%         monitoreo, o pronunciamiento de un órgano oficial.
-%       Fuente: \cite{iso2018iso19011}
+Antes de clasificar es obligado explicitar con qué regla se clasifica. Un auditor
+que aplica categorías sin haberlas definido convierte su juicio en
+inverificable, que es exactamente lo contrario de lo que persigue el principio de
+enfoque basado en la evidencia.
+
+Debe advertirse, en primer lugar, que la evaluación analizada \textbf{no clasificó
+sus resultados como no conformidades}. No era una auditoría de sistema de gestión
+sino una evaluación de impactos en derechos humanos, según se estableció en la
+sección \ref{sec:auditoria}, y sus resultados se formularon como hallazgos y
+recomendaciones por ejes temáticos. La clasificación que se presenta a
+continuación es, por tanto, una \textbf{adaptación propia} construida sobre las
+definiciones de la ISO 19011:2018 expuestas en la sección \ref{sec:marco}
+\parencite{iso2018iso19011}. Reconocerlo no debilita el análisis: lo hace
+auditable.
+
+La regla aplicada es la siguiente:
+
+\begin{itemize}
+  \item \NCmayor: incumplimiento de un requisito que afecta derechos
+        fundamentales, o que tiene carácter sistémico por comprometer la
+        capacidad del conjunto del sistema de gestión para producir resultados
+        conformes.
+  \item \NCmenor: incumplimiento puntual, acotado y subsanable, que no
+        compromete la integridad del sistema.
+  \item \OBS: situación en la que no existe incumplimiento demostrado, pero se
+        identifica un riesgo relevante o una oportunidad de mejora. Se emplea
+        también cuando la evidencia disponible es contradictoria y no permite
+        concluir.
+\end{itemize}
+
+La tercera categoría requiere una precisión, porque su uso en este caso es
+deliberado y no evasivo. Cuando dos cuerpos de evidencia técnica apuntan en
+direcciones opuestas y ninguno puede descartarse, el auditor no está autorizado a
+elegir el que confirme su hipótesis. Registrar una observación es, en esa
+situación, la única conclusión que la evidencia sostiene.
+
+Finalmente, se entiende por \textbf{evidencia objetiva}, en un análisis de
+naturaleza documental como el presente, cualquiera de estas tres fuentes: el
+contenido del propio informe de auditoría, un dato de monitoreo ambiental o
+sanitario procedente de un estudio identificable, o el pronunciamiento formal de
+un órgano oficial nacional o internacional.
 
 % ---------------------------------------------------------------------
-\subsection{Matriz de no conformidades}
-% Extensión: la Tabla 3 (2 a 3 páginas apaisadas) + ~250 palabras de lectura
+\subsection{Matriz de hallazgos y no conformidades}
 
-% TODO (antes de la tabla): un párrafo que anuncie cuántos hallazgos se
-%   identificaron en total y cómo se distribuyen por eje y por clasificación
-%   (p. ej. «se identificaron N hallazgos, de los cuales X son NC mayores...»).
-% TODO (después de la tabla): un párrafo que lea la tabla en voz alta:
-%   qué eje concentra más NC mayores y qué significa eso.
+La Tabla \ref{tab:matriz-nc} presenta los diez hallazgos identificados sobre los
+siete ejes evaluados. Su distribución es la siguiente: cinco no conformidades
+mayores, cuatro menores y una observación.
 
-% --- TABLA 3: Matriz de no conformidades -----------------------------
-% Va en página APAISADA (landscape) porque tiene 7 columnas.
-% Se usa longtable porque con seguridad ocupará más de una página.
-% RELLENA UNA FILA POR HALLAZGO, organizadas por los SIETE EJES de la HRIA:
-%   1. Consulta          -> la mina se permitió sin consulta previa, libre e
-%      informada conforme al Convenio 169. Recomendación: detener adquisición
-%      de tierras, exploración y expansión hasta consultar debidamente. [NC mayor]
-%   2. Ambiente          -> riesgos de drenaje ácido de roca (ARD) y de
-%      calidad de agua; se recomendó reforzar el monitoreo (incluida la AMAC,
-%      Asociación de Monitoreo Ambiental Comunitario) y la planificación del
-%      cierre.
-%   3. Trabajo           -> la empresa habría desalentado activamente la
-%      formación de un sindicato; problemas de seguridad y salud ocupacional.
-%   4. Adquisición de tierras -> equidad, transparencia y derechos colectivos.
-%   5. Inversión económica y social -> aportes reconocidos (empleo, ingresos)
-%      pero mitigación insuficiente de los impactos negativos.
-%   6. Seguridad         -> riesgo para la seguridad personal de residentes
-%      por presencia de seguridad privada armada y fuerzas públicas; se
-%      recomendó adoptar los VPSHR.
-%   7. Acceso a remediación -> mecanismos de queja débiles.
-%
-%\begin{landscape}
-%\begin{footnotesize}
-%\begin{longtable}{@{}L{1.8cm} L{4cm} L{4cm} L{3cm} L{1.8cm} L{4cm} L{2cm}@{}}
-%  \caption{Matriz de no conformidades identificadas en la auditoría socioambiental de la Mina Marlin}
-%  \label{tab:matriz-nc} \\
-%  \toprule
-%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
-%  \midrule
-%  \endfirsthead
-%  \multicolumn{7}{l}{\footnotesize\textit{Tabla \ref{tab:matriz-nc} (continuación)}} \\
-%  \toprule
-%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
-%  \midrule
-%  \endhead
-%  \bottomrule
-%  \multicolumn{7}{l}{\footnotesize Nota. Elaboración propia a partir de \textcite{oncommonground2010hria}.} \\
-%  \endlastfoot
-%  Consulta & & & Convenio 169 {OIT}, art. 6 & \NCmayor & & \\
-%  Ambiente & & & & & & \\
-%  Trabajo & & & & & & \\
-%  Tierras & & & {IFC} {PS}5 & & & \\
-%  Inversión & & & & & & \\
-%  Seguridad & & & {VPSHR} & & & \\
-%  Remediación & & & {IFC} {PS}1 & & & \\
-%\end{longtable}
-%\end{footnotesize}
-%\end{landscape}
+Conviene señalar por qué el eje ambiental aparece desdoblado en tres filas. La
+insuficiencia del monitoreo y de la línea base es un hecho documentado y
+constituye por sí misma un incumplimiento. La afectación efectiva de la calidad
+del agua, en cambio, es objeto de evidencia contradictoria y no puede afirmarse
+como incumplimiento. Y la planificación del cierre presenta un estado distinto de
+ambas. Agrupar las tres cuestiones en un único hallazgo obligaría a dar por
+probado lo que no lo está, o a rebajar lo que sí lo está.
+
+\begin{landscape}
+\begin{footnotesize}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}L{1.7cm} L{4.2cm} L{4.6cm} L{2.9cm} L{1.6cm} L{4.4cm} L{3.2cm}@{}}
+  \caption{Matriz de hallazgos y no conformidades de la auditoría socioambiental de la Mina Marlin}
+  \label{tab:matriz-nc} \\
+  \toprule
+  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} &
+  \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} &
+  \textbf{Estado de cierre} \\
+  \midrule
+  \endfirsthead
+  \multicolumn{7}{@{}l}{\textit{Tabla \ref{tab:matriz-nc} (continuación)}} \\[2pt]
+  \toprule
+  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} &
+  \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} &
+  \textbf{Estado de cierre} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \multicolumn{7}{@{}p{23cm}}{\textit{Nota.} Elaboración propia a partir de
+  \textcite{oncommonground2010hria}, \textcite{cao2006marlin},
+  \textcite{cidh2010medidas}, \textcite{basu2010metales} y
+  \textcite{copaesfmonitoreo}. La clasificación es una adaptación propia
+  construida sobre \textcite{iso2018iso19011}; la evaluación original no
+  clasificó sus resultados como no conformidades.} \\
+  \endlastfoot
+
+  % --- 1. CONSULTA ---
+  Consulta &
+  La operación fue autorizada sin un proceso de consulta previa, libre e informada
+  adecuado a la población maya-mam y maya-sipakapense &
+  Constatación expresa de la evaluación; pronunciamiento de la {CEACR} de la
+  {OIT} (2010) instando a suspender actividades hasta cumplir la consulta &
+  Convenio 169 {OIT}, art. 6; {IFC} {PS}7 &
+  \NCmayor &
+  Detener la adquisición de tierras, la exploración y toda expansión hasta
+  consultar debidamente &
+  \textbf{No cerrada.} La operación continuó hasta 2017 \\
+  \addlinespace
+
+  % --- 2. AMBIENTE (a) ---
+  Ambiente &
+  Sistema de monitoreo ambiental y línea base insuficientes para atribuir o
+  descartar impactos &
+  Revisión independiente del {EIA} \parencite{moran2004review}; recomendación de
+  la propia evaluación de reforzar el monitoreo &
+  {IFC} {PS}1 &
+  \NCmayor &
+  Reforzar el monitoreo, incluida la participación comunitaria a través de la
+  {AMAC} &
+  \textbf{Parcial.} Planta de tratamiento de agua (2008) y monitoreo comunitario;
+  sin verificación independiente \\
+  \addlinespace
+
+  % --- 3. AMBIENTE (b) ---
+  Ambiente &
+  Riesgo de drenaje ácido de roca por la mineralogía piritosa del yacimiento y del
+  desmonte &
+  Composición mineralógica declarada en el informe técnico
+  \parencite{sec2011ni43101}; advertencia de la evaluación &
+  {IFC} {PS}1, {PS}3 &
+  \NCmenor &
+  Incorporar el drenaje ácido a la planificación del cierre y al monitoreo de
+  largo plazo &
+  \textbf{No verificable} con la documentación pública disponible \\
+  \addlinespace
+
+  % --- 4. AMBIENTE (c) ---
+  Ambiente &
+  Afectación efectiva de la calidad del agua atribuible a la operación &
+  Evidencia \textbf{contradictoria}: metales elevados en población cercana
+  \parencite{basu2010metales} y en aguas abajo del reservorio
+  \parencite{copaesfmonitoreo}, frente a monitoreos que sostienen conformidad &
+  --- &
+  \OBS &
+  Línea base pública, cadena de custodia y laboratorio acreditado con validación
+  de terceros &
+  \textbf{No resuelta.} Ver sección \ref{sec:critico} \\
+  \addlinespace
+
+  % --- 5. TRABAJO (a) ---
+  Trabajo &
+  La empresa habría desalentado activamente la formación de un sindicato &
+  Constatación de la evaluación &
+  {PIDCP}, art. 22; convenios fundamentales {OIT} &
+  \NCmayor &
+  Garantizar la libertad sindical y de negociación colectiva &
+  \textbf{No verificable} \\
+  \addlinespace
+
+  % --- 6. TRABAJO (b) ---
+  Trabajo &
+  Deficiencias en seguridad y salud ocupacional &
+  Constatación de la evaluación &
+  {PIDESC}, art. 7 &
+  \NCmenor &
+  Fortalecer el sistema de gestión de seguridad y salud en el trabajo &
+  \textbf{No verificable} \\
+  \addlinespace
+
+  % --- 7. TIERRAS ---
+  Adquisición de tierras &
+  Deficiencias de equidad y transparencia en el proceso de adquisición, y
+  afectación de derechos colectivos &
+  Constatación de la evaluación &
+  {IFC} {PS}5, {PS}7 &
+  \NCmenor &
+  Revisar el procedimiento de adquisición y reconocer la titularidad colectiva &
+  \textbf{No verificable} \\
+  \addlinespace
+
+  % --- 8. INVERSIÓN ---
+  Inversión económica y social &
+  Mitigación insuficiente de los impactos negativos, pese a los aportes efectivos
+  en empleo e ingresos &
+  Constatación de la evaluación; datos de empleo y producción (sección
+  \ref{sec:unidad}) &
+  {IFC} {PS}1 &
+  \NCmenor &
+  Reequilibrar la inversión social hacia la mitigación y no solo hacia el aporte &
+  \textbf{Parcial} \\
+  \addlinespace
+
+  % --- 9. SEGURIDAD ---
+  Seguridad &
+  Riesgo para la seguridad personal de los residentes por la presencia de
+  seguridad privada armada y de fuerzas públicas &
+  Constatación de la evaluación; medidas cautelares {MC} 260-07 de la {CIDH}
+  \parencite{cidh2010medidas} &
+  {VPSHR}; {IFC} {PS}4 &
+  \NCmayor &
+  Adoptar formalmente los Principios Voluntarios en Seguridad y Derechos Humanos &
+  \textbf{No verificable} la adopción formal \\
+  \addlinespace
+
+  % --- 10. REMEDIACIÓN ---
+  Acceso a remediación &
+  Mecanismos de queja y reclamo débiles &
+  Constatación de la evaluación; escalada del caso a la {CAO}/{IFC} y a la
+  {CIDH} \parencite{cao2006marlin} &
+  {IFC} {PS}1; marco Ruggie, pilar «Remediar» &
+  \NCmayor &
+  Implantar un mecanismo de quejas conforme a los criterios de eficacia &
+  \textbf{No verificable} \\
+
+\end{longtable}
+\end{footnotesize}
+\end{landscape}
+
+La lectura de la matriz arroja tres conclusiones inmediatas. La primera es que las
+no conformidades mayores no se distribuyen de manera uniforme: se concentran en
+consulta, monitoreo, libertad sindical, seguridad y remediación, es decir, en los
+ejes donde están comprometidos derechos fundamentales o donde falla el sistema en
+su conjunto. La segunda es que el eje ambiental, pese a ser el que más atención
+pública concentró, no genera la no conformidad más grave por afectación
+demostrada, sino por \textbf{insuficiencia del dispositivo de verificación}: no se
+sabe lo que ocurrió porque no se midió como debía medirse. La tercera es la más
+incómoda y se desarrolla en la sección \ref{sec:sintesis}: la columna de estado de
+cierre está dominada por la expresión «no verificable».
 
 % ---------------------------------------------------------------------
 \subsection{Hallazgo central 1: ausencia de consulta previa, libre e informada}
-% Extensión: ~2 páginas / 750 palabras
 
-% TODO: Es el hallazgo más grave y el que sostiene todo el caso. Desarrolla:
-%   - El hecho: la mina se permitió sin un proceso de consulta previa
-%     adecuado conforme al Convenio 169 de la OIT.
-%   - El criterio: Convenio 169 \cite{oit1989convenio169} + IFC PS7.
-%   - La recomendación de la auditoría: detener la adquisición de tierras,
-%     la exploración y cualquier expansión hasta consultar debidamente.
-%   - La validación externa: la Comisión de Expertos de la OIT (CEACR)
-%     llamó en 2010 a suspender actividades hasta cumplir la consulta.
-%   - El efecto en cadena: la consulta comunitaria de Sipacapa de 2005 y la
-%     posterior judicialización.
-%   Fuente: \cite{oncommonground2010hria}
+Es el hallazgo de mayor gravedad y el que articula todo el caso. La operación fue
+autorizada y construida sin que mediara un proceso de consulta previa, libre e
+informada adecuado a los pueblos maya-mam y maya-sipakapense que habitan el
+territorio afectado \parencite{oncommonground2010hria}.
+
+El criterio incumplido es el artículo 6 del Convenio 169 de la Organización
+Internacional del Trabajo, que obliga a consultar a los pueblos interesados
+mediante procedimientos apropiados y a través de sus instituciones
+representativas, de buena fe y con la finalidad de llegar a un acuerdo
+\parencite{oit1989convenio169}. A ello se suma el Performance Standard 7 de la
+Corporación Financiera Internacional, exigible por vía contractual en virtud del
+préstamo descrito en la sección \ref{sec:unidad} \parencite{ifcsfmarlin}.
+
+La calificación como no conformidad mayor se sostiene en tres razones. La primera
+es que el derecho vulnerado es un derecho colectivo de un pueblo indígena,
+reconocido en un tratado internacional. La segunda es su carácter \textbf{no
+subsanable en el momento en que se detecta}: una consulta es previa o no es
+consulta. Una vez otorgada la licencia, construida la mina e iniciada la
+producción, no existe acción correctiva capaz de restituir la situación
+original; solo caben medidas de reparación, que son otra cosa. La tercera es su
+condición de causa raíz: la ausencia de consulta explica el déficit de
+legitimidad que arrastró la operación durante toda su vida útil y, con él, la
+intensidad del conflicto posterior.
+
+La evaluación recomendó detener la adquisición de tierras, la exploración y
+cualquier expansión hasta consultar debidamente. La recomendación fue respaldada
+externamente ese mismo año: la Comisión de Expertos en Aplicación de Convenios y
+Recomendaciones de la Organización Internacional del Trabajo instó en 2010 a
+suspender las actividades hasta dar cumplimiento a la obligación de consulta
+\parencite{oncommonground2010hria}.
+
+Conviene registrar también el antecedente. En 2005 el municipio de Sipacapa había
+celebrado una consulta comunitaria de buena fe, ejercicio de participación
+promovido por la propia población ante la ausencia de un procedimiento estatal.
+Su resultado fue mayoritariamente contrario a la actividad minera. Que una
+comunidad organice por su cuenta el procedimiento que el Estado no convocó es, en
+términos de auditoría, evidencia directa de la magnitud del vacío que se está
+constatando.
+
+El estado de cierre de esta no conformidad es inequívoco: la operación continuó
+hasta su agotamiento natural en 2017. La no conformidad más grave del expediente
+nunca se cerró.
 
 % ---------------------------------------------------------------------
-\subsection{Hallazgo central 2: riesgos ambientales sobre el agua y drenaje ácido de roca}
-% Extensión: ~2 páginas / 750 palabras
+\subsection{Hallazgo central 2: insuficiencia del monitoreo y conflicto de evidencia sobre el agua}
 
-% TODO: - El hecho: riesgos de drenaje ácido de roca (ARD) y afectación de la
-%         calidad del agua en las cuencas de los ríos Tzalá, Quivichil y Cuilco.
-%       - La recomendación: reforzar el monitoreo —incluida la AMAC— y la
-%         planificación del cierre.
-%       - LA EVIDENCIA ESTÁ EN CONFLICTO. Presenta las dos posiciones sin
-%         resolverlas artificialmente (esto se retoma en 7.3):
-%         (a) El estudio de \textcite{basu2010metales}, coordinado por
-%             Physicians for Human Rights, halló niveles más altos de
-%             mercurio, cobre, arsénico y zinc en orina, y de plomo en
-%             sangre, en residentes cercanos a la mina frente a personas que
-%             vivían a siete kilómetros. El propio estudio advirtió que no
-%             estaba claro si la magnitud de esas elevaciones representaba
-%             una amenaza significativa para la salud. NO OMITAS ESA
-%             ADVERTENCIA: citar solo la primera mitad sería tendencioso.
-%         (b) El monitoreo de COPAE reportó arsénico, cobre, aluminio y
-%             manganeso por encima de estándares aguas abajo del reservorio
-%             de relaves. \cite{copaesfmonitoreo}
-%         (c) La empresa y algunos monitoreos oficiales sostuvieron que no
-%             había contaminación atribuible a la operación.
-%       - Antecedente técnico: la revisión independiente del EIA por el
-%         hidrogeólogo Robert Moran (2004) ya había advertido deficiencias.
-%         \cite{moran2004review}
+Este hallazgo exige una distinción que la matriz ya anticipa y que constituye el
+aporte analítico central de esta sección: \textbf{no es lo mismo afirmar que hubo
+contaminación que afirmar que el sistema no permitía saberlo}. Lo primero no está
+demostrado; lo segundo sí.
+
+\subsubsection{Lo que sí puede afirmarse}
+
+La revisión independiente del estudio de impacto ambiental elaborada por
+\textcite{moran2004review} advirtió deficiencias en el instrumento predictivo
+antes incluso del inicio de la producción. La propia evaluación de derechos
+humanos recomendó reforzar el monitoreo, incluida la participación comunitaria a
+través de la Asociación de Monitoreo Ambiental Comunitario, y mejorar la
+planificación del cierre \parencite{oncommonground2010hria}. Existe además un
+riesgo geoquímico documentado de drenaje ácido de roca, derivado de la
+mineralogía piritosa descrita en la sección \ref{sec:unidad}
+\parencite{sec2011ni43101}.
+
+El incumplimiento, por tanto, no consiste en haber contaminado —extremo no
+probado— sino en no haber dispuesto de un sistema de monitoreo y de una línea base
+capaces de acreditar la ausencia de contaminación cuando esta fue cuestionada.
+Esa carencia se clasifica como no conformidad mayor por su carácter sistémico:
+inutiliza el mecanismo de verificación del que depende todo el sistema de gestión
+ambiental.
+
+\subsubsection{Lo que no puede afirmarse}
+
+La evidencia sobre afectación efectiva es contradictoria y debe presentarse como
+tal.
+
+Del lado de la afectación, el estudio coordinado por Physicians for Human Rights
+con participación de la Universidad de Michigan halló que una muestra de
+residentes próximos a la mina presentaba niveles más altos de mercurio, cobre,
+arsénico y zinc en orina, y de plomo en sangre, que una muestra de personas
+residentes a siete kilómetros de distancia \parencite{basu2010metales}. El
+monitoreo de la Comisión Pastoral Paz y Ecología reportó arsénico, cobre, aluminio
+y manganeso por encima de estándares en puntos situados aguas abajo del reservorio
+de relaves \parencite{copaesfmonitoreo}.
+
+Ahora bien, el propio estudio de salud incorporó una advertencia que sería
+tendencioso omitir: sus autores señalaron que no resultaba claro si la magnitud de
+esas elevaciones representaba una amenaza significativa para la salud. Citar la
+primera mitad del hallazgo sin la segunda constituiría una manipulación de la
+fuente, y este informe no la comete.
+
+Del lado contrario, la empresa y determinados monitoreos oficiales sostuvieron que
+no existía contaminación atribuible a la operación.
+
+\subsubsection{Por qué la evidencia no converge}
+
+La discrepancia no obedece necesariamente a mala fe de ninguna de las partes, sino
+a diferencias metodológicas que la hacen previsible: distintos puntos de muestreo,
+distintas matrices analizadas —orina y sangre frente a agua superficial—,
+distintos períodos, distintos laboratorios y, sobre todo, la ausencia de una línea
+base pública y anterior al inicio de la operación que permitiera establecer un
+término de comparación aceptado por todos.
+
+Un estudio de biomonitoreo humano acredita exposición, no fuente: detectar
+arsénico en orina no identifica de dónde procede ese arsénico, que puede tener
+origen geogénico en un terreno mineralizado. Precisamente por eso la línea base
+previa resulta indispensable, y precisamente por eso su ausencia se clasifica como
+no conformidad mayor mientras la afectación misma se registra como observación. La
+consecuencia práctica es que el conflicto de evidencia era, en el diseño del
+sistema, técnicamente irresoluble desde el principio. Este punto se retoma en la
+sección \ref{sec:critico}.
 
 % ---------------------------------------------------------------------
 \subsection{Hallazgo central 3: seguridad privada armada y riesgo para las personas}
-% Extensión: ~1,5 páginas / 550 palabras
 
-% TODO: - El hecho: riesgo para la seguridad personal de los residentes
-%         derivado de la presencia de seguridad privada armada y de fuerzas
-%         públicas en el entorno de la operación.
-%       - El criterio: Voluntary Principles on Security and Human Rights,
-%         cuya adopción fue precisamente la recomendación.
-%         \cite{vpshr2000principios}
-%       - Conecta con el PS4 de la IFC (salud y seguridad de la comunidad).
-%       - Este es el eje donde la dimensión «social» de la auditoría es más
-%         nítida y donde menos se parece a una auditoría ISO tradicional.
+La evaluación identificó un riesgo para la seguridad personal de los residentes
+derivado de la presencia de seguridad privada armada y de fuerzas de seguridad
+pública en el entorno de la operación, y recomendó la adopción formal de los
+Principios Voluntarios en Seguridad y Derechos Humanos
+\parencite{oncommonground2010hria, vpshrsfprincipios}.
+
+Se clasifica como no conformidad mayor porque el bien jurídico comprometido es la
+integridad física de las personas, y porque el riesgo no se localiza en un
+incidente aislado sino en la configuración misma del dispositivo de seguridad.
+
+Este hallazgo obtuvo la validación externa más contundente de todo el expediente.
+El 20 de mayo de 2010 la Comisión Interamericana de Derechos Humanos otorgó
+medidas cautelares a favor de los miembros de dieciocho comunidades del pueblo
+maya —sipakapense y mam— del departamento de San Marcos, solicitando inicialmente
+la suspensión de la mina \parencite{cidh2010medidas}. Que un órgano del sistema
+interamericano adopte medidas cautelares implica la apreciación de una situación
+de gravedad y urgencia con riesgo de daño irreparable a personas determinadas. Es
+el grado más alto de corroboración externa que un hallazgo de auditoría puede
+recibir.
+
+En diciembre de 2011 la Comisión modificó las medidas y retiró la solicitud de
+suspensión, reorientándolas hacia la garantía de acceso a agua apta para el
+consumo humano. La empresa hizo pública esa modificación, subrayando que las
+medidas revisadas no requerían suspender las operaciones y que estas habían
+continuado con normalidad a lo largo de todo el procedimiento ante la Comisión.
+
+La afirmación es exacta y por eso se recoge. Pero merece una lectura que se
+desarrolla en la sección \ref{sec:critico}: durante el año y medio en que
+estuvieron vigentes unas medidas cautelares internacionales que pedían la
+suspensión de la actividad, la actividad no se suspendió. Ese dato mide, mejor que
+ninguna declaración, la capacidad real de estos mecanismos para alterar la
+conducta de una operación en curso.
+
+Este eje es, además, el que con mayor nitidez muestra por qué la evaluación
+analizada no podía ser una auditoría ambiental convencional. Ninguna cláusula de
+la ISO 14001 se pronuncia sobre el porte de armas por personal de seguridad
+privada en el entorno de una comunidad indígena.
 
 % ---------------------------------------------------------------------
 \subsection{Hallazgo central 4: debilidad del mecanismo de acceso a remediación}
-% Extensión: ~1,25 páginas / 450 palabras
 
-% TODO: - El hecho: mecanismos de queja débiles.
-%       - Por qué es estructural y no menor: sin un mecanismo de reclamo
-%         eficaz, todos los demás hallazgos quedan sin vía de corrección
-%         interna, y el conflicto migra necesariamente a instancias externas
-%         (CAO/IFC, CIDH, tribunales). Es decir, este hallazgo EXPLICA la
-%         escalada del caso.
-%       - Criterio: tercer pilar del marco Ruggie («Remediar») + IFC PS1.
-%       - Enlaza con la sección 8.3, donde el plan de mejora debe proponer un
-%         mecanismo de quejas conforme a los criterios de eficacia.
+El último hallazgo central es, en apariencia, el más técnico y el menos
+llamativo: los mecanismos de queja y reclamo de la operación eran débiles
+\parencite{oncommonground2010hria}. Se clasifica, sin embargo, como no
+conformidad mayor, y conviene justificar por qué.
+
+Un mecanismo de quejas es el dispositivo mediante el cual una organización detecta
+y corrige internamente sus propios fallos. Si funciona, los problemas se resuelven
+en el nivel en que se originan. Si no funciona, ninguno de los demás hallazgos
+dispone de vía interna de corrección, y el conflicto migra necesariamente hacia
+instancias externas. Se trata, en la terminología de la sección \ref{sec:marco},
+de un fallo sistémico en sentido estricto: no compromete un requisito, compromete
+la capacidad de la organización para cumplir todos los demás.
+
+La trayectoria del caso confirma este diagnóstico de manera casi didáctica. La
+queja no se resolvió en la mina: fue presentada por Madre Selva ante la Compliance
+Advisor Ombudsman de la Corporación Financiera Internacional en 2005
+\parencite{cao2006marlin}. Tampoco se resolvió allí: escaló hasta la Comisión
+Interamericana de Derechos Humanos en 2010 \parencite{cidh2010medidas}. Y en
+paralelo alcanzó los órganos de control de la Organización Internacional del
+Trabajo. Una controversia que en un sistema con mecanismos de reclamo eficaces se
+habría tramitado localmente terminó recorriendo tres instancias internacionales a
+lo largo de una década.
+
+El criterio incumplido es el Performance Standard 1 de la Corporación Financiera
+Internacional y, en el plano conceptual, el tercer pilar del marco «Proteger,
+Respetar, Remediar», expuesto en la sección \ref{sec:marco}. La propuesta
+correctiva correspondiente se desarrolla en la sección \ref{sec:plan}.
 
 % ---------------------------------------------------------------------
-\subsection{Síntesis de hallazgos y respuesta de la empresa}
-% Extensión: ~0,75 página / 280 palabras
+\subsection{Síntesis y respuesta de la empresa}
+\label{sec:sintesis}
 
-% TODO: - Recuento por eje y por clasificación.
-%       - Respuesta de la empresa: Goldcorp se comprometió a emitir una
-%         respuesta pública y un plan de acción detallado frente a las
-%         recomendaciones, con actualizaciones publicadas en 2010, 2011 y
-%         2017, integrando los aprendizajes a sus políticas globales.
-%       - Deja planteada la pregunta que abre la sección 7: ¿ese plan de
-%         acción cerró efectivamente las no conformidades?
-%       Fuentes: \cite{oncommonground2010hria}, \cite{goldcorp2023marlin}
+De los diez hallazgos identificados, cinco se clasifican como no conformidades
+mayores, cuatro como menores y uno como observación. Los ejes que concentran la
+mayor gravedad son consulta, monitoreo ambiental, libertad sindical, seguridad y
+acceso a remediación.
 
-\pendiente{desarrollar la sección 6 (8--10 páginas) + Tabla 3 completa}
+La empresa se comprometió a emitir una respuesta pública y un plan de acción
+detallado frente a las recomendaciones, con actualizaciones publicadas en 2010,
+2011 y 2017, e integró los aprendizajes del proceso a sus políticas corporativas
+globales \parencite{oncommonground2010hria, goldcorp2023marlin}. La operación
+cerró en mayo de 2017 con un plan de recuperación ambiental que incluyó la
+destrucción de cianuro y el relleno del tajo.
+
+Ahora bien, el elemento más significativo de esta síntesis no es lo que la matriz
+afirma, sino lo que no puede afirmar. La columna de estado de cierre está dominada
+por la expresión «no verificable»: existe constancia de que la empresa publicó
+actualizaciones de su plan de acción, pero no consta una \textbf{verificación
+independiente} de que cada recomendación se implementara efectivamente ni de que
+cada no conformidad se cerrara.
+
+Esta circunstancia enlaza directamente con la debilidad identificada en la sección
+\ref{sec:auditoria} al contrastar el proceso con las fases de la ISO 19011:2018.
+La norma concibe la auditoría como un ciclo que se cierra verificando la
+implementación de las acciones correctivas; aquí esa verificación quedó
+encomendada a la propia organización auditada, sin que el equipo auditor
+conservara mandato para comprobarla. El resultado es que, siete años después del
+cierre de la operación y quince después de la publicación del informe, no es
+posible determinar con la documentación pública disponible cuántas de las
+recomendaciones se cumplieron.
+
+En la lógica de una auditoría, una no conformidad cuyo cierre no puede verificarse
+permanece abierta. Esa es la conclusión con la que esta sección entrega el caso al
+análisis crítico de la sección \ref{sec:critico}.

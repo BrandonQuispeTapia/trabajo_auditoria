@@ -87,7 +87,11 @@ Se redacta **capítulo por capítulo**, no de una sola vez.
 |---|---|
 | 3. Marco teórico y normativo | ✅ Redactado (~3.100 palabras, Tabla 1) |
 | 4. Descripción de la unidad minera | ✅ Redactado (~3.100 palabras, Tablas 2 y 3; faltan Figuras 1 y 2) |
-| 1, 2, 5–11 | ⬜ Esqueleto con `% TODO` y objetivos de extensión |
+| 5. Descripción de la auditoría | ✅ Redactado (~2.300 palabras, Tablas 4 y 5; falta Figura 3) |
+| 6. Análisis de hallazgos | ✅ Redactado (~2.900 palabras, matriz completa de 10 hallazgos en la Tabla 6) |
+| 1, 2, 7–11 | ⬜ Esqueleto con `% TODO` y objetivos de extensión |
+
+Extensión actual del PDF: **47 páginas**.
 
 ## Estado de la bibliografía
 
