@@ -1,119 +1,261 @@
 % =====================================================================
 %  ANEXOS
-%  Responsables: INTEGRANTE 2 (Anexos A y E) e INTEGRANTE 4 (Anexos B, C y D)
-%  Extensión: libre, no cuenta para el objetivo de 40 páginas del cuerpo.
+%  Responsables: INTEGRANTE 2 (Anexo A) e INTEGRANTE 4 (Anexos B a E)
+%  ESTADO: REDACTADOS los anexos B, C, D y E.
+%          El Anexo A queda pendiente del archivo de imagen del mapa.
 %
-%  \appendix hace que las secciones pasen a numerarse con letras (A, B, C...)
+%  \appendix hace que las secciones pasen a numerarse con letras (A, B...)
 % =====================================================================
 
 \appendix
 \newpage
 
+% =====================================================================
 \section{Mapa de ubicación ampliado}
 \label{anexo:mapa}
 
-% TODO: Versión a página completa del mapa de la Figura 1, con el detalle de
-%   los municipios de San Miguel Ixtahuacán y Sipacapa, las cuencas de los
-%   ríos Tzalá, Quivichil y Cuilco, y la ubicación de la planta y del
-%   depósito de relaves.
-%   RECORDATORIO DE LICENCIA: si el mapa base es de OpenStreetMap, la
-%   atribución «© OpenStreetMap contributors» (licencia ODbL) es obligatoria.
-%   Si usas el mapa del conflicto de OCMAL, cítalo. \cite{ocmalsfmarlin}
-%
+% PENDIENTE: es lo único que falta del informe. Captura un mapa base de
+% OpenStreetMap centrado en 15.234852, -91.689418 y guárdalo en
+% imagenes/mapas/mapa_ampliado.png. Después descomenta el bloque de abajo
+% y borra la línea \pendiente.
+% LICENCIA: la atribución «© OpenStreetMap contributors» (ODbL) es
+% OBLIGATORIA en el pie. Si usas el mapa del conflicto de OCMAL, cítalo.
+
+\pendiente{insertar el mapa ampliado en imagenes/mapas/}
+
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[width=\textwidth]{imagenes/mapas/mapa_ampliado.png}
 %  \caption{Mapa ampliado del área de influencia de la Mina Marlin}
 %  \label{fig:mapa-ampliado}
-%  \footnotesize Nota. Mapa base de OpenStreetMap, © OpenStreetMap contributors, licencia ODbL.
+%  \par\vspace{2pt}
+%  \raggedright\footnotesize Nota. Mapa base de OpenStreetMap,
+%  \textcopyright{} OpenStreetMap contributors, licencia ODbL
+%  \parencite{osmsfmapa}.
 %\end{figure}
 
+El mapa debe representar los municipios de San Miguel Ixtahuacán y Sipacapa, las
+cuencas de los ríos Tzalá, Quivichil y Cuilco, y la ubicación relativa de la
+planta de proceso y del depósito de relaves respecto de los centros poblados.
+
+% =====================================================================
 \newpage
-\section{Matriz de no conformidades completa}
+\section{Distribución de los hallazgos por eje y clasificación}
 \label{anexo:matriz}
 
-% TODO: Si la Tabla 3 de la sección 6 quedó demasiado larga para el cuerpo
-%   del informe, deja allí un extracto con los hallazgos principales y
-%   coloca aquí la matriz íntegra, con TODOS los hallazgos de los siete ejes.
-%   Usa la misma estructura de columnas y el mismo entorno longtable dentro
-%   de landscape.
+La matriz completa de hallazgos figura en la Tabla \ref{tab:matriz-nc} de la
+sección \ref{sec:hallazgos}. Este anexo presenta su distribución agregada, que
+permite identificar de un vistazo dónde se concentra la gravedad.
 
+\begin{table}[H]
+  \centering
+  \caption{Distribución de los hallazgos por eje de la auditoría y clasificación}
+  \label{tab:distribucion}
+  \begin{small}
+  \begin{tabular}{@{}l c c c c@{}}
+    \toprule
+    \textbf{Eje de la auditoría} & \textbf{NC mayor} & \textbf{NC menor}
+      & \textbf{Observación} & \textbf{Total} \\
+    \midrule
+    Consulta                     & 1 & --- & --- & 1 \\
+    Ambiente                     & 1 & 1   & 1   & 3 \\
+    Trabajo                      & 1 & 1   & --- & 2 \\
+    Adquisición de tierras       & --- & 1 & --- & 1 \\
+    Inversión económica y social & --- & 1 & --- & 1 \\
+    Seguridad                    & 1 & --- & --- & 1 \\
+    Acceso a remediación         & 1 & --- & --- & 1 \\
+    \midrule
+    \textbf{Total}               & \textbf{5} & \textbf{4} & \textbf{1} & \textbf{10} \\
+    \bottomrule
+  \end{tabular}
+  \end{small}
+  \par\vspace{3pt}
+  \raggedright\footnotesize
+  Nota. Elaboración propia a partir de la Tabla \ref{tab:matriz-nc}.
+\end{table}
+
+% =====================================================================
 \newpage
 \section{Cronología del caso (1996--2017)}
 \label{anexo:cronologia}
 
-% TODO: Tabla de dos columnas (fecha / hecho). Hitos que no pueden faltar:
-%   06/08/1996  Constitución de Montana Exploradora de Guatemala, S.A.
-%   1998        Descubrimiento del yacimiento.
-%   2000        Adquisición por Francisco Gold.
-%   2002        Fusión con Glamis Gold.
-%   2003        Préstamo de la IFC por US$ 45 millones.
-%   27/11/2003  Licencia de explotación del Ministerio de Energía y Minas.
-%   2004-2005   Construcción de la mina.
-%   2004        Revisión independiente del EIA por Robert Moran.
-%   2005        Consulta comunitaria de Sipacapa; queja de Madre Selva ante la CAO.
-%   Fines 2005  Inicio de producción.
-%   05/2006     Cierre del caso CAO Marlin-01/Sipacapa.
-%   2006        Goldcorp adquiere Glamis Gold.
-%   03/2008     Firma del MOU para la evaluación de derechos humanos.
-%   10/2008     Selección de On Common Ground Consultants.
-%   05/2010     Publicación de la HRIA.
-%   20/05/2010  La CIDH otorga medidas cautelares MC 260-07.
-%   2010        Estudio de salud de Physicians for Human Rights / U. de Michigan.
-%   2010        Pronunciamiento de la CEACR de la OIT.
-%   12/2011     La CIDH modifica las medidas cautelares.
-%   2013        Instalación de la planta de relaves filtrados (dry-stack).
-%   31/05/2017  Cierre de producción de la mina.
-%
-%\begin{longtable}{@{}L{3cm} L{12cm}@{}}
-%  \caption{Cronología del caso Mina Marlin} \label{tab:cronologia} \\
-%  \toprule \textbf{Fecha} & \textbf{Hecho} \\ \midrule \endfirsthead
-%  \toprule \textbf{Fecha} & \textbf{Hecho} \\ \midrule \endhead
-%  \bottomrule \endlastfoot
-%   & \\
-%\end{longtable}
+\begin{footnotesize}
+\begin{longtable}{@{}L{2.6cm} L{12.2cm}@{}}
+  \caption{Cronología del caso Mina Marlin} \label{tab:cronologia} \\
+  \toprule
+  \textbf{Fecha} & \textbf{Hecho} \\
+  \midrule
+  \endfirsthead
+  \multicolumn{2}{@{}l}{\textit{Tabla \ref{tab:cronologia} (continuación)}} \\[2pt]
+  \toprule
+  \textbf{Fecha} & \textbf{Hecho} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \multicolumn{2}{@{}p{14.8cm}}{\textit{Nota.} Elaboración propia a partir de las
+  fuentes citadas en las secciones \ref{sec:unidad} a \ref{sec:critico}.} \\
+  \endlastfoot
 
+  6 ago. 1996  & Constitución de Montana Exploradora de Guatemala, S.\,A. \\
+  1998         & Descubrimiento del yacimiento por Montana Exploradora. \\
+  2000         & Adquisición de la propiedad por Francisco Gold. \\
+  2002         & Fusión de Francisco Gold con Glamis Gold. \\
+  2003         & La Corporación Financiera Internacional aprueba un préstamo de
+                 US\$ 45 millones al proyecto. \\
+  27 nov. 2003 & El Ministerio de Energía y Minas de Guatemala otorga la licencia
+                 de explotación. \\
+  2004--2005   & Construcción de la mina y del depósito de relaves. \\
+  2004         & Revisión independiente del estudio de impacto ambiental por
+                 Robert E. Moran. \\
+  2005         & Consulta comunitaria de buena fe en Sipacapa, de resultado
+                 mayoritariamente contrario a la minería. \\
+  2005         & La organización Madre Selva presenta queja ante la Compliance
+                 Advisor Ombudsman de la {IFC}. \\
+  Fines 2005   & Inicio de la producción de oro y plata. \\
+  Mayo 2006    & Cierre del caso {CAO} Marlin-01/Sipacapa. \\
+  2006         & Goldcorp Inc. adquiere Glamis Gold e incorpora la operación. \\
+  2008         & Entrada en servicio de la planta de tratamiento de agua. \\
+  Marzo 2008   & Firma del Memorando de Entendimiento para la evaluación de
+                 derechos humanos. \\
+  Oct. 2008    & El Comité Directivo selecciona a On Common Ground Consultants Inc. \\
+  Dic. 2008    & El equipo auditor incorpora los principios de consentimiento
+                 informado y confidencialidad. \\
+  2009         & Trabajo de campo de la evaluación. \\
+  Mayo 2010    & Publicación de la \textit{Human Rights Assessment of Goldcorp's
+                 Marlin Mine}. \\
+  20 mayo 2010 & La {CIDH} otorga medidas cautelares {MC} 260-07 a favor de 18
+                 comunidades del pueblo maya. \\
+  2010         & Estudio de metales en población cercana, coordinado por
+                 Physicians for Human Rights. \\
+  2010         & La {CEACR} de la {OIT} insta a suspender actividades hasta
+                 cumplir la consulta del Convenio 169. \\
+  Dic. 2011    & La {CIDH} modifica las medidas cautelares y retira la solicitud
+                 de suspensión, centrándolas en el acceso a agua. \\
+  2013         & Instalación de la planta de relaves filtrados (\textit{dry-stack}). \\
+  31 mayo 2017 & Cierre de la producción, con destrucción de cianuro y relleno
+                 del tajo. \\
+  2019         & Tras la fusión societaria, los activos históricos de Goldcorp se
+                 integran en Newmont. \\
+
+\end{longtable}
+\end{footnotesize}
+
+% =====================================================================
 \newpage
 \section{Fichas de los estándares aplicados}
 \label{anexo:estandares}
 
-% TODO: Una ficha breve por estándar, con: nombre completo, organismo emisor,
-%   año, carácter (obligatorio / voluntario / certificable), alcance y
-%   pertinencia para este caso. Estándares a fichar:
-%   ISO 14001:2015, ISO 19011:2018, IFC Performance Standards,
-%   Convenio 169 de la OIT, VPSHR, ICMM Mining Principles, GISTM e IRMA.
+\begin{footnotesize}
+\begin{longtable}{@{}L{3.1cm} L{2.2cm} L{2.4cm} L{6.8cm}@{}}
+  \caption{Fichas resumidas de los estándares y normas aplicados en el informe}
+  \label{tab:fichas} \\
+  \toprule
+  \textbf{Estándar} & \textbf{Emisor / año} & \textbf{Carácter} &
+  \textbf{Pertinencia para el caso} \\
+  \midrule
+  \endfirsthead
+  \multicolumn{4}{@{}l}{\textit{Tabla \ref{tab:fichas} (continuación)}} \\[2pt]
+  \toprule
+  \textbf{Estándar} & \textbf{Emisor / año} & \textbf{Carácter} &
+  \textbf{Pertinencia para el caso} \\
+  \midrule
+  \endhead
+  \bottomrule
+  \multicolumn{4}{@{}p{14.8cm}}{\textit{Nota.} Elaboración propia a partir de las
+  fuentes citadas en la sección \ref{sec:marco}.} \\
+  \endlastfoot
 
+  {ISO} 14001:2015 & {ISO}, 2015 & Voluntario, certificable &
+  Aporta el vocabulario de aspecto e impacto y la estructura del ciclo PHVA sobre
+  la que se construye la propuesta de mejora. La operación no fue auditada contra
+  esta norma. \\
+  \addlinespace
+
+  {ISO} 19011:2018 & {ISO}, 2018 & Directrices, no certificable &
+  Proporciona los principios de auditoría, la secuencia de fases y las
+  definiciones de hallazgo, no conformidad y acción correctiva empleadas en la
+  clasificación. \\
+  \addlinespace
+
+  {IFC} Performance Standards & Corporación Financiera Internacional &
+  Obligación contractual &
+  Exigibles por el préstamo de US\$ 45 millones. {PS}1 gestión de riesgos y
+  mecanismo de quejas; {PS}3 eficiencia y contaminación; {PS}4 salud y seguridad
+  de la comunidad; {PS}5 tierras; {PS}7 pueblos indígenas; {PS}8 patrimonio
+  cultural. \\
+  \addlinespace
+
+  Convenio 169 & {OIT}, 1989 & Tratado vinculante para el Estado &
+  Su artículo 6 establece la obligación de consulta previa, libre e informada.
+  Es el criterio incumplido de mayor gravedad del expediente. \\
+  \addlinespace
+
+  Principios Voluntarios en Seguridad y Derechos Humanos & Iniciativa
+  multiactor & Voluntario &
+  Marco para la gestión de la seguridad privada y su relación con la seguridad
+  pública. Su adopción fue una de las recomendaciones de la evaluación. \\
+  \addlinespace
+
+  {ICMM} Mining Principles & {ICMM} & Voluntario, para empresas miembro &
+  Compromisos de desempeño ambiental, social y de gobernanza del sector. \\
+  \addlinespace
+
+  {GISTM} & {ICMM}, {UNEP} y {PRI}, 2020 & Voluntario, auditable &
+  Seis áreas temáticas, 15 principios y 77 requisitos auditables sobre gestión de
+  relaves. Posterior al cierre de la operación: se usa como referencia
+  prospectiva, no como criterio retroactivo. \\
+  \addlinespace
+
+  {IRMA} & Initiative for Responsible Mining Assurance & Voluntario, certificable &
+  Más de 420 requisitos auditables con verificación independiente de tercera
+  parte y umbral de 90 \% por área de principios. Es el modelo de verificación
+  propuesto en la sección \ref{sec:plan}. \\
+
+\end{longtable}
+\end{footnotesize}
+
+% =====================================================================
 \newpage
 \section{Glosario de siglas}
 \label{anexo:glosario}
 
-% TODO: Lista alfabética. Como mínimo:
-%   AMAC    Asociación de Monitoreo Ambiental Comunitario
-%   ARD     Drenaje ácido de roca (acid rock drainage)
-%   CAO     Compliance Advisor Ombudsman
-%   CEACR   Comisión de Expertos en Aplicación de Convenios y Recomendaciones (OIT)
-%   CIDH    Comisión Interamericana de Derechos Humanos
-%   CIL     Carbon in leach (lixiviación con carbón en pulpa)
-%   COPAE   Comisión Pastoral Paz y Ecología
-%   DIHR    Danish Institute for Human Rights
-%   EIA     Estudio de impacto ambiental
-%   GISTM   Global Industry Standard on Tailings Management
-%   HRCA    Human Rights Compliance Assessment
-%   HRIA    Human Rights Impact Assessment
-%   ICMM    International Council on Mining and Metals
-%   IFC     International Finance Corporation
-%   IRMA    Initiative for Responsible Mining Assurance
-%   MOU     Memorando de entendimiento
-%   NC      No conformidad
-%   OCMAL   Observatorio de Conflictos Mineros de América Latina
-%   OEFA    Organismo de Evaluación y Fiscalización Ambiental (Perú)
-%   OIT     Organización Internacional del Trabajo
-%   PAMA    Programa de adecuación y manejo ambiental
-%   PHVA    Planificar, Hacer, Verificar, Actuar
-%   PS      Performance Standard (IFC)
-%   SEIA    Sistema Nacional de Evaluación de Impacto Ambiental
-%   SGA     Sistema de gestión ambiental
-%   TSF     Tailings storage facility (depósito de relaves)
-%   VPSHR   Voluntary Principles on Security and Human Rights
-
-\pendiente{completar los anexos A a E}
+\begin{description}[leftmargin=2.6cm,style=sameline,font=\bfseries]
+  \item[AMAC] Asociación de Monitoreo Ambiental Comunitario.
+  \item[ARD] Drenaje ácido de roca (\textit{acid rock drainage}).
+  \item[CAO] \textit{Compliance Advisor Ombudsman}, mecanismo de rendición de
+        cuentas de la IFC.
+  \item[CEACR] Comisión de Expertos en Aplicación de Convenios y Recomendaciones
+        de la OIT.
+  \item[CIDH] Comisión Interamericana de Derechos Humanos.
+  \item[CIL] \textit{Carbon in leach}: lixiviación con adsorción simultánea sobre
+        carbón activado.
+  \item[COPAE] Comisión Pastoral Paz y Ecología.
+  \item[DIHR] \textit{Danish Institute for Human Rights}.
+  \item[EIA] Estudio de impacto ambiental.
+  \item[GISTM] \textit{Global Industry Standard on Tailings Management}.
+  \item[HRCA] \textit{Human Rights Compliance Assessment}, herramienta del DIHR.
+  \item[HRIA] \textit{Human Rights Impact Assessment}.
+  \item[ICMM] \textit{International Council on Mining and Metals}.
+  \item[IFC] \textit{International Finance Corporation} (Corporación Financiera
+        Internacional).
+  \item[IRMA] \textit{Initiative for Responsible Mining Assurance}.
+  \item[MOU] Memorando de entendimiento (\textit{memorandum of understanding}).
+  \item[NC] No conformidad.
+  \item[NI 43-101] Norma canadiense de reporte de información técnica sobre
+        proyectos minerales.
+  \item[OCMAL] Observatorio de Conflictos Mineros de América Latina.
+  \item[OEFA] Organismo de Evaluación y Fiscalización Ambiental (Perú).
+  \item[OIT] Organización Internacional del Trabajo.
+  \item[PAMA] Programa de adecuación y manejo ambiental.
+  \item[PHVA] Planificar, Hacer, Verificar, Actuar.
+  \item[PIDCP] Pacto Internacional de Derechos Civiles y Políticos.
+  \item[PIDESC] Pacto Internacional de Derechos Económicos, Sociales y Culturales.
+  \item[PS] \textit{Performance Standard} de la IFC.
+  \item[SEIA] Sistema Nacional de Evaluación de Impacto Ambiental (Perú).
+  \item[SENACE] Servicio Nacional de Certificación Ambiental para las Inversiones
+        Sostenibles (Perú).
+  \item[SGA] Sistema de gestión ambiental.
+  \item[SINEFA] Sistema Nacional de Evaluación y Fiscalización Ambiental (Perú).
+  \item[TSF] \textit{Tailings storage facility}: depósito de relaves.
+  \item[VPSHR] \textit{Voluntary Principles on Security and Human Rights}.
+\end{description}

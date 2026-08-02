@@ -83,15 +83,36 @@ pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
 
 Se redacta **capítulo por capítulo**, no de una sola vez.
 
-| Capítulo | Estado |
-|---|---|
-| 3. Marco teórico y normativo | ✅ Redactado (~3.100 palabras, Tabla 1) |
-| 4. Descripción de la unidad minera | ✅ Redactado (~3.100 palabras, Tablas 2 y 3; faltan Figuras 1 y 2) |
-| 5. Descripción de la auditoría | ✅ Redactado (~2.300 palabras, Tablas 4 y 5; falta Figura 3) |
-| 6. Análisis de hallazgos | ✅ Redactado (~2.900 palabras, matriz completa de 10 hallazgos en la Tabla 6) |
-| 1, 2, 7–11 | ⬜ Esqueleto con `% TODO` y objetivos de extensión |
+**El texto del informe está completo.** 69 páginas, ~19.500 palabras, 9 tablas.
 
-Extensión actual del PDF: **47 páginas**.
+| Capítulo | Palabras | Estado |
+|---|---:|---|
+| Resumen ejecutivo | 282 | ✅ |
+| 1. Introducción | 816 | ✅ |
+| 2. Objetivos | 186 | ✅ |
+| 3. Marco teórico y normativo | 3.102 | ✅ Tabla 1 |
+| 4. Descripción de la unidad minera | 3.078 | ✅ Tablas 2 y 3 · faltan Figuras 1 y 2 |
+| 5. Descripción de la auditoría | 2.271 | ✅ Tablas 4 y 5 · falta Figura 3 |
+| 6. Análisis de hallazgos | 2.900 | ✅ Matriz completa de 10 hallazgos (Tabla 6) |
+| 7. Análisis crítico | 2.184 | ✅ |
+| 8. Plan de mejora continua (PHVA) | 2.303 | ✅ Plan de 12 acciones (Tabla 7) · falta Figura 4 |
+| 9. Conclusiones | 820 | ✅ |
+| 10. Recomendaciones | 569 | ✅ |
+| Anexos A–E | 1.007 | ✅ B, C, D y E · **falta el mapa del Anexo A** |
+
+### Lo único que falta
+
+1. **Las cuatro figuras.** Los entornos `figure` están escritos y comentados en su
+   sitio, con instrucciones de qué debe mostrar cada una. Solo hay que crear los
+   archivos y descomentar:
+   - Figura 1 y Anexo A: mapa de ubicación (OpenStreetMap, **atribución ODbL obligatoria**)
+   - Figura 2: diagrama de flujo del proceso metalúrgico
+   - Figura 3: línea de tiempo del proceso de auditoría (los hitos ya están listados en el comentario)
+   - Figura 4: diagrama del ciclo PHVA
+2. **Rellenar `config/portada.tex`:** universidad, facultad, escuela, curso, docente e integrantes.
+3. **Los 21 avisos `VERIFICAR`** de `referencias.bib` (ver más abajo).
+4. **Comentar el `\nocite{*}`** de `main.tex` antes de entregar.
+5. **Apagar los marcadores `\pendiente`** con la línea comentada de `config/comandos.tex`.
 
 ## Estado de la bibliografía
 
