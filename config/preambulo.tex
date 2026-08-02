@@ -1,117 +1,270 @@
-% =====================================================================
-%  PREÁMBULO — paquetes y configuración global
+% ============================================================
+%  PREÁMBULO — FORMATO ACADÉMICO BASADO EN IEEE (dos columnas)
+%  Informe EVI. 6 — Auditoría socioambiental de la Mina Marlin
+%  (Montana Exploradora de Guatemala, S.A. / Goldcorp)
+%  UNAP-FIM | Escuela Profesional de Ingeniería de Minas
+%
+%  Compilar con: pdflatex -> biber -> pdflatex -> pdflatex
+%  (o simplemente: latexmk -pdf main.tex)
+%
 %  El \documentclass va en main.tex, NO aquí.
-%  Stack probado en Overleaf: compilador pdfLaTeX + motor Biber.
-% =====================================================================
+%
+%  CRITERIOS DE ESTE FORMATO
+%   - Base IEEEtran, DOS columnas, pero sin seguir el formato IEEE
+%     "a rajatabla": es un formato académico propio, inspirado en IEEE.
+%   - Numeración ARÁBIGA anidada (1, 1.1, 1.1.1, 1.1.1.1), NO romana.
+%   - Índice general a UNA columna tras el resumen; el resto del
+%     documento (desde la Introducción) va a DOS columnas.
+%   - Índice hasta nivel de sección (Capítulo + Sección).
+%   - Jerarquía de títulos NO monolítica:
+%       Nivel 1 (Capítulo)     -> negrita, grande, centrado
+%       Nivel 2 (Sección)      -> negrita, tamaño intermedio
+%       Nivel 3 (Subsección)   -> SIN negrita, cursiva
+%       Nivel 4 (Sub-subsec.)  -> SIN negrita, cursiva, en línea
+%   - Citas, referencias y enlaces en AZUL (colorlinks).
+%   - Tablas en blanco y negro (solo booktabs), sin celdas de color.
+% ============================================================
 
-% --- Codificación de entrada y de fuente -----------------------------
-% utf8 permite escribir acentos y ñ directamente en los .tex.
-% T1 evita que las palabras con acento se partan mal al final de línea.
+% ------------------------------------------------------------
+%  IDIOMA Y CODIFICACIÓN
+% ------------------------------------------------------------
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+% es-tabla -> los flotantes se rotulan «Tabla» y no «Cuadro», tanto en las
+% leyendas como en el índice de tablas. Sin esta opción, babel-spanish los
+% llama «cuadros», que no es lo que pide un informe técnico.
+\usepackage[english,spanish,es-noquoting,es-tabla]{babel}
+\usepackage{textcomp}
 
-% --- Tipografía: Times New Roman -------------------------------------
-% mathptmx sustituye la fuente por Times (requisito típico de informes
-% universitarios). Si la universidad exige ARIAL, hay que cambiar el
-% compilador a XeLaTeX y usar fontspec con \setmainfont{Arial}.
-\usepackage{mathptmx}
+% IEEEtran rotula las palabras clave como «Index Terms», en inglés, y babel
+% no lo traduce porque no forma parte de sus captions estándar.
+\AtBeginDocument{\renewcommand{\IEEEkeywordsname}{Palabras clave}}
 
-% --- Márgenes --------------------------------------------------------
-% 3 cm a la izquierda (para el anillado/empastado), 2,5 cm el resto.
-\usepackage[a4paper,left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+% ------------------------------------------------------------
+%  MATEMÁTICAS
+% ------------------------------------------------------------
+\usepackage{amsmath,amssymb,mathtools}
 
-% --- Idioma español --------------------------------------------------
-% es-tabla        -> los flotantes se rotulan «Tabla», no «Cuadro».
-% es-nodecimaldot -> no fuerza la coma decimal en modo matemático.
-% es-lcroman      -> numera los preliminares en romanos MINÚSCULOS (i, ii,
-%                    iii), que es la convención académica. Sin esta opción,
-%                    babel-spanish los pone en mayúsculas (I, II, III).
-\usepackage[spanish,es-tabla,es-nodecimaldot,es-lcroman]{babel}
-
-% --- Interlineado ----------------------------------------------------
-% ÚNICO lugar donde se controla el interlineado de todo el documento.
-% \onehalfspacing = 1,5 líneas (el que estamos usando).
-% Si el docente pidiera interlineado doble, cambia a \doublespacing.
-% Si necesitas comprimir para entrar en un límite de páginas, \singlespacing.
-\usepackage{setspace}
-\onehalfspacing
-
-% --- Imágenes --------------------------------------------------------
-% graphicspath evita tener que escribir la ruta completa en \includegraphics:
-% basta con \includegraphics{mapa_ubicacion.png}.
-\usepackage{graphicx}
-\graphicspath{{imagenes/}{imagenes/mapas/}{imagenes/diagramas/}{imagenes/fotos/}{imagenes/logos/}}
-
-% --- Tablas ----------------------------------------------------------
-% booktabs  -> líneas horizontales de calidad (\toprule, \midrule, \bottomrule).
-% longtable -> tablas que se parten en varias páginas (la matriz de no
-%              conformidades del Anexo B seguro la necesita).
-% tabularx  -> columnas de ancho automático que ajustan al ancho de página.
-% multirow  -> celdas que ocupan varias filas.
-% array     -> tipos de columna personalizados (ver config/comandos.tex).
+% ------------------------------------------------------------
+%  TABLAS Y FIGURAS
+% ------------------------------------------------------------
 \usepackage{booktabs}
-\usepackage{longtable}
+\usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
-\usepackage{array}
-
-% --- Leyendas de tablas y figuras ------------------------------------
-% Norma APA / uso académico: el rótulo de la TABLA va ARRIBA y el de la
-% FIGURA va ABAJO. Aquí se fija ese comportamiento para todo el documento.
-\usepackage{caption}
-\captionsetup[table]{position=top,labelsep=period,font=small,labelfont=bf}
-\captionsetup[figure]{position=bottom,labelsep=period,font=small,labelfont=bf}
-
-% --- Listas ----------------------------------------------------------
-% enumitem permite controlar sangrías y separación de itemize/enumerate.
-\usepackage{enumitem}
-\setlist{itemsep=2pt,parsep=0pt,topsep=4pt}
-
-% --- Posicionamiento de flotantes ------------------------------------
-% float habilita el especificador [H] = «aquí exactamente, sin discutir».
+\usepackage{graphicx}
+\graphicspath{{imagenes/}{imagenes/mapas/}{imagenes/diagramas/}{imagenes/fotos/}{imagenes/logos/}}
 \usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{morefloats}
 
-% --- Páginas apaisadas -----------------------------------------------
-% pdflscape gira una página completa en el PDF. Imprescindible para la
-% Tabla 3 (matriz de no conformidades) y la Tabla 4 (plan de acción).
+% longtable y pdflscape NO forman parte del formato IEEE original.
+% Se añaden porque los anexos de este informe (matriz de no conformidades
+% completa y cronología) necesitan tablas de varias páginas.
+% ATENCIÓN: longtable NO funciona en modo de dos columnas. Solo puede
+% usarse dentro de los anexos, que main.tex conmuta a una columna.
+\usepackage{longtable}
 \usepackage{pdflscape}
 
-% --- Color (necesario para los enlaces de hyperref) ------------------
+% ------------------------------------------------------------
+%  VARIOS
+% ------------------------------------------------------------
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{microtype}
+\usepackage{url}
 \usepackage{xcolor}
-\definecolor{azuloscuro}{RGB}{0,51,102}
 
-% =====================================================================
-%  BIBLIOGRAFÍA — biblatex en estilo APA 7 con motor Biber
-% =====================================================================
-% csquotes es OBLIGATORIO antes de biblatex (gestiona las comillas).
+% A dos columnas hay líneas que no encuentran punto de corte —sobre todo
+% los nombres institucionales largos de la bibliografía, como
+% «Organización Internacional de Normalización»— y se salen del margen.
+% emergencystretch da a TeX un margen extra de maniobra antes de permitirlo.
+\setlength{\emergencystretch}{3em}
+
+% ------------------------------------------------------------
+%  BIBLIOGRAFÍA — biblatex + biber, estilo IEEE (numérico)
+%
+%  OJO: este estilo produce citas numéricas [1], [2], NO citas
+%  autor-año de APA 7. Si el docente exige APA 7, basta con volver a:
+%     \usepackage[backend=biber,style=apa,sortlocale=es_ES,
+%                 natbib=true]{biblatex}
+%     \DeclareLanguageMapping{spanish}{spanish-apa}
+%  El archivo referencias.bib sirve para ambos estilos sin cambios.
+% ------------------------------------------------------------
 \usepackage{csquotes}
-\usepackage[backend=biber,style=apa,sortlocale=es_ES,natbib=true]{biblatex}
-% Traduce al español los elementos fijos de las citas («y», «et al.», «s. f.»).
-\DeclareLanguageMapping{spanish}{spanish-apa}
-% Archivo con TODAS las referencias del informe.
+\usepackage[
+  backend=biber,
+  style=ieee,
+  sorting=none,
+  language=spanish,
+  uniquename=false
+]{biblatex}
 \addbibresource{referencias.bib}
 
-% =====================================================================
-%  HYPERREF — SIEMPRE EL ÚLTIMO PAQUETE EN CARGARSE
-% =====================================================================
-% Convierte en enlaces clicables el índice, las referencias cruzadas y
-% las URLs, y genera los marcadores (bookmarks) del PDF.
-\usepackage[
-  colorlinks=true,
-  linkcolor=azuloscuro,     % enlaces internos (índice, \ref)
-  citecolor=azuloscuro,     % citas bibliográficas
-  urlcolor=azuloscuro,      % URLs externas
-  bookmarks=true,
-  bookmarksnumbered=true,
-  breaklinks=true,
-  % plainpages=false hace que las anclas del PDF usen el número de página tal
-  % como se imprime (i, ii, 1, 2...). Junto con el \pagenumbering{roman} que
-  % main.tex activa desde la portada, evita anclas duplicadas.
-  plainpages=false,
-  pdftitle={Auditoría socioambiental de la Mina Marlin — Informe EVI. 6},
-  pdfsubject={Auditoría ambiental},
-  pdfkeywords={auditoría socioambiental, Mina Marlin, Goldcorp, ISO 14001, ISO 19011, PHVA}
-]{hyperref}
-% Rompe las URLs largas de la bibliografía para que no se salgan del margen.
-\usepackage{url}
-\urlstyle{same}
+% ------------------------------------------------------------
+%  COLOR DE CITAS Y ENLACES — azul académico (NO hidelinks)
+% ------------------------------------------------------------
+\definecolor{azulacademico}{RGB}{20,60,130}
+\usepackage[colorlinks=true,
+            linkcolor=azulacademico,
+            citecolor=azulacademico,
+            urlcolor=azulacademico,
+            filecolor=azulacademico]{hyperref}
+\hypersetup{
+  pdftitle={Auditoria socioambiental de la Mina Marlin -- Informe EVI. 6},
+  pdfauthor={UNAP-FIM},
+  pdfsubject={Auditoria ambiental}}
+\usepackage[capitalise]{cleveref}
+
+% ============================================================
+%  TÍTULOS: JERARQUÍA CON PESO VISUAL DECRECIENTE (titlesec)
+%  Se aplica ANTES de capturar \section, \subsection, etc. en el
+%  adaptador de jerarquía (más abajo).
+% ============================================================
+\usepackage{titlesec}
+
+% ---- Numeración arábiga anidada (no romana) ----
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+
+% ---- Nivel 1 = "Capítulo" (se escribe \chapter en los capítulos):
+%      negrita, grande, CENTRADO -- funciona como separador. ----
+\titleformat{\section}
+  {\normalfont\Large\bfseries\centering}
+  {\thesection.}
+  {0.7em}
+  {}
+\titlespacing*{\section}{0pt}{1.8em}{1.0em}
+
+% ---- Nivel 2 = sección real (se escribe \section en los capítulos) ----
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection.}
+  {0.6em}
+  {}
+\titlespacing*{\subsection}{0pt}{1.3em}{0.5em}
+
+% ---- Nivel 3 = subsección real (se escribe \subsection) ----
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\itshape}
+  {\thesubsubsection.}
+  {0.5em}
+  {}
+\titlespacing*{\subsubsection}{0pt}{1.0em}{0.35em}
+
+% ---- Nivel 4 = sub-subsección real (se escribe \subsubsection) ----
+\titleformat{\paragraph}[runin]
+  {\normalfont\normalsize\itshape}
+  {\theparagraph}
+  {0.4em}
+  {}
+\titlespacing*{\paragraph}{0pt}{0.8em}{0.5em}
+
+% ============================================================
+%  ADAPTADOR DE JERARQUÍA DE TÍTULOS
+%
+%  IMPORTANTE PARA QUIEN REDACTE: en los archivos de secciones/
+%  se escribe un nivel MÁS ALTO del habitual:
+%       \chapter{}        -> título de capítulo   (nivel 1)
+%       \section{}        -> sección              (nivel 2)
+%       \subsection{}     -> subsección           (nivel 3)
+%       \subsubsection{}  -> sub-subsección       (nivel 4)
+% ============================================================
+\makeatletter
+\let\IEEE@section\section
+\let\IEEE@subsection\subsection
+\let\IEEE@subsubsection\subsubsection
+\let\IEEE@paragraph\paragraph
+
+% \chapter no existe en IEEEtran: se crea y se mapea al nivel 1
+\newcommand{\chapter}{\IEEE@section}
+
+% Se degradan los niveles inferiores en una posición
+\renewcommand{\section}{\IEEE@subsection}
+\renewcommand{\subsection}{\IEEE@subsubsection}
+\renewcommand{\subsubsection}{\IEEE@paragraph}
+\makeatother
+
+% Numeración completa en el texto (hasta nivel 4); el índice se acota
+% aparte con tocdepth en main.tex.
+\setcounter{secnumdepth}{4}
+
+% ============================================================
+%  TABLAS Y FIGURAS A ANCHO COMPLETO (dos columnas)
+%  Los capítulos usan tabularx{\anchotabla}; en dos columnas eso
+%  requiere flotantes que abarquen ambas columnas.
+% ============================================================
+\newcommand{\anchotabla}{0.85\textwidth}
+\renewenvironment{table}[1][]{%
+  \begin{table*}[!t]%
+    \centering
+}{%
+  \end{table*}%
+}
+\renewenvironment{figure}[1][]{\begin{figure*}[!t]}{\end{figure*}}
+
+\setcounter{topnumber}{4}
+\setcounter{totalnumber}{6}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.8}
+
+% ============================================================
+%  ECUACIONES: tamaño homogéneo y qquad acortado.
+% ============================================================
+\AtBeginEnvironment{equation}{\small}
+\AtBeginEnvironment{equation*}{\small}
+\AtBeginEnvironment{align}{\small}
+\AtBeginEnvironment{align*}{\small}
+\renewcommand{\qquad}{\quad}
+
+% ============================================================
+%  ESTILO DE TABLAS — BLANCO Y NEGRO, SOLO booktabs
+% ============================================================
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% ---- Numeración arábiga para tablas y figuras (sin números romanos) ----
+\renewcommand{\thetable}{\arabic{table}}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+% ---- Eliminar símbolo § y reemplazar por Sección ----
+\renewcommand{\S}{Secci\'on~}
+
+\newcommand{\encab}[1]{\multicolumn{1}{c}{\bfseries #1}}
+\newcommand{\filagrupo}[2]{\multicolumn{#1}{@{}l}{\bfseries #2}}
+
+\newcommand{\tnote}[1]{\par\vspace{2pt}{\footnotesize\textit{Nota:} #1}}
+\newcommand{\src}[1]{\par\vspace{2pt}{\footnotesize\textit{Fuente:} #1}}
+
+\captionsetup[table]{position=top,labelsep=colon,justification=centering,
+                     singlelinecheck=false,font=small,labelfont={bf}}
+\captionsetup[figure]{position=bottom,labelsep=colon,justification=centering,
+                      font=small,labelfont={bf}}
+
+% ============================================================
+%  MACROS DEL DOCUMENTO
+% ============================================================
+\newcommand{\recuadro}[2]{%
+  \par\medskip\noindent
+  \noindent\rule{\linewidth}{0.8pt}\par\vspace{4pt}
+  {\bfseries\small #1}\par\vspace{3pt}
+  \small #2\par\vspace{4pt}
+  \noindent\rule{\linewidth}{0.4pt}
+  \par\medskip}
+
+\newcommand{\eqcap}[1]{}
+\newcommand{\pct}{\char37 }
+
+\setlist{itemsep=1pt,topsep=3pt,parsep=0pt,partopsep=0pt,leftmargin=*}
+
+% ============================================================
+%  ENCABEZADO DE BIBLIOGRAFÍA -- se resuelve al imprimirse
+%  (usa \chapter, ya con su significado final).
+% ============================================================
+\defbibheading{referencias}{\chapter{#1}}

@@ -1,71 +1,45 @@
-% =====================================================================
-%  PORTADA
-%  RELLENA TODO LO QUE ESTÁ ENTRE LLAVES {  }. No borres las llaves.
-%  Si tu universidad tiene un formato de carátula oficial, respétalo:
-%  esta es una plantilla genérica de informe académico peruano.
-% =====================================================================
+% ============================================================
+%  DATOS DE PORTADA (bloque de título estilo IEEE)
+%
+%  Ya NO es una carátula a página completa: IEEEtran compone el
+%  título, los autores y la afiliación en la cabecera de la primera
+%  página, y el resumen va justo debajo.
+%
+%  RELLENA lo que está entre llaves { }:
+%    - el nombre del curso
+%    - el nombre del docente
+%  Y VERIFICA LA LISTA DE INTEGRANTES (ver nota más abajo).
+% ============================================================
 
-\begin{titlepage}
-\centering
-\singlespacing
+\title{\LARGE\bfseries Auditoría Socioambiental de la Mina Marlin\\
+       (Montana Exploradora de Guatemala, S.\,A. / Goldcorp):\\
+       Análisis del Proceso de Auditoría y Propuesta de\\
+       Plan de Mejora Continua bajo el Ciclo PHVA}
 
-% --- Logo institucional ----------------------------------------------
-% Coloca el archivo del logo en imagenes/logos/ y descomenta la línea.
-% Formatos recomendados: .png o .pdf (evita .jpg, se ve pixelado al imprimir).
-%\includegraphics[width=3.5cm]{imagenes/logos/logo_universidad.png}
-%\vspace{0.8cm}
+% ------------------------------------------------------------
+%  INTEGRANTES
+%  VERIFICAR: esta lista se tomó del trabajo de Perforación y Voladura,
+%  asumiendo que el grupo es el mismo. Si el grupo de este curso es
+%  distinto, corrige los nombres aquí. La bitácora preveía un grupo de
+%  4 o 5 integrantes; aquí hay 4.
+% ------------------------------------------------------------
+\author{%
+  \IEEEauthorblockN{%
+    \textbf{Brandon Gabriel Quispe Tapia}\IEEEauthorrefmark{1},
+    \textbf{Cristian Ivan Huanca Constancia}\IEEEauthorrefmark{1},\\
+    \textbf{Rudy Javier Mollocondo Mollocondo}\IEEEauthorrefmark{1} y
+    \textbf{Britt Lizardo Gemio Mamani}\IEEEauthorrefmark{1}%
+  }\\[4pt]
+  \IEEEauthorblockA{\IEEEauthorrefmark{1}Escuela Profesional de Ingeniería de Minas,
+                    Facultad de Ingeniería de Minas\\
+                    Universidad Nacional del Altiplano, Puno, Perú\\
+                    \textit{Curso: {NOMBRE DEL CURSO} --- Evidencia N.\textsuperscript{o} 6}\\
+                    \textbf{Docente:} {Grado y nombre completo del docente}}%
+  \thanks{Manuscrito elaborado en 2026. Trabajo desarrollado a partir de la
+  \textit{Human Rights Assessment of Goldcorp's Marlin Mine}, evaluación
+  socioambiental independiente realizada por On Common Ground Consultants Inc.
+  (2010) sobre la operación de Montana Exploradora de Guatemala, S.\,A.,
+  departamento de San Marcos, Guatemala.}}
 
-% --- Cabecera institucional ------------------------------------------
-{\large\textbf{UNIVERSIDAD {NOMBRE DE LA UNIVERSIDAD}}\par}
-\vspace{0.3cm}
-{\normalsize FACULTAD DE {NOMBRE DE LA FACULTAD}\par}
-\vspace{0.2cm}
-{\normalsize ESCUELA PROFESIONAL DE {NOMBRE DE LA ESCUELA PROFESIONAL}\par}
-
-\vspace{2.0cm}
-
-% --- Título del informe ----------------------------------------------
-{\Large\textbf{AUDITORÍA SOCIOAMBIENTAL DE LA MINA MARLIN\\[0.3cm]
-(MONTANA EXPLORADORA DE GUATEMALA, S.\,A. / GOLDCORP),\\[0.3cm]
-SAN MARCOS, GUATEMALA}\par}
-
-\vspace{0.6cm}
-{\normalsize\textit{Análisis del proceso de auditoría y propuesta de plan\\
-de mejora continua bajo el ciclo PHVA}\par}
-
-\vspace{1.5cm}
-
-% --- Naturaleza del trabajo ------------------------------------------
-{\normalsize INFORME ACADÉMICO — EVIDENCIA N.\textsuperscript{o} 6\par}
-\vspace{0.4cm}
-{\normalsize Asignatura: {NOMBRE DEL CURSO}\par}
-
-\vspace{1.5cm}
-
-% --- Autores ---------------------------------------------------------
-% Formato: APELLIDOS, Nombres — Código
-{\normalsize\textbf{PRESENTADO POR:}\par}
-\vspace{0.4cm}
-\begin{tabular}{ll}
-{APELLIDOS, Nombres del integrante 1} & {Código} \\
-{APELLIDOS, Nombres del integrante 2} & {Código} \\
-{APELLIDOS, Nombres del integrante 3} & {Código} \\
-{APELLIDOS, Nombres del integrante 4} & {Código} \\
-{APELLIDOS, Nombres del integrante 5} & {Código} \\
-\end{tabular}
-
-\vspace{1.5cm}
-
-% --- Docente ---------------------------------------------------------
-{\normalsize\textbf{DOCENTE:}\par}
-\vspace{0.3cm}
-{\normalsize {Grado académico y nombre completo del docente}\par}
-
-\vfill
-
-% --- Lugar y fecha ---------------------------------------------------
-{\normalsize PUNO — PERÚ\par}
-\vspace{0.2cm}
-{\normalsize 2026\par}
-
-\end{titlepage}
+\markboth{Universidad Nacional del Altiplano --- Auditoría Ambiental, 2026}%
+         {Auditoría Socioambiental de la Mina Marlin}

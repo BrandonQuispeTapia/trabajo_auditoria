@@ -9,7 +9,7 @@
 %  no quede como un listado de normas desconectado del objeto del informe.
 % =====================================================================
 
-\section{Marco teórico y normativo}
+\chapter{Marco teórico y normativo}
 \label{sec:marco}
 
 El análisis de una auditoría exige, antes que nada, precisar qué se entiende por
@@ -26,7 +26,7 @@ sección \ref{sec:critico}. La sección cierra con el ciclo PHVA, sobre el cual 
 construye íntegramente la propuesta de mejora continua.
 
 % ---------------------------------------------------------------------
-\subsection{La auditoría ambiental: definición, tipos y delimitación conceptual}
+\section{La auditoría ambiental: definición, tipos y delimitación conceptual}
 
 La auditoría ambiental puede definirse como un proceso \textit{sistemático},
 \textit{documentado} e \textit{independiente} para obtener evidencia objetiva y
@@ -72,7 +72,7 @@ gestión del agua— que acotan su alcance a un aspecto determinado. Una auditor
 integrada, por su parte, examina simultáneamente varios sistemas de gestión, como
 el ambiental, el de calidad y el de seguridad y salud ocupacional.
 
-\subsubsection{Diferencias con la fiscalización y con la evaluación de impacto ambiental}
+\subsection{Delimitación frente a la fiscalización y al EIA}
 
 Una confusión frecuente, y que conviene despejar antes de analizar el caso,
 consiste en tratar como equivalentes tres instrumentos que operan en momentos
@@ -105,8 +105,10 @@ verificara los impactos efectivamente producidos.
 
 La Tabla \ref{tab:auditoria-vs-fiscalizacion} sintetiza estas diferencias.
 
-\begin{table}[H]
-  \centering
+% El preámbulo convierte automáticamente `table` en `table*`, de modo que la
+% tabla abarca las dos columnas y se centra sola. Por eso aquí no se pone
+% [H] ni \centering: en un flotante que abarca columnas, [H] no tiene efecto.
+\begin{table}
   \caption{Diferencias entre auditoría ambiental, fiscalización y evaluación de impacto ambiental}
   \label{tab:auditoria-vs-fiscalizacion}
   \begin{footnotesize}
@@ -146,13 +148,12 @@ La Tabla \ref{tab:auditoria-vs-fiscalizacion} sintetiza estas diferencias.
     \bottomrule
   \end{tabularx}
   \end{footnotesize}
-  \par\vspace{4pt}
-  \raggedright\footnotesize Nota. Elaboración propia a partir de
-  \textcite{iso2018iso19011} y \textcite{congreso2009ley29325,congreso2001ley27446}.
+  \src{elaboración propia a partir de \cite{iso2018iso19011},
+       \cite{congreso2009ley29325} y \cite{congreso2001ley27446}.}
 \end{table}
 
 % ---------------------------------------------------------------------
-\subsection{ISO 14001:2015 y el sistema de gestión ambiental}
+\section{ISO 14001:2015 y el sistema de gestión ambiental}
 
 La ISO 14001:2015 es la norma internacional certificable que establece los
 requisitos de un sistema de gestión ambiental. Su versión de 2015 adoptó la
@@ -187,7 +188,7 @@ vocabulario técnico con el que se clasifican los hallazgos en la sección
 porque haya constituido un criterio de la auditoría original.
 
 % ---------------------------------------------------------------------
-\subsection{ISO 19011:2018 y la conducción de la auditoría}
+\section{ISO 19011:2018 y la conducción de la auditoría}
 
 Si la ISO 14001 establece qué debe cumplirse, la ISO 19011:2018 establece cómo
 verificarlo. Se trata de una norma de directrices —no certificable— para la
@@ -235,14 +236,14 @@ detectada y evitar su repetición, lo que la diferencia de la simple corrección
 síntoma.
 
 % ---------------------------------------------------------------------
-\subsection{Estándares internacionales de desempeño ambiental y social}
+\section{Estándares internacionales de desempeño ambiental y social}
 
 Las normas ISO regulan procesos de gestión, pero no fijan umbrales de desempeño
 sustantivo en materia social ni de derechos humanos. Ese vacío lo cubren los
 estándares que se exponen a continuación, que constituyeron —total o
 parcialmente— los criterios efectivamente aplicados en la auditoría analizada.
 
-\subsubsection{Los Performance Standards de la Corporación Financiera Internacional}
+\subsection{Los Performance Standards de la Corporación Financiera Internacional}
 
 Los Performance Standards de la Corporación Financiera Internacional (IFC)
 establecen las obligaciones ambientales y sociales que asumen los proyectos
@@ -262,7 +263,7 @@ supuestos. El PS8 protege el patrimonio cultural. Como se verá en la sección
 \ref{sec:hallazgos}, cada uno de los siete ejes evaluados por la auditoría admite
 ser mapeado contra al menos uno de estos estándares.
 
-\subsubsection{El Convenio 169 de la Organización Internacional del Trabajo}
+\subsection{El Convenio 169 de la Organización Internacional del Trabajo}
 
 El Convenio 169 sobre pueblos indígenas y tribales en países independientes es el
 instrumento internacional vinculante que establece, en su artículo 6, la
@@ -281,7 +282,7 @@ explica por qué el caso escaló hasta los órganos del sistema interamericano y
 hasta los mecanismos de control de la propia Organización Internacional del
 Trabajo.
 
-\subsubsection{Los Principios Voluntarios en Seguridad y Derechos Humanos}
+\subsection{Los Principios Voluntarios en Seguridad y Derechos Humanos}
 
 Los Principios Voluntarios en Seguridad y Derechos Humanos constituyen el marco de
 referencia internacional para las empresas extractivas en la gestión de la
@@ -296,7 +297,7 @@ del eje de seguridad, ante el riesgo identificado para la integridad personal de
 los residentes por la presencia de seguridad privada armada y de fuerzas públicas
 en el entorno de la operación \parencite{oncommonground2010hria}.
 
-\subsubsection{ICMM, GISTM e IRMA}
+\subsection{ICMM, GISTM e IRMA}
 
 Tres iniciativas sectoriales completan el marco. Los Mining Principles del
 International Council on Mining and Metals establecen compromisos de desempeño
@@ -329,7 +330,7 @@ auditoría financiada por la empresa auditada que se discute en la sección
 \ref{sec:critico}.
 
 % ---------------------------------------------------------------------
-\subsection{Marco normativo peruano de referencia}
+\section{Marco normativo peruano de referencia}
 
 La normativa que se expone a continuación no resultaba aplicable a la operación
 guatemalteca. Se incorpora deliberadamente al marco teórico con una finalidad
@@ -384,7 +385,7 @@ existencia de un aparato fiscalizador no evita por sí sola el conflicto
 exigibilidad y no de resultados garantizados.
 
 % ---------------------------------------------------------------------
-\subsection{El ciclo PHVA como base de la mejora continua}
+\section{El ciclo PHVA como base de la mejora continua}
 
 El ciclo Planificar-Hacer-Verificar-Actuar constituye el esquema lógico sobre el
 que se estructura la ISO 14001:2015 y, en consecuencia, la propuesta desarrollada

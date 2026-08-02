@@ -2,16 +2,17 @@
 %  COMANDOS Y ATAJOS PROPIOS DEL INFORME
 %  Objetivo: escribir siempre igual los nombres largos y las unidades,
 %  para que el documento quede uniforme aunque lo redacten 5 personas.
+%
+%  NOTA: los tipos de columna L{}, C{} y R{} ya NO se definen aquí.
+%  Los define config/preambulo.tex, que es donde vive el formato de
+%  tablas. Definirlos dos veces provoca el error «Column type already
+%  defined».
 % =====================================================================
 
-% --- Tipos de columna para tablas ------------------------------------
-% L{3cm} = columna de ancho fijo alineada a la izquierda con salto de línea
-% C{3cm} = ídem centrada       R{3cm} = ídem alineada a la derecha
-% Se usan sobre todo en la matriz de no conformidades (Tabla 3).
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
-% Y = como X de tabularx pero con el texto sin justificar (evita huecos feos)
+% --- Tipo de columna adicional ---------------------------------------
+% Y = como la X de tabularx, pero con el texto sin justificar. Evita los
+% huecos feos entre palabras en columnas estrechas, que en dos columnas
+% se notan mucho más que en una.
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 % --- Nombres recurrentes ---------------------------------------------
@@ -38,14 +39,14 @@
 
 % --- Marcador de pendiente -------------------------------------------
 % \pendiente{texto} imprime una nota visible en el PDF mientras se redacta.
-% CUANDO EL INFORME ESTÉ TERMINADO: comenta la primera definición y
-% descomenta la segunda para que los pendientes desaparezcan del PDF final.
+% CUANDO EL INFORME ESTÉ TERMINADO: descomenta la segunda línea para que
+% los pendientes desaparezcan del PDF final.
 \newcommand{\pendiente}[1]{\textcolor{red}{\small[PENDIENTE: #1]}}
 %\renewcommand{\pendiente}[1]{}
 
 % --- Cita textual destacada ------------------------------------------
-% APA: las citas de más de 40 palabras van en bloque, sin comillas y
-% con sangría. \citalarga{texto}{referencia} lo hace automáticamente.
+% Para citas largas en bloque. En dos columnas conviene que vayan en
+% cuerpo menor, porque el ancho de columna es reducido.
 \newenvironment{citalarga}
-  {\begin{quote}\singlespacing\small}
+  {\begin{quote}\small}
   {\end{quote}\normalsize}

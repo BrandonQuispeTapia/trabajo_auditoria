@@ -1,48 +1,55 @@
-% =====================================================================
-%  INFORME ACADÉMICO — EVI. 6
-%  Auditoría socioambiental de la Mina Marlin
+% ============================================================
+%  main.tex — FORMATO ACADÉMICO BASADO EN IEEE (dos columnas)
+%  Informe EVI. 6 — Auditoría socioambiental de la Mina Marlin
 %  (Montana Exploradora de Guatemala, S.A. / Goldcorp), San Marcos, Guatemala
+%  UNAP-FIM | Escuela Profesional de Ingeniería de Minas
 %
-%  Compilador: pdfLaTeX      Motor bibliográfico: Biber
-%  Repositorio: https://github.com/BrandonQuispeTapia/trabajo_auditoria.git
+%  Compilar con: pdflatex -> biber -> pdflatex -> pdflatex
+%  (o simplemente: latexmk -pdf main.tex)
 %
 %  ATENCIÓN AL GRUPO: este archivo y config/preambulo.tex los toca UNA
 %  SOLA PERSONA. Cada integrante edita únicamente su archivo de secciones/.
-% =====================================================================
+%
+%  JERARQUÍA DE TÍTULOS EN LOS ARCHIVOS DE secciones/:
+%     \chapter{}       -> capítulo      (nivel 1, centrado y grande)
+%     \section{}       -> sección       (nivel 2, negrita)
+%     \subsection{}    -> subsección    (nivel 3, cursiva)
+%     \subsubsection{} -> sub-subsec.   (nivel 4, cursiva en línea)
+% ============================================================
 
-\documentclass[12pt,a4paper]{article}
+\documentclass[journal,onecolumn,10pt,a4paper]{IEEEtran}
 
 % --- Configuración (no editar sin avisar al grupo) -------------------
 \input{config/preambulo}
+\input{config/portada}
 \input{config/comandos}
 
 \begin{document}
 
-% --- Portada ---------------------------------------------------------
-% La numeración romana empieza AQUÍ, en la portada (que cuenta como página i
-% aunque el número no se imprima). Si la portada quedara fuera de la
-% numeración romana, sería «página 1 arábiga» igual que la primera página del
-% cuerpo, y hyperref generaría dos anclas con el mismo nombre.
-\pagenumbering{roman}
-\input{config/portada}
+\maketitle
 
-% --- Preliminares (índices y resumen) --------------------------------
-\setcounter{page}{2}
+% ------------------------------------------------------------
+%  RESUMEN + PALABRAS CLAVE (a una columna)
+% ------------------------------------------------------------
+\input{secciones/00_resumen}          % Todos (se redacta al final)
 
+% ------------------------------------------------------------
+%  ÍNDICES (a una columna, justo después del resumen)
+%  tocdepth=2 -> el índice llega hasta el nivel "Sección" y no baja
+%  a subsección, para que quede corto y limpio.
+% ------------------------------------------------------------
+\setcounter{tocdepth}{2}
 \tableofcontents
-\newpage
 
+% Los índices de figuras y tablas los pedía la estructura del curso.
+% Si el docente no los exige, comenta estas dos líneas.
 \listoffigures
 \listoftables
-\newpage
 
-% Resumen ejecutivo — SE ESCRIBE AL FINAL, entre todos
-\input{secciones/00_resumen}
-\newpage
-
-% --- Cuerpo del informe (numeración arábiga) -------------------------
-\pagenumbering{arabic}
-\setcounter{page}{1}
+% ------------------------------------------------------------
+%  A PARTIR DE AQUÍ, DOS COLUMNAS
+% ------------------------------------------------------------
+\twocolumn
 
 \input{secciones/01_introduccion}      % Todos (al final, en conjunto)
 \input{secciones/02_objetivos}         % Todos (al final, en conjunto)
@@ -55,18 +62,24 @@
 \input{secciones/09_conclusiones}      % Integrante 5
 \input{secciones/10_recomendaciones}   % Integrante 5
 
-% --- Referencias (APA 7, generadas por Biber) ------------------------
-% \nocite{*} fuerza que TODAS las entradas de referencias.bib aparezcan en
-% la lista, aunque todavía no estén citadas en el texto. Es útil mientras se
-% redacta: el grupo ve la bibliografía completa desde el primer día.
-% >>> COMENTAR ESTA LÍNEA ANTES DE LA ENTREGA FINAL <<<
-% APA exige que la lista contenga solo las obras efectivamente citadas.
+% ------------------------------------------------------------
+%  REFERENCIAS
+%  Estilo IEEE numérico: las citas salen como [1], [2], ordenadas
+%  por orden de aparición en el texto.
+%
+%  \nocite{*} fuerza que TODAS las entradas de referencias.bib
+%  aparezcan aunque aún no estén citadas. Es útil mientras se redacta.
+%  >>> COMENTAR ESTA LÍNEA ANTES DE LA ENTREGA FINAL <<<
+% ------------------------------------------------------------
 \nocite{*}
+\printbibliography[heading=referencias,title={Referencias}]
 
-\newpage
-\printbibliography[heading=bibintoc,title={Referencias}]
-
-% --- Anexos ----------------------------------------------------------
-\input{secciones/11_anexos}            % Integrante 2 y 4
+% ------------------------------------------------------------
+%  ANEXOS
+%  Vuelven a UNA columna: las matrices de no conformidades y la
+%  cronología usan longtable, que no funciona en dos columnas.
+% ------------------------------------------------------------
+\onecolumn
+\input{secciones/11_anexos}            % Integrantes 2 y 4
 
 \end{document}

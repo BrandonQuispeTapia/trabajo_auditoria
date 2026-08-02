@@ -1,15 +1,24 @@
 % =====================================================================
 %  ANEXOS
 %  Responsables: INTEGRANTE 2 (Anexos A y E) e INTEGRANTE 4 (Anexos B, C y D)
-%  Extensión: libre, no cuenta para el objetivo de 40 páginas del cuerpo.
+%  Extensión: libre, no cuenta para el objetivo de páginas del cuerpo.
 %
-%  \appendix hace que las secciones pasen a numerarse con letras (A, B, C...)
+%  DOS COSAS IMPORTANTES DE ESTE FORMATO:
+%
+%  1. main.tex conmuta a UNA COLUMNA (\onecolumn) antes de incluir este
+%     archivo. Por eso aquí SÍ se puede usar longtable, que no funciona
+%     en modo de dos columnas. Es el único sitio del informe donde se
+%     puede.
+%
+%  2. Los anexos se rotulan a mano (Anexo A, B, C...) con \chapter* y se
+%     añaden al índice con \addcontentsline. No se usa \appendix: en
+%     IEEEtran, combinado con el adaptador de jerarquía del preámbulo,
+%     produce resultados impredecibles.
 % =====================================================================
 
-\appendix
 \newpage
-
-\section{Mapa de ubicación ampliado}
+\chapter*{Anexo A. Mapa de ubicación ampliado}
+\addcontentsline{toc}{section}{Anexo A. Mapa de ubicación ampliado}
 \label{anexo:mapa}
 
 % TODO: Versión a página completa del mapa de la Figura 1, con el detalle de
@@ -20,26 +29,54 @@
 %   atribución «© OpenStreetMap contributors» (licencia ODbL) es obligatoria.
 %   Si usas el mapa del conflicto de OCMAL, cítalo. \cite{ocmalsfmarlin}
 %
-%\begin{figure}[H]
+%\begin{figure}
 %  \centering
-%  \includegraphics[width=\textwidth]{imagenes/mapas/mapa_ampliado.png}
+%  \includegraphics[width=0.9\textwidth]{imagenes/mapas/mapa_ampliado.png}
 %  \caption{Mapa ampliado del área de influencia de la Mina Marlin}
 %  \label{fig:mapa-ampliado}
-%  \footnotesize Nota. Mapa base de OpenStreetMap, © OpenStreetMap contributors, licencia ODbL.
 %\end{figure}
 
 \newpage
-\section{Matriz de no conformidades completa}
+\chapter*{Anexo B. Matriz de no conformidades completa}
+\addcontentsline{toc}{section}{Anexo B. Matriz de no conformidades completa}
 \label{anexo:matriz}
 
-% TODO: Si la Tabla 3 de la sección 6 quedó demasiado larga para el cuerpo
-%   del informe, deja allí un extracto con los hallazgos principales y
-%   coloca aquí la matriz íntegra, con TODOS los hallazgos de los siete ejes.
-%   Usa la misma estructura de columnas y el mismo entorno longtable dentro
-%   de landscape.
+% TODO: En el capítulo 6 va un EXTRACTO de la matriz (los hallazgos
+%   principales, en una tabla que abarca las dos columnas). Aquí va la
+%   matriz ÍNTEGRA, con todos los hallazgos de los siete ejes.
+%   Como estamos a una columna, aquí sí funciona longtable.
+%
+%\begin{landscape}
+%\begin{footnotesize}
+%\begin{longtable}{@{}L{1.8cm} L{4cm} L{4cm} L{3cm} L{1.8cm} L{4cm} L{2cm}@{}}
+%  \caption{Matriz completa de no conformidades de la auditoría socioambiental de la Mina Marlin}
+%  \label{tab:matriz-nc-completa} \\
+%  \toprule
+%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
+%  \midrule
+%  \endfirsthead
+%  \multicolumn{7}{l}{\footnotesize\textit{Tabla \ref{tab:matriz-nc-completa} (continuación)}} \\
+%  \toprule
+%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
+%  \midrule
+%  \endhead
+%  \bottomrule
+%  \multicolumn{7}{l}{\footnotesize Fuente: elaboración propia a partir de \cite{oncommonground2010hria}.} \\
+%  \endlastfoot
+%  Consulta    & & & Convenio 169 {OIT}, art. 6 & \NCmayor & & \\
+%  Ambiente    & & &                            &          & & \\
+%  Trabajo     & & &                            &          & & \\
+%  Tierras     & & & {IFC} {PS}5                &          & & \\
+%  Inversión   & & &                            &          & & \\
+%  Seguridad   & & & {VPSHR}                    &          & & \\
+%  Remediación & & & {IFC} {PS}1                &          & & \\
+%\end{longtable}
+%\end{footnotesize}
+%\end{landscape}
 
 \newpage
-\section{Cronología del caso (1996--2017)}
+\chapter*{Anexo C. Cronología del caso (1996--2017)}
+\addcontentsline{toc}{section}{Anexo C. Cronología del caso (1996--2017)}
 \label{anexo:cronologia}
 
 % TODO: Tabla de dos columnas (fecha / hecho). Hitos que no pueden faltar:
@@ -74,7 +111,8 @@
 %\end{longtable}
 
 \newpage
-\section{Fichas de los estándares aplicados}
+\chapter*{Anexo D. Fichas de los estándares aplicados}
+\addcontentsline{toc}{section}{Anexo D. Fichas de los estándares aplicados}
 \label{anexo:estandares}
 
 % TODO: Una ficha breve por estándar, con: nombre completo, organismo emisor,
@@ -82,9 +120,12 @@
 %   pertinencia para este caso. Estándares a fichar:
 %   ISO 14001:2015, ISO 19011:2018, IFC Performance Standards,
 %   Convenio 169 de la OIT, VPSHR, ICMM Mining Principles, GISTM e IRMA.
+%   Sugerencia: la macro \recuadro{título}{contenido} del preámbulo da un
+%   formato de ficha limpio y homogéneo.
 
 \newpage
-\section{Glosario de siglas}
+\chapter*{Anexo E. Glosario de siglas}
+\addcontentsline{toc}{section}{Anexo E. Glosario de siglas}
 \label{anexo:glosario}
 
 % TODO: Lista alfabética. Como mínimo:
