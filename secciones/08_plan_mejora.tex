@@ -415,16 +415,60 @@ verificable:
         ISO 19011:2018 y sistema de aseguramiento de IRMA.
 \end{itemize}
 
-% --- FIGURA 4: Ciclo PHVA aplicado al caso ---------------------------
-% PENDIENTE DE INSERTAR. Sugerencia: círculo de cuatro cuadrantes; en cada
-% uno, las acciones de la Tabla 7 que le corresponden según la columna
-% «Fase». Dibújalo en TikZ o expórtalo a PDF en imagenes/diagramas/.
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=0.8\textwidth]{imagenes/diagramas/ciclo_phva.pdf}
-%  \caption{Ciclo PHVA aplicado a la gestión socioambiental de la Mina Marlin}
-%  \label{fig:phva}
-%  \par\vspace{2pt}
-%  \raggedright\footnotesize Nota. Elaboración propia a partir de
-%  \textcite{iso2015iso14001}.
-%\end{figure}
+% --- FIGURA 4: Ciclo PHVA aplicado al caso (dibujada en TikZ) --------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+      fase/.style={draw,rounded corners=3pt,minimum width=6.3cm,minimum height=2.5cm,
+                   align=left,font=\scriptsize,inner sep=6pt},
+      titulo/.style={font=\small\bfseries},
+      fl/.style={-{Stealth[length=3mm]},very thick,azuloscuro}
+    ]
+    \node[fase,fill=grisclaro] (p) at (-3.5,2.0)
+      {\textbf{\normalsize PLANIFICAR}\\[3pt]
+       $\bullet$ Aspectos e impactos: cianuro, relaves,\\
+       \phantom{$\bullet$} drenaje ácido, agua, tierras, seguridad\\
+       $\bullet$ Requisitos legales, contractuales\\
+       \phantom{$\bullet$} y voluntarios en tres capas\\
+       $\bullet$ Un objetivo por cada NC mayor\\
+       $\bullet$ Análisis de partes interesadas};
+
+    \node[fase] (h) at (3.5,2.0)
+      {\textbf{\normalsize HACER}\\[3pt]
+       $\bullet$ Controles de cianuro y de relaves\\
+       $\bullet$ Consulta previa, libre e informada\\
+       $\bullet$ Mecanismo de quejas con registro,\\
+       \phantom{$\bullet$} plazo e idioma propio\\
+       $\bullet$ Adhesión formal a los VPSHR};
+
+    \node[fase] (v) at (3.5,-1.2)
+      {\textbf{\normalsize VERIFICAR}\\[3pt]
+       $\bullet$ \textbf{Línea base pública y auditable}\\
+       $\bullet$ Monitoreo participativo\\
+       \phantom{$\bullet$} (modelo Espinar)\\
+       $\bullet$ Auditorías internas ISO 19011\\
+       $\bullet$ \textbf{Verificación IRMA de tercera parte}};
+
+    \node[fase,fill=grisclaro] (a) at (-3.5,-1.2)
+      {\textbf{\normalsize ACTUAR}\\[3pt]
+       $\bullet$ Análisis de causa raíz\\
+       $\bullet$ \textbf{Criterio escrito de cierre}\\
+       \phantom{$\bullet$} validado por un tercero\\
+       $\bullet$ Revisión por la dirección\\
+       $\bullet$ Cierre y post-cierre};
+
+    % Flechas del ciclo
+    \draw[fl] (p.east) -- (h.west);
+    \draw[fl] (h.south) -- (v.north);
+    \draw[fl] (v.west) -- (a.east);
+    \draw[fl] (a.north) -- (p.south);
+  \end{tikzpicture}
+  \caption{Ciclo PHVA aplicado a la gestión socioambiental de la Mina Marlin}
+  \label{fig:phva}
+  \par\vspace{2pt}
+  \raggedright\footnotesize
+  Nota. En negrita, las tres acciones que responden directamente a los dos
+  fallos sistémicos identificados en la sección \ref{sec:hallazgos}: la
+  ausencia de línea base y la ausencia de verificación del cierre.
+  Elaboración propia a partir de \textcite{iso2015iso14001}.
+\end{figure}

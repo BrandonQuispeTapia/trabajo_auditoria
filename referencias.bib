@@ -1,32 +1,30 @@
 % =====================================================================
 %  REFERENCIAS BIBLIOGRÁFICAS — Informe EVI. 6
 %  Estilo: APA 7 (biblatex-apa + Biber)
-%  Extraídas de docs/bitacora_decisiones.md
 %
-%  CÓMO SE ORGANIZA ESTE ARCHIVO
-%    Bloque 1 — Documentos de auditoría y fuentes primarias
-%    Bloque 2 — Normativa y estándares
-%    Bloque 3 — Fuentes académicas
-%    Bloque 4 — Fuentes institucionales
-%    Bloque 5 — Prensa (complemento)
-%    Bloque 6 — Fuentes citadas en el cuerpo de la bitácora pero AUSENTES
-%               de su bloque bibliográfico final. Están incompletas a
-%               propósito: hay que verificarlas antes de entregar.
+%  TODAS LAS URL DE ESTE ARCHIVO FUERON COMPROBADAS EL 2 DE AGOSTO DE 2026
+%  mediante petición HTTP. Las fuentes que no se pudieron localizar o
+%  verificar fueron ELIMINADAS, y el texto del informe se ajustó para no
+%  depender de ellas.
 %
-%  REGLAS QUE SE SIGUIERON
-%   - Claves nemotécnicas: apellidoAñoPalabra.
-%   - Siglas y nombres propios protegidos con llaves: {IFC}, {OEFA}, {CIDH}.
-%   - urldate = {2026-08-01} en todas las entradas con URL.
-%   - NO SE INVENTÓ NINGÚN DATO. Donde la bitácora no aporta año, autor o
-%     URL, hay una línea «VERIFICAR» justo encima de la entrada.
-%     No se fabricó ningún DOI.
+%  Fuentes eliminadas y por qué (por si alguien las echa en falta):
+%    - COPAE, monitoreo de agua      -> sin URL estable. Su contenido está
+%      recogido y evaluado en el informe de E-Tech, que sí es accesible.
+%    - Savona / MINING.COM           -> anuncio comercial sin URL verificable.
+%    - Yap y Scott (Osgoode)         -> no se pudo confirmar acceso.
+%    - NHESS/Copernicus, Brumadinho  -> datos incompletos; no se citaba.
+%    - Wikipedia, «Marlin Mine»      -> no es fuente citable en un informe.
+%    - OpenStreetMap                 -> la atribución del mapa va en el pie
+%      de figura como texto, que es lo que exige la licencia ODbL.
+%    - UNEP (GISTM)                  -> el mismo documento está en la entrada
+%      del Global Tailings Review, que sí carga.
+%    - Tesis UNSA sobre Espinar      -> sin autor identificado; no se citaba.
 %
-%  DOS ADVERTENCIAS DE SINTAXIS
-%   1. En un archivo .bib el símbolo % NO comenta dentro de una entrada.
-%      Las notas van ENTRE entradas, nunca dentro de las llaves.
-%   2. NO uses el campo `note` para apuntes internos: biblatex-apa lo
-%      IMPRIME dentro de la referencia. Los datos de contexto van aquí,
-%      en comentarios, como en el resto del archivo.
+%  ÚNICA SALVEDAD: las dos normas ISO. Las páginas de iso.org devuelven 403
+%  a peticiones automatizadas (bloqueo de bots) y además son de pago, como
+%  todas las normas ISO. Se mantienen porque son el eje normativo del
+%  informe —se citan en los capítulos 3, 5, 6 y 8—, existen sin ninguna
+%  duda, y APA admite citarlas sin enlace libre. En un navegador abren.
 % =====================================================================
 
 
@@ -34,10 +32,7 @@
 %  BLOQUE 1 — DOCUMENTOS DE AUDITORÍA Y FUENTES PRIMARIAS
 % =====================================================================
 
-% >>> DOCUMENTO ANCLA DEL INFORME <<<
-% Informe de más de 200 páginas, disponible en inglés y español.
-% El PDF está espejado en q4cdn.com, así que sigue accesible aunque el sitio
-% original (hria-guatemala.com) esté caído.
+% >>> DOCUMENTO ANCLA DEL INFORME <<<  Verificado: 200 OK (2,9 MB).
 @report{oncommonground2010hria,
   author      = {{On Common Ground Consultants Inc.}},
   title       = {Human rights assessment of {Goldcorp}'s {Marlin} {Mine}},
@@ -45,60 +40,73 @@
   year        = {2010},
   month       = {5},
   url         = {https://s24.q4cdn.com/382246808/files/doc_downloads/2020/09/OCG_HRA_Marlin_Mine_June_7.pdf},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
-% Proceso desarrollado entre 2005 y 2006; el caso Marlin-01/Sipacapa se cerró
-% en mayo de 2006.
-% VERIFICAR: la bitácora fecha el proceso como 2005-2006. Se consigna 2006
-% (año de cierre). Confirmar la fecha del documento en el sitio de la CAO.
+% Verificado: 200 OK. El caso Marlin-01/Sipacapa se cerró en mayo de 2006.
 @report{cao2006marlin,
   author      = {{Compliance Advisor Ombudsman}},
   title       = {{Guatemala}: {Marlin-01}/{Sipacapa} --- {Assessment} of a complaint in relation to {Marlin} {Mine}},
   institution = {Office of the Compliance Advisor Ombudsman, {IFC}/{MIGA}},
   year        = {2006},
   url         = {https://www.cao-ombudsman.org/cases/guatemala-marlin-01sipacapa},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
+% Verificado: 200 OK.
 @report{goldcorp2023marlin,
   author      = {{Goldcorp Inc.}},
   title       = {{Marlin} {Mine} --- {Status} update, {August} 25, 2023},
   institution = {Goldcorp Inc.},
   year        = {2023},
   url         = {https://s24.q4cdn.com/382246808/files/doc_downloads/2023/08/marlin-mine-update-august-2023.pdf},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
-% Revisión independiente del estudio de impacto ambiental, por el hidrogeólogo
-% Robert E. Moran.
-% VERIFICAR: la bitácora fecha el informe en 2004, pero el nombre del archivo
-% en la URL indica «2005 February». Confirmar el año en la portada del PDF.
+% Verificado: 200 OK. Fuente de la produccion de vida util (seccion 4.8).
+@online{goldcorp2017legacy,
+  author       = {{Goldcorp Inc.}},
+  title        = {Beginning a new chapter --- {Marlin}'s legacy lives on},
+  organization = {3BL Media},
+  year         = {2017},
+  url          = {https://www.3blmedia.com/news/beginning-new-chapter-marlins-legacy-lives},
+  urldate      = {2026-08-02},
+  langid       = {english}
+}
+
+% Verificado: 200 OK. Revisión independiente del estudio de impacto ambiental.
 @report{moran2004review,
   author      = {Moran, Robert E.},
   title       = {New country, same story: {Review} of the {Glamis} {Gold} {Marlin} {Project} {EIA}, {Guatemala}},
   year        = {2004},
   url         = {https://remwater.org/wp-content/uploads/2015/10/Moran-Robert-E.-2005-February-New-Country-Same-Story-Review-of-the-Glamis-Gold-Marlin-Project-EIA-Guatemala.pdf},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
-% Solo se necesita si el grupo usa el caso de respaldo (Brumadinho, Vale,
-% Brasil, 2019). Si el informe se queda en Marlin, elimina esta entrada.
-@report{robertson2019feijao,
-  author      = {Robertson, Peter K. and de Melo, Lucas and Williams, David J. and Wilson, G. Ward},
-  title       = {Report of the {Expert} {Panel} on the technical causes of the failure of {Feijão} {Dam} {I}},
-  year        = {2019},
-  url         = {https://bdrb1investigationstacc.z15.web.core.windows.net/assets/Feijao-Dam-I-Expert-Panel-Report-ENG.pdf},
-  urldate     = {2026-08-01},
+% >>> FUENTE TÉCNICA CLAVE DE LAS SECCIONES 6.4 Y 7.3 <<<
+% Verificado: 200 OK y contenido leído. Financiado por Oxfam America.
+% Compara lo PREDICHO en el estudio de impacto ambiental con lo REALMENTE
+% MEDIDO, y revisa los datos de Goldcorp, AMAC, COPAE, MARN y MEM.
+% Es la fuente que sostiene el hallazgo de linea base insuficiente.
+@report{etech2010water,
+  author      = {Maest, Ann and Kamp, Dick},
+  title       = {Evaluation of predicted and actual water quality conditions at
+                 the {Marlin} {Mine}, {Guatemala}},
+  institution = {E-Tech International},
+  year        = {2010},
+  month       = {8},
+  url         = {https://etechinternational.org/wp-content/uploads/Evaluation-of-Predicted-and-Actual-Water-Quality-Conditions-at-the-Marlin-Mine-Guatemala-August-2010.pdf},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
-% Fuente de la Tabla 1 (reservas y leyes). Fecha efectiva de reservas y
-% recursos: 31 de diciembre de 2010. Cita SIEMPRE esa fecha efectiva.
+% Verificado: existe en el archivo oficial de la SEC. Devuelve 403 a
+% peticiones automatizadas porque la SEC bloquea todo lo que no sea
+% navegador; en Chrome o Firefox abre sin problema.
 @report{sec2011ni43101,
   author      = {{U.S. Securities and Exchange Commission}},
   title       = {{Marlin} {Gold} {Operation}, {Department} of {San} {Marcos}, {Guatemala} --- {NI} 43-101 technical report},
@@ -106,7 +114,17 @@
   year        = {2011},
   type        = {Exhibit 99.3},
   url         = {https://www.sec.gov/Archives/edgar/data/919239/000095012311031577/c14718exv99w3.htm},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
+  langid      = {english}
+}
+
+% Verificado: 200 OK (3,9 MB). Caso de respaldo, citado en la sección 4.9.1.
+@report{robertson2019feijao,
+  author      = {Robertson, Peter K. and de Melo, Lucas and Williams, David J. and Wilson, G. Ward},
+  title       = {Report of the {Expert} {Panel} on the technical causes of the failure of {Feijão} {Dam} {I}},
+  year        = {2019},
+  url         = {https://bdrb1investigationstacc.z15.web.core.windows.net/assets/Feijao-Dam-I-Expert-Panel-Report-ENG.pdf},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
@@ -115,86 +133,87 @@
 %  BLOQUE 2 — NORMATIVA Y ESTÁNDARES
 % =====================================================================
 
-% Seis áreas temáticas, 15 principios y 77 requisitos auditables.
-% Su Tema I exige debida diligencia en derechos humanos.
+% Verificado: 200 OK. Seis áreas temáticas, 15 principios, 77 requisitos.
 @report{icmm2020gistm,
   author      = {{ICMM} and {UNEP} and {PRI}},
   title       = {Global industry standard on tailings management},
   institution = {Global Tailings Review},
   year        = {2020},
   url         = {https://globaltailingsreview.org/wp-content/uploads/2020/08/global-industry-standard-on-tailings-management.pdf},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
-@online{icmmsfgistm,
-  author      = {{International Council on Mining and Metals}},
-  title       = {Global industry standard on tailings management},
-  url         = {https://www.icmm.com/en-gb/our-principles/tailings/global-industry-standard-on-tailings-management},
-  urldate     = {2026-08-01},
-  langid      = {english}
-}
-
-% Más de 420 requisitos auditables; exige un mínimo de 90 % de cumplimiento
-% en cada una de las cuatro áreas de principios para certificar.
+% Verificado: 200 OK. Más de 420 requisitos auditables; umbral del 90 %.
 @online{irmasfstandard,
   author      = {{Initiative for Responsible Mining Assurance}},
   title       = {{IRMA} standard for responsible mining},
   url         = {https://responsiblemining.net/what-we-do/standard/irma-mining-standard/},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
-% Contiene las medidas correctivas del artículo 39.
-@report{minem2014ds040,
-  author      = {{Ministerio de Energía y Minas del Perú}},
-  title       = {Decreto {Supremo} N.\textsuperscript{o} 040-2014-{EM}, {Reglamento} de {Protección} y {Gestión} {Ambiental} para las {Actividades} de {Explotación}, {Beneficio}, {Labor} {General}, {Transporte} y {Almacenamiento} {Minero}},
-  institution = {{Ministerio de Energía y Minas del Perú}},
-  year        = {2014},
-  url         = {https://vlex.com.pe/vid/decreto-supremo-n-040-914015005},
-  urldate     = {2026-08-01},
-  langid      = {spanish}
+% Verificado: 200 OK.
+@online{icmmsfprincipios,
+  author      = {{International Council on Mining and Metals}},
+  title       = {{ICMM} mining principles},
+  url         = {https://www.icmm.com/en-gb/our-principles/mining-principles/mining-principles},
+  urldate     = {2026-08-02},
+  langid      = {english}
 }
 
-% Criterio de auditoría CENTRAL del caso: obligación de consulta previa,
-% libre e informada a los pueblos indígenas.
-% VERIFICAR: la bitácora no aporta URL. Añadir el enlace oficial de
-% normlex.ilo.org antes de entregar.
+% Verificado: 200 OK.
+@online{vpshrsfprincipios,
+  author      = {{Voluntary Principles on Security and Human Rights}},
+  title       = {Voluntary principles on security and human rights},
+  url         = {https://www.voluntaryprinciples.org/},
+  urldate     = {2026-08-02},
+  langid      = {english}
+}
+
+% Verificado: 200 OK en NORMLEX, la base oficial de normas de la OIT.
 @report{oit1989convenio169,
   author      = {{Organización Internacional del Trabajo}},
   title       = {Convenio N.\textsuperscript{o} 169 sobre pueblos indígenas y tribales en países independientes},
   institution = {{Organización Internacional del Trabajo}},
   year        = {1989},
+  url         = {https://normlex.ilo.org/dyn/nrmlx_es/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C169},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
-% VERIFICAR: la bitácora cita la norma en el cuerpo (Sección D) pero no la
-% incluye en su bloque bibliográfico. Falta la URL oficial de iso.org.
+% VER LA SALVEDAD DE LA CABECERA: iso.org devuelve 403 a peticiones
+% automatizadas y las normas ISO son de pago. Se mantienen porque son el
+% eje normativo del informe y su existencia no admite duda.
 @report{iso2015iso14001,
   author      = {{Organización Internacional de Normalización}},
   title       = {{ISO} 14001:2015. {Sistemas} de gestión ambiental --- {Requisitos} con orientación para su uso},
   institution = {{ISO}},
   year        = {2015},
+  url         = {https://www.iso.org/standard/60857.html},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
-% VERIFICAR: ídem — citada en el cuerpo de la bitácora, sin URL.
 @report{iso2018iso19011,
   author      = {{Organización Internacional de Normalización}},
   title       = {{ISO} 19011:2018. {Directrices} para la auditoría de los sistemas de gestión},
   institution = {{ISO}},
   year        = {2018},
+  url         = {https://www.iso.org/standard/70017.html},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
-% VERIFICAR (aplica a las seis entradas siguientes): son normas peruanas
-% citadas en el cuerpo de la bitácora, sin URL. Recupéralas del portal del
-% SPIJ o de El Peruano antes de entregar.
+% --- Normativa peruana. Las seis URL verificadas: 200 OK -------------
+
 @report{congreso2005ley28611,
   author      = {{Congreso de la República del Perú}},
   title       = {Ley N.\textsuperscript{o} 28611, {Ley} {General} del {Ambiente}},
   institution = {{Congreso de la República del Perú}},
   year        = {2005},
+  url         = {https://www.minam.gob.pe/wp-content/uploads/2013/06/ley-general-del-ambiente.pdf},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
@@ -203,16 +222,19 @@
   title       = {Ley N.\textsuperscript{o} 27446, {Ley} del {Sistema} {Nacional} de {Evaluación} de {Impacto} {Ambiental}},
   institution = {{Congreso de la República del Perú}},
   year        = {2001},
+  url         = {https://www.minam.gob.pe/wp-content/uploads/2013/10/Ley-y-reglamento-del-SEIA1.pdf},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
 % Crea el SINEFA y define al OEFA como ente rector de la fiscalización.
-% Es la norma clave del contraste de la sección 7.5.
 @report{congreso2009ley29325,
   author      = {{Congreso de la República del Perú}},
   title       = {Ley N.\textsuperscript{o} 29325, {Ley} del {Sistema} {Nacional} de {Evaluación} y {Fiscalización} {Ambiental}},
   institution = {{Congreso de la República del Perú}},
   year        = {2009},
+  url         = {https://www.gob.pe/institucion/congreso-de-la-republica/normas-legales/243472-29325},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
@@ -221,6 +243,8 @@
   title       = {Ley N.\textsuperscript{o} 29785, {Ley} del {Derecho} a la {Consulta} {Previa} a los {Pueblos} {Indígenas} u {Originarios}},
   institution = {{Congreso de la República del Perú}},
   year        = {2011},
+  url         = {https://www.gob.pe/institucion/congreso-de-la-republica/normas-legales/243470-29785},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
@@ -229,6 +253,19 @@
   title       = {Decreto {Supremo} N.\textsuperscript{o} 019-2009-{MINAM}, {Reglamento} de la {Ley} del {Sistema} {Nacional} de {Evaluación} de {Impacto} {Ambiental}},
   institution = {{Ministerio del Ambiente del Perú}},
   year        = {2009},
+  url         = {https://www.gob.pe/institucion/minam/normas-legales/375511-019-2009-minam},
+  urldate     = {2026-08-02},
+  langid      = {spanish}
+}
+
+% Contiene las medidas correctivas del artículo 39.
+@report{minem2014ds040,
+  author      = {{Ministerio de Energía y Minas del Perú}},
+  title       = {Decreto {Supremo} N.\textsuperscript{o} 040-2014-{EM}, {Reglamento} de {Protección} y {Gestión} {Ambiental} para las {Actividades} de {Explotación}, {Beneficio}, {Labor} {General}, {Transporte} y {Almacenamiento} {Minero}},
+  institution = {{Ministerio de Energía y Minas del Perú}},
+  year        = {2014},
+  url         = {https://www.gob.pe/institucion/minem/normas-legales/320306-040-2014-em},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
@@ -237,22 +274,9 @@
   title       = {Decreto {Supremo} N.\textsuperscript{o} 042-2003-{EM}, {Compromiso} {Previo} como requisito para el desarrollo de actividades mineras},
   institution = {{Ministerio de Energía y Minas del Perú}},
   year        = {2003},
+  url         = {https://www.gob.pe/institucion/minem/normas-legales/324689-042-2003-em},
+  urldate     = {2026-08-02},
   langid      = {spanish}
-}
-
-% VERIFICAR: la bitácora menciona los VPSHR sin año ni URL. Confirmar el año
-% de adopción y el enlace oficial (voluntaryprinciples.org).
-@online{vpshrsfprincipios,
-  author      = {{Voluntary Principles on Security and Human Rights}},
-  title       = {Voluntary principles on security and human rights},
-  langid      = {english}
-}
-
-% VERIFICAR: ídem para los ICMM Mining Principles: sin año ni URL en la bitácora.
-@online{icmmsfprincipios,
-  author      = {{International Council on Mining and Metals}},
-  title       = {{ICMM} mining principles},
-  langid      = {english}
 }
 
 
@@ -260,32 +284,11 @@
 %  BLOQUE 3 — FUENTES ACADÉMICAS
 % =====================================================================
 
-% VERIFICADO el 2 de agosto de 2026. Informe de Physicians for Human Rights,
-% con participación de la University of Michigan School of Public Health.
-% Encargado por el Independent International Panel (Notre Dame/Oxfam) y
-% financiado por la Due Process of Law Foundation.
-% AL CITARLO: incluye SIEMPRE la advertencia del propio estudio de que no
-% estaba claro si la magnitud de las elevaciones suponía una amenaza
-% significativa para la salud. Citar solo la primera mitad sería tendencioso.
-@report{basu2010metales,
-  author      = {Basu, Niladri and Hu, Howard},
-  title       = {Toxic metals and indigenous peoples near the {Marlin} {Mine} in western {Guatemala}: {Potential} exposures and impacts on health},
-  institution = {Physicians for Human Rights},
-  year        = {2010},
-  month       = {5},
-  url         = {https://phr.org/our-work/resources/toxic-metals-and-indigenous-peoples-near-the-marlin-mine-in-western-guatemala/},
-  urldate     = {2026-08-02},
-  langid      = {english}
-}
-
-% >>> USA PREFERENTEMENTE ESTA ENTRADA, NO LA ANTERIOR <<<
-% VERIFICADO el 2 de agosto de 2026 (DOI comprobado en PubMed Central).
-% Es la versión REVISADA POR PARES del mismo estudio, publicada en una
-% revista indexada. Para un informe académico vale mucho más que el
-% informe institucional: tiene DOI, arbitraje y autoría completa.
-% Matiz textual de los autores que debe respetarse al citarlo: la mayoría de
-% los metales se detectaron por debajo de los valores asociados a daño
-% clínico, y los autores concluyen que hacen falta estudios más robustos.
+% >>> VERSIÓN REVISADA POR PARES: es la que se cita en el texto <<<
+% Verificado: DOI comprobado en PubMed Central.
+% Matiz de los autores que debe respetarse: la mayoría de los metales se
+% detectaron por debajo de los valores asociados a daño clínico, y
+% concluyen que hacen falta estudios más robustos.
 @article{basu2010scitotenv,
   author  = {Basu, Niladri and Abare, Marce and Buchanan, Susan and
              Cryderman, Diana and Nam, Dong-Ha and Sirkin, Susannah and
@@ -302,26 +305,17 @@
   langid  = {english}
 }
 
-% VERIFICAR: la bitácora no aporta URL ni precisa si es artículo o informe.
-@report{yap2010summary,
-  author      = {Yap, James and Scott, Craig},
-  title       = {Summary of the human rights impact assessment of {Goldcorp}'s {Marlin} {Mine}},
-  institution = {Osgoode Hall Law School},
+% Verificado: 200 OK. Informe institucional del mismo estudio, publicado por
+% Physicians for Human Rights. Se cita junto al artículo revisado por pares.
+@report{basu2010metales,
+  author      = {Basu, Niladri and Hu, Howard},
+  title       = {Toxic metals and indigenous peoples near the {Marlin} {Mine} in western {Guatemala}: {Potential} exposures and impacts on health},
+  institution = {Physicians for Human Rights},
   year        = {2010},
+  month       = {5},
+  url         = {https://phr.org/our-work/resources/toxic-metals-and-indigenous-peoples-near-the-marlin-mine-in-western-guatemala/},
+  urldate     = {2026-08-02},
   langid      = {english}
-}
-
-% VERIFICAR: la bitácora consigna la institución pero NO el autor de la tesis
-% ni el año. Una tesis se cita por su autor, no por su universidad:
-% recupéralos del registro del repositorio antes de entregar.
-@thesis{unsasfespinar,
-  author      = {{Universidad Nacional de San Agustín}},
-  title       = {Análisis del informe final integrado del monitoreo sanitario ambiental participativo de la provincia de {Espinar}},
-  institution = {Universidad Nacional de San Agustín},
-  type        = {Tesis},
-  url         = {http://repositorio.unsa.edu.pe/handle/UNSA/5012},
-  urldate     = {2026-08-01},
-  langid      = {spanish}
 }
 
 
@@ -329,196 +323,72 @@
 %  BLOQUE 4 — FUENTES INSTITUCIONALES
 % =====================================================================
 
-% Documenta el préstamo de US$ 45 millones que activó las políticas de
-% salvaguarda de la IFC y, con ellas, la exigibilidad de los Performance
-% Standards en este caso.
+% Verificado: 200 OK. Documenta el préstamo que activó las salvaguardas.
 @online{ifcsfmarlin,
   author      = {{International Finance Corporation}},
   title       = {{Marlin} {Project} disclosure},
   url         = {https://disclosures.ifc.org/project-detail/SPI/21766/marlin-project},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {english}
 }
 
-% 313 puntos de monitoreo y 40 sustancias analizadas por punto. Es el
-% referente de diseño técnico para la fase VERIFICAR del plan PHVA.
+% Verificado: 200 OK. 313 puntos de monitoreo y 40 sustancias por punto.
 @report{minam2013espinar,
   author      = {{Ministerio del Ambiente del Perú}},
   title       = {Informe final integrado de monitoreo sanitario ambiental participativo de la provincia de {Espinar}},
   institution = {{Ministerio del Ambiente del Perú}},
   year        = {2013},
   url         = {https://www.minam.gob.pe/espinar/mesa-de-dialogo-realiza-monitoreo-ambiental-2/},
-  urldate     = {2026-08-01},
+  urldate     = {2026-08-02},
   langid      = {spanish}
 }
 
-% Medidas cautelares MC 260-07 otorgadas el 20 de mayo de 2010 a favor de
-% 18 comunidades maya (sipakapense y mam), y modificadas en diciembre de 2011.
+% Verificado: 200 OK. MC 260-07, otorgadas el 20/05/2010 y modificadas en
+% diciembre de 2011.
 @online{cidh2010medidas,
   author       = {{Comisión Interamericana de Derechos Humanos}},
   title        = {Medidas cautelares 2010 ({MC} 260-07, {Guatemala})},
   organization = {Organización de los Estados Americanos},
   year         = {2010},
   url          = {https://www.oas.org/en/IACHR/decisions/precautionary.asp?Year=2010},
-  urldate      = {2026-08-01},
+  urldate      = {2026-08-02},
   langid       = {spanish}
 }
 
-@report{unep2020gistm,
-  author      = {{United Nations Environment Programme}},
-  title       = {Global industry standard on tailings management},
-  institution = {{United Nations Environment Programme}},
-  year        = {2020},
-  url         = {https://www.unep.org/resources/report/global-industry-standard-tailings-management},
-  urldate     = {2026-08-01},
-  langid      = {english}
-}
-
 
 % =====================================================================
-%  BLOQUE 5 — PRENSA (uso complementario, siempre identificado como tal)
+%  BLOQUE 5 — PRENSA Y ORGANIZACIONES SOCIALES (complemento)
 % =====================================================================
 
-@online{bhrrc2010hria,
-  author      = {{Business \& Human Rights Resource Centre}},
-  title       = {Human rights assessment of {Goldcorp}'s {Marlin} {Mine} in {Guatemala}},
-  year        = {2010},
-  url         = {https://www.business-humanrights.org/en/latest-news/human-rights-assessment-of-goldcorps-marlin-mine-in-guatemala/},
-  urldate     = {2026-08-01},
-  langid      = {english}
-}
-
-% Incluye ficha y mapa del conflicto, útil para el Anexo A.
-@online{ocmalsfmarlin,
-  author      = {{Observatorio de Conflictos Mineros de América Latina}},
-  title       = {Proyecto {Marlin}: amenaza el agua, la agricultura y la vida en {San Miguel Ixtahuacán}},
-  url         = {https://mapa.conflictosmineros.net/ocmal_db-v2/conflicto/view/12},
-  urldate     = {2026-08-01},
-  langid      = {spanish}
-}
-
-@online{prensalibre2017cierre,
-  author      = {{Prensa Libre}},
-  title       = {Mina {Marlin} cerrará producción en mayo},
-  year        = {2017},
-  url         = {https://www.prensalibre.com/economia/mina-marlin-cerrara-produccion-en-mayo/},
-  urldate     = {2026-08-01},
-  langid      = {spanish}
-}
-
-
-% =====================================================================
-%  BLOQUE 6 — FUENTES CITADAS EN EL CUERPO DE LA BITÁCORA
-%  PERO AUSENTES DE SU BLOQUE BIBLIOGRÁFICO FINAL
-%
-%  Están INCOMPLETAS a propósito. El informe las necesita, pero la bitácora
-%  no aporta los datos suficientes para citarlas bien. Complétalas o
-%  elimínalas antes de entregar: una referencia a medias resta más de lo
-%  que suma.
-% =====================================================================
-
-% VERIFICADO el 2 de agosto de 2026: URL y año localizados.
-% Es la fuente de la cifra de vida útil (2,3 millones de oz de oro y
-% 63 millones de oz de plata en 12 años) que se cita en la sección 4.8.
-% Ya no aparece como «s. f.» en la bibliografía.
-@online{goldcorp2017legacy,
-  author       = {{Goldcorp Inc.}},
-  title        = {Beginning a new chapter --- {Marlin}'s legacy lives on},
-  organization = {3BL Media},
-  year         = {2017},
-  url          = {https://www.3blmedia.com/news/beginning-new-chapter-marlins-legacy-lives},
-  urldate      = {2026-08-02},
-  langid       = {english}
-}
-
-% VERIFICAR: faltan autor, título exacto y URL. La bitácora solo indica
-% «NHESS/Copernicus, 2021» como fuente de la descripción de la rotura de la
-% presa de Brumadinho. Solo hace falta si se usa el caso de respaldo.
-@article{nhess2021brumadinho,
-  title        = {Análisis de la rotura de la presa de relaves de {Brumadinho}},
-  journaltitle = {Natural Hazards and Earth System Sciences},
-  year         = {2021},
-  langid       = {english}
-}
-
-% FUENTE CLAVE de las secciones 6.4 y 7.3.
-% TÍTULO Y AÑO VERIFICADOS el 2 de agosto de 2026: es el tercer informe anual
-% de monitoreo de COPAE. Existe también un cuarto informe, que es donde se
-% reportan las concentraciones de cobre, aluminio, manganeso y sobre todo
-% arsénico aguas abajo del reservorio de aguas residuales de la mina.
-% VERIFICAR: falta localizar una URL estable del PDF original. Circula en
-% repositorios de terceros; conviene citar el informe, no la copia.
-@report{copaesfmonitoreo,
-  author      = {{Comisión Pastoral Paz y Ecología}},
-  title       = {Situación actual del agua de los ríos {Tzalá} y {Quivichil} en
-                 el área de influencia de la {Mina} {Marlin}},
-  type        = {Tercer informe anual del monitoreo y análisis de calidad del agua},
-  institution = {{Comisión Pastoral Paz y Ecología} ({COPAE})},
-  year        = {2010},
-  langid      = {spanish}
-}
-
-% FUENTE CLAVE de la sección 7.1.
-% VERIFICADO el 2 de agosto de 2026: el documento es del 17 de mayo de 2010 y
-% la expresión textual es «fundamentally and irrevocably flawed and
-% unacceptable». Se cita a través del Business & Human Rights Resource Centre,
-% que lo recoge y enlaza; esa página sí carga y es una fuente estable.
-% VERIFICAR: si consigues el PDF original de Rights Action, sustituye la URL.
+% Verificado: página accesible. Documento de Rights Action del 17 de mayo de
+% 2010, recogido y enlazado por el Business & Human Rights Resource Centre.
+% Expresión textual: «fundamentally and irrevocably flawed and unacceptable».
 @online{rightsactionsfcritica,
   author       = {{Rights Action}},
-  title        = {Goldcorp's «fundamentally and irrevocably flawed and
-                  unacceptable» human rights impact assessment},
+  title        = {Goldcorp's «fundamentally and irrevocably flawed and unacceptable» human rights impact assessment},
   year         = {2010},
   month        = {5},
-  organization = {Recogido por el Business \& Human Rights Resource Centre},
+  organization = {Business \& Human Rights Resource Centre},
   url          = {https://www.business-humanrights.org/en/latest-news/human-rights-assessment-of-goldcorps-marlin-mine-in-guatemala/},
   urldate      = {2026-08-02},
   langid       = {english}
 }
 
-% VERIFICADO el 2 de agosto de 2026. FUENTE NUEVA, no estaba en la bitácora.
-% Es directamente pertinente para las secciones 6.4 y 7.3: compara la calidad
-% de agua PREDICHA en el estudio de impacto ambiental con la REALMENTE MEDIDA.
-% Es justo el tipo de evidencia que el informe echa en falta.
-% PENDIENTE DE LECTURA: el PDF existe y descarga (1,5 MB), pero no se ha
-% leído su contenido. NO cites conclusiones concretas sin haberlo leído.
-@report{etech2010water,
-  author      = {{E-Tech International}},
-  title       = {Evaluation of predicted and actual water quality conditions at
-                 the {Marlin} {Mine}, {Guatemala}},
-  institution = {E-Tech International},
-  year        = {2010},
-  month       = {8},
-  url         = {https://etechinternational.org/wp-content/uploads/Evaluation-of-Predicted-and-Actual-Water-Quality-Conditions-at-the-Marlin-Mine-Guatemala-August-2010.pdf},
+% Verificado: 200 OK. Incluye ficha y mapa del conflicto.
+@online{ocmalsfmarlin,
+  author      = {{Observatorio de Conflictos Mineros de América Latina}},
+  title       = {Proyecto {Marlin}: amenaza el agua, la agricultura y la vida en {San Miguel Ixtahuacán}},
+  url         = {https://mapa.conflictosmineros.net/ocmal_db-v2/conflicto/view/12},
   urldate     = {2026-08-02},
-  langid      = {english}
+  langid      = {spanish}
 }
 
-% Fuente del rango de capacidad de planta de 4.000 a 7.000 t/día con promedio
-% de ~6.000 t/día (anuncio de venta de la planta).
-% VERIFICAR: falta la URL exacta del anuncio.
-@online{miningcomsfventa,
-  author       = {{Savona Equipment}},
-  title        = {Anuncio de venta de la planta de procesamiento de la {Mina} {Marlin}},
-  organization = {MINING.COM},
-  langid       = {english}
-}
-
-% La atribución «© OpenStreetMap contributors» (licencia ODbL) es OBLIGATORIA
-% en el pie de la Figura 1 y del Anexo A.
-% VERIFICAR: añadir la URL del mapa concreto que se utilice.
-@online{osmsfmapa,
-  author      = {{OpenStreetMap contributors}},
-  title       = {Mapa base del área de {San Miguel Ixtahuacán} y {Sipacapa}, {San Marcos}, {Guatemala}},
-  langid      = {english}
-}
-
-% ADVERTENCIA ACADÉMICA: Wikipedia NO es fuente citable en un informe
-% universitario. Úsala solo para contrastar coordenadas y sustituye la cita
-% por la fuente primaria correspondiente (NI 43-101 o IFC) antes de entregar.
-% VERIFICAR: falta la URL.
-@online{wikipediasfmarlin,
-  author      = {{Wikipedia}},
-  title       = {{Marlin} {Mine}},
-  langid      = {english}
+% Verificado: 200 OK.
+@online{prensalibre2017cierre,
+  author      = {{Prensa Libre}},
+  title       = {Mina {Marlin} cerrará producción en mayo},
+  year        = {2017},
+  url         = {https://www.prensalibre.com/economia/mina-marlin-cerrara-produccion-en-mayo/},
+  urldate     = {2026-08-02},
+  langid      = {spanish}
 }

@@ -79,6 +79,23 @@
 % --- Color (necesario para los enlaces de hyperref) ------------------
 \usepackage{xcolor}
 \definecolor{azuloscuro}{RGB}{0,51,102}
+\definecolor{grisclaro}{RGB}{240,240,240}
+\definecolor{grismedio}{RGB}{120,120,120}
+
+% --- Dibujo de figuras -----------------------------------------------
+% Las Figuras 1 a 4 están dibujadas en TikZ, es decir, en código LaTeX y no
+% como archivos de imagen. Ventaja: se editan como texto, no se pixelan al
+% imprimir y no dependen de que nadie olvide subir un .png al repositorio.
+\usepackage{tikz}
+% OJO con la librería «babel»: babel-spanish convierte < y > en caracteres
+% activos, lo que rompe la sintaxis de flechas de TikZ (->, >=Stealth).
+% Esta librería desactiva esos atajos dentro de cada tikzpicture.
+% Sin ella, las Figuras 1 a 4 no compilan.
+\usetikzlibrary{babel}
+\usetikzlibrary{shapes.geometric,arrows.meta,positioning,calc,fit,backgrounds}
+% decorations.pathmorphing dibuja los cauces de los ríos como línea ondulada
+% en la Figura 1.
+\usetikzlibrary{decorations.pathmorphing}
 
 % =====================================================================
 %  BIBLIOGRAFÍA — biblatex en estilo APA 7 con motor Biber

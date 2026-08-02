@@ -104,23 +104,70 @@ estos cauces —por drenaje ácido de roca, por infiltración desde el depósito
 relaves o por descarga de efluentes de proceso— se traduce de inmediato en
 afectación de la población. La geografía, aquí, define el mapa del conflicto.
 
-% --- FIGURA 1: Mapa de ubicación -------------------------------------
-% PENDIENTE DE INSERTAR. Cómo obtenerlo: captura un mapa base de
-% OpenStreetMap centrado en 15.234852, -91.689418. Licencia ODbL: la
-% atribución «© OpenStreetMap contributors» es OBLIGATORIA en el pie.
-% Guarda el archivo en imagenes/mapas/ y descomenta este bloque.
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=0.85\textwidth]{imagenes/mapas/mapa_ubicacion_marlin.png}
-%  \caption{Ubicación de la Mina Marlin, departamento de San Marcos, Guatemala}
-%  \label{fig:mapa-ubicacion}
-%  \par\vspace{2pt}
-%  \raggedright\footnotesize Nota. Mapa base de OpenStreetMap,
-%  \textcopyright{} OpenStreetMap contributors, licencia ODbL
-%  \parencite{osmsfmapa}. Coordenadas del yacimiento:
-%  15\textdegree14\textquotesingle05\textquotedbl{} N,
-%  91\textdegree41\textquotesingle22\textquotedbl{} O.
-%\end{figure}
+% --- FIGURA 1: Esquema de ubicación (dibujada en TikZ) ---------------
+% Es un CROQUIS SIN ESCALA, no un mapa cartográfico. Representa solo lo que
+% las fuentes permiten afirmar: la adyacencia de los dos municipios, las
+% tres cuencas y la posición relativa del depósito de relaves al norte de la
+% planta. Si el docente exige mapa cartográfico, añade en el Anexo A una
+% captura de OpenStreetMap centrada en 15.234852, -91.689418 (la atribución
+% «© OpenStreetMap contributors», licencia ODbL, es obligatoria).
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+      muni/.style={draw,rounded corners=2pt,minimum width=5.0cm,minimum height=2.3cm,
+                   fill=grisclaro,align=center,font=\small,inner sep=5pt},
+      infra/.style={draw,circle,inner sep=1.7pt,fill=black},
+      rio/.style={grismedio,thick,decorate,
+                  decoration={snake,amplitude=.4mm,segment length=3mm}},
+      etq/.style={font=\scriptsize,text=grismedio}
+    ]
+    % --- Cabecera de datos ---
+    \node[align=center,font=\scriptsize,anchor=north] at (2.9,4.85)
+      {Departamento de \textbf{San Marcos}, altiplano occidental de Guatemala\\
+       15\textdegree14\textquotesingle05\textquotedbl{} N,
+       91\textdegree41\textquotesingle22\textquotedbl{} O
+       \;$\vert$\; 1.800--2.300 \msnm
+       \;$\vert$\; $\approx$300 km de la Ciudad de Guatemala};
+
+    % --- Infraestructura, por encima de los municipios ---
+    \node[infra] (tsf) at (0,3.25) {};
+    \node[font=\scriptsize,anchor=west] at (0.2,3.25) {Depósito de relaves};
+    \node[infra] (planta) at (0,2.35) {};
+    \node[font=\scriptsize,anchor=west] at (0.2,2.35) {Planta de proceso};
+    \draw[-{Stealth[length=2mm]},thin] (planta) -- node[etq,left=1pt] {N} (tsf);
+
+    % --- Municipios ---
+    \node[muni] (smi) at (0,0)
+      {\footnotesize\textbf{SAN MIGUEL IXTAHUACÁN}\\[3pt]
+       \scriptsize Pueblo maya-mam\\[2pt]
+       \scriptsize $\approx$87 \% de la propiedad\\
+       \scriptsize y del cuerpo mineral};
+    \node[muni] (sip) at (5.8,0)
+      {\footnotesize\textbf{SIPACAPA}\\[3pt]
+       \scriptsize Pueblo maya-sipakapense};
+
+    % --- Límite municipal ---
+    \draw[dashed,thick] (2.9,-1.5) -- (2.9,1.5);
+    \node[etq,anchor=south] at (2.9,1.6) {límite municipal};
+
+    % --- Ríos ---
+    \draw[rio] (-2.6,-2.1) -- (1.2,-2.1);
+    \node[etq,anchor=west] at (1.3,-2.1) {río Tzalá};
+    \draw[rio] (-2.6,-2.7) -- (2.7,-2.7);
+    \node[etq,anchor=west] at (2.8,-2.7) {río Quivichil};
+    \draw[rio] (-2.6,-3.3) -- (5.4,-3.3);
+    \node[etq,anchor=west] at (5.5,-3.3) {río Cuilco};
+    \node[etq,anchor=north west,align=left] at (-2.6,-3.7)
+      {Cuencas que delimitan el área de la licencia};
+  \end{tikzpicture}
+  \caption{Esquema de ubicación de la Mina Marlin y de su entorno hidrográfico}
+  \label{fig:mapa-ubicacion}
+  \par\vspace{2pt}
+  \raggedright\footnotesize
+  Nota. Croquis esquemático \textbf{sin escala}; no sustituye a un mapa
+  cartográfico. Elaboración propia a partir de \textcite{sec2011ni43101} y
+  \textcite{oncommonground2010hria}.
+\end{figure}
 
 % ---------------------------------------------------------------------
 \subsection{Entorno social y económico}
@@ -295,19 +342,52 @@ del alcance de ese código. Confundir ambas cosas —una certificación específ
 con una garantía general— es precisamente el tipo de inferencia que una auditoría
 debe evitar.
 
-% --- FIGURA 2: Diagrama de flujo del proceso -------------------------
-% PENDIENTE DE INSERTAR. Puedes dibujarlo en TikZ o hacerlo en draw.io /
-% PowerPoint y exportarlo a PDF (NO a JPG). Guárdalo en imagenes/diagramas/.
-% Sigue la secuencia de los siete pasos enumerados arriba.
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=0.9\textwidth]{imagenes/diagramas/flujo_proceso.pdf}
-%  \caption{Diagrama de flujo del proceso metalúrgico de la Mina Marlin}
-%  \label{fig:flujo-proceso}
-%  \par\vspace{2pt}
-%  \raggedright\footnotesize Nota. Elaboración propia a partir de
-%  \textcite{sec2011ni43101}.
-%\end{figure}
+% --- FIGURA 2: Diagrama de flujo del proceso (dibujada en TikZ) ------
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[
+      node distance=6mm and 9mm,
+      etapa/.style={draw,rounded corners=2pt,minimum width=3.5cm,minimum height=1.0cm,
+                    align=center,font=\small,fill=grisclaro},
+      critica/.style={etapa,fill=white,very thick},
+      prod/.style={draw,rounded corners=6pt,minimum width=3.5cm,minimum height=0.9cm,
+                   align=center,font=\small\bfseries},
+      fl/.style={-{Stealth[length=2mm]},thick}
+    ]
+    \node[etapa] (tri) {Trituración};
+    \node[etapa,below=of tri] (mol) {Molienda SAG y de bolas\\[-2pt]{\scriptsize 85 \% pasante malla 200}};
+    \node[critica,below=of mol] (cil) {Lixiviación con cianuro\\[-2pt]{\scriptsize tipo CIL}};
+    \node[etapa,below=of cil] (dec) {Decantación\\[-2pt]{\scriptsize en contracorriente}};
+    \node[etapa,below=of dec] (mc)  {Precipitación Merrill-Crowe\\[-2pt]{\scriptsize con zinc}};
+    \node[prod,below=of mc] (dore) {Fundición a doré (Au--Ag)};
+
+    \draw[fl] (tri) -- (mol);
+    \draw[fl] (mol) -- (cil);
+    \draw[fl] (cil) -- (dec);
+    \draw[fl] (dec) -- (mc);
+    \draw[fl] (mc)  -- (dore);
+
+    % Rama de relaves
+    \node[critica,right=22mm of dec] (inco)
+      {Destrucción de cianuro\\[-2pt]{\scriptsize proceso INCO}};
+    \node[etapa,below=of inco] (tsf)
+      {Depósito de relaves\\[-2pt]{\scriptsize desde 2013, filtrados}};
+    \draw[fl] (dec) -- node[above,font=\scriptsize] {sólidos} (inco);
+    \draw[fl] (inco) -- (tsf);
+
+    % Leyenda
+    \node[font=\scriptsize,align=left,anchor=north west]
+      at ($(tsf.south west)+(-0.2,-0.5)$)
+      {Los recuadros de borde grueso señalan las dos etapas de mayor\\
+       significancia ambiental: el uso de cianuro y su destrucción\\
+       previa al depósito de relaves.};
+  \end{tikzpicture}
+  \caption{Diagrama de flujo del proceso metalúrgico de la Mina Marlin}
+  \label{fig:flujo-proceso}
+  \par\vspace{2pt}
+  \raggedright\footnotesize Nota. Elaboración propia a partir de
+  \textcite{sec2011ni43101}.
+\end{figure}
 
 % ---------------------------------------------------------------------
 \subsection{Capacidad de tratamiento: precisión sobre las cifras}
@@ -335,10 +415,6 @@ una. La Tabla \ref{tab:capacidad} las presenta de forma explícita.
     \addlinespace
     Procesamiento real (2010) & $\approx$1,4 Mt/año \newline ($\approx$3.800 \tdia) &
       Tratamiento efectivo, inferior a la capacidad instalada. \\
-    \addlinespace
-    Rango operativo declarado en la venta de la planta & 4.000--7.000 \tdia \newline
-      (promedio $\approx$6.000 \tdia) & Cifra del anuncio de venta del activo;
-      procede de una fuente comercial, no técnica. \\
     \midrule
     \multicolumn{3}{@{}l}{\textit{Dato que NO corresponde a capacidad de planta:}} \\
     Material total minado & $\approx$24.282 \tdia &
@@ -347,8 +423,7 @@ una. La Tabla \ref{tab:capacidad} las presenta de forma explícita.
   \end{tabularx}
   \par\vspace{3pt}
   \raggedright\footnotesize
-  Nota. Elaboración propia a partir de \textcite{sec2011ni43101} y
-  \textcite{miningcomsfventa}.
+  Nota. Elaboración propia a partir de \textcite{sec2011ni43101}.
 \end{table}
 
 La distinción de la última fila es la más importante y la que con más frecuencia
@@ -360,11 +435,13 @@ seis la capacidad real de la planta. Un informe de auditoría que incurriera en
 esa confusión perdería credibilidad técnica en su conjunto, y por eso se deja
 constancia expresa del punto.
 
-Debe señalarse asimismo que la cuarta fila procede de un anuncio comercial de
-venta del activo, no de un documento técnico sometido a estándar de reporte. Se
-incluye por transparencia y porque es la fuente que sostiene las cifras más altas
-que circulan sobre la operación, pero su jerarquía probatoria es inferior a la
-del informe NI 43-101 y así debe ponderarse.
+Conviene añadir una advertencia sobre las fuentes. En publicaciones comerciales y
+en anuncios de venta de equipos circulan cifras de capacidad sensiblemente más
+altas que las del informe técnico, en algunos casos con promedios superiores a
+las 6.000 \tdia. Este informe no las incorpora porque no proceden de documentos
+sometidos a un estándar de reporte y su jerarquía probatoria es inferior a la del
+informe NI 43-101. Se deja constancia de su existencia para que quien las
+encuentre sepa por qué no se recogen aquí.
 
 % ---------------------------------------------------------------------
 \subsection{Producción, empleo y ciclo de vida de la operación}

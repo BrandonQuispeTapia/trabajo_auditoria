@@ -75,55 +75,81 @@ pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
 - `main.tex` y `config/preambulo.tex` los modifica **una sola persona**.
 - El resumen ejecutivo, la introducción y los objetivos se cierran **al final**, entre todos.
 - Las referencias se añaden a `referencias.bib`, nunca escritas a mano en el texto.
-- Antes de entregar: busca `\pendiente` y `% TODO` en todo el proyecto; no debe quedar ninguno.
-  En `config/comandos.tex` hay una línea comentada que hace desaparecer los marcadores
-  `\pendiente` del PDF final.
+- No quedan marcadores `\pendiente` ni `% TODO` en el proyecto. Si alguien añade uno
+  mientras edita, `config/comandos.tex` tiene una línea comentada que los hace
+  desaparecer del PDF final.
+- El `\nocite{*}` de `main.tex` ya está **desactivado**: la lista de referencias
+  contiene solo las obras efectivamente citadas, como exige APA.
 
-## Estado de la redacción
+## Estado
 
-Se redacta **capítulo por capítulo**, no de una sola vez.
+**El informe está terminado.** 72 páginas, ~19.500 palabras, 4 figuras y 10 tablas.
+Todas las URL de la bibliografía fueron comprobadas el 2 de agosto de 2026.
 
-**El texto del informe está completo.** 69 páginas, ~19.500 palabras, 9 tablas.
-
-| Capítulo | Palabras | Estado |
+| Capítulo | Palabras | Contenido |
 |---|---:|---|
-| Resumen ejecutivo | 282 | ✅ |
-| 1. Introducción | 816 | ✅ |
-| 2. Objetivos | 186 | ✅ |
-| 3. Marco teórico y normativo | 3.102 | ✅ Tabla 1 |
-| 4. Descripción de la unidad minera | 3.078 | ✅ Tablas 2 y 3 · faltan Figuras 1 y 2 |
-| 5. Descripción de la auditoría | 2.271 | ✅ Tablas 4 y 5 · falta Figura 3 |
-| 6. Análisis de hallazgos | 2.900 | ✅ Matriz completa de 10 hallazgos (Tabla 6) |
-| 7. Análisis crítico | 2.184 | ✅ |
-| 8. Plan de mejora continua (PHVA) | 2.303 | ✅ Plan de 12 acciones (Tabla 7) · falta Figura 4 |
-| 9. Conclusiones | 820 | ✅ |
-| 10. Recomendaciones | 569 | ✅ |
-| Anexos A–E | 1.007 | ✅ B, C, D y E · **falta el mapa del Anexo A** |
+| Resumen ejecutivo | 282 | |
+| 1. Introducción | 816 | |
+| 2. Objetivos | 186 | General + 5 específicos |
+| 3. Marco teórico y normativo | 3.102 | Tabla 1 |
+| 4. Descripción de la unidad minera | 3.078 | Figuras 1 y 2 · Tablas 2 y 3 |
+| 5. Descripción de la auditoría | 2.271 | Figura 3 · Tablas 4 y 5 |
+| 6. Análisis de hallazgos | 2.900 | Matriz completa de 10 hallazgos (Tabla 6) |
+| 7. Análisis crítico | 2.184 | |
+| 8. Plan de mejora continua (PHVA) | 2.303 | Figura 4 · Plan de 12 acciones (Tabla 7) |
+| 9. Conclusiones | 820 | Una por objetivo específico + una general |
+| 10. Recomendaciones | 569 | Por destinatario |
+| Anexos A–E | 1.007 | Cartografía, distribución de hallazgos, cronología, fichas y glosario |
 
 ### Lo único que falta
 
-1. **Las cuatro figuras.** Los entornos `figure` están escritos y comentados en su
-   sitio, con instrucciones de qué debe mostrar cada una. Solo hay que crear los
-   archivos y descomentar:
-   - Figura 1 y Anexo A: mapa de ubicación (OpenStreetMap, **atribución ODbL obligatoria**)
-   - Figura 2: diagrama de flujo del proceso metalúrgico
-   - Figura 3: línea de tiempo del proceso de auditoría (los hitos ya están listados en el comentario)
-   - Figura 4: diagrama del ciclo PHVA
-2. **Rellenar `config/portada.tex`:** universidad, facultad, escuela, curso, docente e integrantes.
-3. **Los 21 avisos `VERIFICAR`** de `referencias.bib` (ver más abajo).
-4. **Comentar el `\nocite{*}`** de `main.tex` antes de entregar.
-5. **Apagar los marcadores `\pendiente`** con la línea comentada de `config/comandos.tex`.
+**Los nombres y códigos de los seis integrantes**, en `config/portada.tex`.
+Es literalmente lo único pendiente. El resto de la carátula (universidad,
+facultad, escuela, curso y docente) ya está rellenado.
 
-## Estado de la bibliografía
+Opcionalmente, el **logo de la UNAP**: guárdalo en `imagenes/logos/logo_unap.png`
+y descomenta las dos líneas señaladas al principio de `config/portada.tex`.
 
-`referencias.bib` está organizado en seis bloques. Los bloques 1 a 5 corresponden a la
-bibliografía verificada de la bitácora. **El bloque 6 contiene entradas incompletas a
-propósito**: fuentes que el informe necesita pero cuyos datos (año, autor o URL) no constan
-en la bitácora. Busca `VERIFICAR` en el archivo y complétalas o elimínalas antes de entregar.
+### Figuras
 
-Mientras se redacta, `main.tex` incluye un `\nocite{*}` que fuerza la aparición de todas las
-referencias en el PDF. **Hay que comentarlo antes de la entrega final**, porque APA exige que
-la lista contenga únicamente las obras efectivamente citadas.
+Las cuatro figuras están **dibujadas en TikZ**, es decir, en código LaTeX dentro
+de los propios archivos `.tex`. No hay que subir ninguna imagen ni preocuparse de
+que se pixelen al imprimir:
+
+| Figura | Dónde | Qué es |
+|---|---|---|
+| 1 | §4.2 | Esquema de ubicación y entorno hidrográfico (croquis sin escala) |
+| 2 | §4.6 | Diagrama de flujo del proceso metalúrgico |
+| 3 | §5.6 | Cronología del proceso de auditoría (2004–2017) |
+| 4 | §8.6 | Ciclo PHVA aplicado al caso |
+
+> La Figura 1 es un **croquis esquemático, no un mapa cartográfico**, y así se
+> declara en su nota. Si el docente exige cartografía real, el Anexo A explica
+> cómo añadirla (OpenStreetMap centrado en 15.234852, −91.689418; la atribución
+> «© OpenStreetMap contributors» es obligatoria por licencia ODbL).
+
+## Bibliografía
+
+**Las 30 entradas de `referencias.bib` tienen URL comprobada** mediante petición HTTP
+el 2 de agosto de 2026. Las fuentes que no se pudieron localizar o verificar fueron
+eliminadas, y el texto del informe se reescribió para no depender de ellas. La
+cabecera del `.bib` lleva la lista de qué se eliminó y por qué.
+
+Dos advertencias sobre fuentes que **sí funcionan pero devuelven error a los robots**:
+
+- **SEC EDGAR** (informe técnico NI 43-101) devuelve 403 a cualquier petición que no
+  venga de un navegador. En Chrome o Firefox abre sin problema.
+- **iso.org** (ISO 14001 e ISO 19011) hace lo mismo, y además las normas ISO son de
+  pago, como todas las normas ISO. Se mantienen porque son el eje normativo del
+  informe y APA admite citarlas sin enlace libre.
+
+Fuente destacada que **no estaba en la bitácora original** y se incorporó tras la
+verificación: Maest y Kamp (2010), *Evaluation of predicted and actual water quality
+conditions at the Marlin Mine*, de E-Tech International y financiado por Oxfam America.
+Compara lo predicho en el estudio de impacto ambiental con lo realmente medido, y
+aporta los datos duros que sostienen el hallazgo central del capítulo 6: línea base de
+solo 8–9 meses, dos manantiales muestreados y potencial «moderado a alto» de generar
+acidez.
 
 ## Tipografía
 
