@@ -21,11 +21,11 @@
 %  su regla de clasificación antes de aplicarla.
 % =====================================================================
 
-\chapter{Análisis de hallazgos}
+\section{Análisis de hallazgos}
 \label{sec:hallazgos}
 
 % ---------------------------------------------------------------------
-\section{Criterio de clasificación de los hallazgos}
+\subsection{Criterio de clasificación de los hallazgos}
 % Extensión: ~0,75 página / 280 palabras
 
 % TODO: - Explica que la HRIA no clasificó sus hallazgos como no
@@ -41,7 +41,7 @@
 %       Fuente: \cite{iso2018iso19011}
 
 % ---------------------------------------------------------------------
-\section{Matriz de no conformidades}
+\subsection{Matriz de no conformidades}
 % Extensión: la Tabla 3 (2 a 3 páginas apaisadas) + ~250 palabras de lectura
 
 % TODO (antes de la tabla): un párrafo que anuncie cuántos hallazgos se
@@ -50,20 +50,10 @@
 % TODO (después de la tabla): un párrafo que lea la tabla en voz alta:
 %   qué eje concentra más NC mayores y qué significa eso.
 
-% --- TABLA: Extracto de la matriz de no conformidades ----------------
-%
-% ############### IMPORTANTE EN ESTE FORMATO ###############
-% Estamos a DOS COLUMNAS, y ahí longtable NO funciona: no puede partirse
-% entre páginas dentro de un flotante. Por eso:
-%   - AQUÍ va un EXTRACTO de una página: los 7 ejes, un hallazgo
-%     representativo por eje, en un flotante que abarca las dos columnas
-%     (el preámbulo convierte automáticamente `table` en `table*`).
-%   - La MATRIZ ÍNTEGRA va al Anexo B (\ref{anexo:matriz}), donde el
-%     documento vuelve a una columna y longtable sí funciona.
-% El preámbulo define \anchotabla = 0.85\textwidth para estos casos.
-% ##########################################################
-%
-% RELLENA UNA FILA POR EJE, con los SIETE EJES de la HRIA:
+% --- TABLA 3: Matriz de no conformidades -----------------------------
+% Va en página APAISADA (landscape) porque tiene 7 columnas.
+% Se usa longtable porque con seguridad ocupará más de una página.
+% RELLENA UNA FILA POR HALLAZGO, organizadas por los SIETE EJES de la HRIA:
 %   1. Consulta          -> la mina se permitió sin consulta previa, libre e
 %      informada conforme al Convenio 169. Recomendación: detener adquisición
 %      de tierras, exploración y expansión hasta consultar debidamente. [NC mayor]
@@ -81,31 +71,36 @@
 %      recomendó adoptar los VPSHR.
 %   7. Acceso a remediación -> mecanismos de queja débiles.
 %
-%\begin{table}
-%  \caption{Extracto de la matriz de no conformidades de la auditoría socioambiental de la Mina Marlin}
-%  \label{tab:matriz-nc}
-%  \begin{footnotesize}
-%  \begin{tabularx}{\textwidth}{@{}L{1.6cm} Y Y L{2.4cm} L{1.5cm} Y@{}}
-%    \toprule
-%    \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} \\
-%    \midrule
-%    Consulta    & & & Convenio 169 {OIT}, art. 6 & \NCmayor & \\
-%    Ambiente    & & & {IFC} {PS}1, {PS}4         &          & \\
-%    Trabajo     & & &                            &          & \\
-%    Tierras     & & & {IFC} {PS}5                &          & \\
-%    Inversión   & & &                            &          & \\
-%    Seguridad   & & & {VPSHR}, {IFC} {PS}4       &          & \\
-%    Remediación & & & {IFC} {PS}1                &          & \\
-%    \bottomrule
-%  \end{tabularx}
-%  \end{footnotesize}
-%  \src{elaboración propia a partir de \cite{oncommonground2010hria}. La matriz
-%       completa, con la columna «Estado de cierre» y todos los hallazgos por
-%       eje, figura en el Anexo B.}
-%\end{table}
+%\begin{landscape}
+%\begin{footnotesize}
+%\begin{longtable}{@{}L{1.8cm} L{4cm} L{4cm} L{3cm} L{1.8cm} L{4cm} L{2cm}@{}}
+%  \caption{Matriz de no conformidades identificadas en la auditoría socioambiental de la Mina Marlin}
+%  \label{tab:matriz-nc} \\
+%  \toprule
+%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
+%  \midrule
+%  \endfirsthead
+%  \multicolumn{7}{l}{\footnotesize\textit{Tabla \ref{tab:matriz-nc} (continuación)}} \\
+%  \toprule
+%  \textbf{Eje} & \textbf{Hallazgo} & \textbf{Evidencia objetiva} & \textbf{Criterio incumplido} & \textbf{Clasif.} & \textbf{Recomendación} & \textbf{Estado de cierre} \\
+%  \midrule
+%  \endhead
+%  \bottomrule
+%  \multicolumn{7}{l}{\footnotesize Nota. Elaboración propia a partir de \textcite{oncommonground2010hria}.} \\
+%  \endlastfoot
+%  Consulta & & & Convenio 169 {OIT}, art. 6 & \NCmayor & & \\
+%  Ambiente & & & & & & \\
+%  Trabajo & & & & & & \\
+%  Tierras & & & {IFC} {PS}5 & & & \\
+%  Inversión & & & & & & \\
+%  Seguridad & & & {VPSHR} & & & \\
+%  Remediación & & & {IFC} {PS}1 & & & \\
+%\end{longtable}
+%\end{footnotesize}
+%\end{landscape}
 
 % ---------------------------------------------------------------------
-\section{Hallazgo central 1: ausencia de consulta previa, libre e informada}
+\subsection{Hallazgo central 1: ausencia de consulta previa, libre e informada}
 % Extensión: ~2 páginas / 750 palabras
 
 % TODO: Es el hallazgo más grave y el que sostiene todo el caso. Desarrolla:
@@ -121,7 +116,7 @@
 %   Fuente: \cite{oncommonground2010hria}
 
 % ---------------------------------------------------------------------
-\section{Hallazgo central 2: riesgos ambientales sobre el agua y drenaje ácido de roca}
+\subsection{Hallazgo central 2: riesgos ambientales sobre el agua y drenaje ácido de roca}
 % Extensión: ~2 páginas / 750 palabras
 
 % TODO: - El hecho: riesgos de drenaje ácido de roca (ARD) y afectación de la
@@ -148,7 +143,7 @@
 %         \cite{moran2004review}
 
 % ---------------------------------------------------------------------
-\section{Hallazgo central 3: seguridad privada armada y riesgo para las personas}
+\subsection{Hallazgo central 3: seguridad privada armada y riesgo para las personas}
 % Extensión: ~1,5 páginas / 550 palabras
 
 % TODO: - El hecho: riesgo para la seguridad personal de los residentes
@@ -162,7 +157,7 @@
 %         nítida y donde menos se parece a una auditoría ISO tradicional.
 
 % ---------------------------------------------------------------------
-\section{Hallazgo central 4: debilidad del mecanismo de acceso a remediación}
+\subsection{Hallazgo central 4: debilidad del mecanismo de acceso a remediación}
 % Extensión: ~1,25 páginas / 450 palabras
 
 % TODO: - El hecho: mecanismos de queja débiles.
@@ -176,7 +171,7 @@
 %         mecanismo de quejas conforme a los criterios de eficacia.
 
 % ---------------------------------------------------------------------
-\section{Síntesis de hallazgos y respuesta de la empresa}
+\subsection{Síntesis de hallazgos y respuesta de la empresa}
 % Extensión: ~0,75 página / 280 palabras
 
 % TODO: - Recuento por eje y por clasificación.
