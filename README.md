@@ -83,7 +83,7 @@ pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
 
 ## Estado
 
-**El informe está terminado.** 72 páginas, ~19.500 palabras, 4 figuras y 10 tablas.
+**El informe está terminado.** 66 páginas, ~19.500 palabras, 5 figuras y 10 tablas.
 Todas las URL de la bibliografía fueron comprobadas el 2 de agosto de 2026.
 
 | Capítulo | Palabras | Contenido |
@@ -91,15 +91,20 @@ Todas las URL de la bibliografía fueron comprobadas el 2 de agosto de 2026.
 | Resumen ejecutivo | 282 | |
 | 1. Introducción | 816 | |
 | 2. Objetivos | 186 | General + 5 específicos |
-| 3. Marco teórico y normativo | 3.102 | Tabla 1 |
-| 4. Descripción de la unidad minera | 3.078 | Figuras 1 y 2 · Tablas 2 y 3 |
-| 5. Descripción de la auditoría | 2.271 | Figura 3 · Tablas 4 y 5 |
-| 6. Análisis de hallazgos | 2.900 | Matriz completa de 10 hallazgos (Tabla 6) |
+| 3. Marco teórico y normativo | 3.102 | Tabla 3.1 |
+| 4. Descripción de la unidad minera | 3.078 | Figuras 4.1 y 4.2 · Tablas 4.1 y 4.2 |
+| 5. Descripción de la auditoría | 2.271 | Figura 5.1 · Tablas 5.1 y 5.2 |
+| 6. Análisis de hallazgos | 2.900 | Matriz completa de 10 hallazgos (Tabla 6.1) |
 | 7. Análisis crítico | 2.184 | |
-| 8. Plan de mejora continua (PHVA) | 2.303 | Figura 4 · Plan de 12 acciones (Tabla 7) |
+| 8. Plan de mejora continua (PHVA) | 2.303 | Figura 8.1 · Plan de 12 acciones (Tabla 8.1) |
 | 9. Conclusiones | 820 | Una por objetivo específico + una general |
 | 10. Recomendaciones | 569 | Por destinatario |
 | Anexos A–E | 1.007 | Cartografía, distribución de hallazgos, cronología, fichas y glosario |
+
+> Las figuras y tablas se numeran **por capítulo** (p. ej. Tabla 6.1, Figura 4.2),
+> convención estándar de la clase `report`. Si citas una en el texto, usa siempre
+> `\ref{...}` o `\Cref{...}`, nunca el número a mano: al insertar o quitar una
+> figura/tabla, todos los demás números se recalculan solos.
 
 ### Estado de la entrega
 
@@ -114,21 +119,19 @@ desactivado y las 30 referencias con enlace comprobado.
 
 ### Figuras
 
-Las cuatro figuras están **dibujadas en TikZ**, es decir, en código LaTeX dentro
-de los propios archivos `.tex`. No hay que subir ninguna imagen ni preocuparse de
-que se pixelen al imprimir:
+| Figura | Dónde | Fuente | Qué es |
+|---|---|---|---|
+| 4.1 | §4.2 | TikZ (código, en el propio `.tex`) | Esquema de ubicación y entorno hidrográfico (croquis sin escala) |
+| 4.2 | §4.6 | `imagenes/diagramas/flujo_proceso.jpg` | Diagrama de flujo del proceso metalúrgico |
+| 5.1 | §5.6 | `imagenes/diagramas/linea_tiempo_auditoria.jpg` | Cronología del proceso de auditoría (2004–2011) |
+| 8.1 | §8.6 | `imagenes/diagramas/ciclo_phva.jpg` | Ciclo PHVA aplicado al caso |
+| A.1 | Anexo A | `imagenes/mapas/mapa_ubicacion_marlin.jpg` | Mapa de ubicación (cartografía real) |
 
-| Figura | Dónde | Qué es |
-|---|---|---|
-| 1 | §4.2 | Esquema de ubicación y entorno hidrográfico (croquis sin escala) |
-| 2 | §4.6 | Diagrama de flujo del proceso metalúrgico |
-| 3 | §5.6 | Cronología del proceso de auditoría (2004–2017) |
-| 4 | §8.6 | Ciclo PHVA aplicado al caso |
-
-> La Figura 1 es un **croquis esquemático, no un mapa cartográfico**, y así se
-> declara en su nota. Si el docente exige cartografía real, el Anexo A explica
-> cómo añadirla (OpenStreetMap centrado en 15.234852, −91.689418; la atribución
-> «© OpenStreetMap contributors» es obligatoria por licencia ODbL).
+> La Figura 4.1 es un **croquis esquemático, no un mapa cartográfico**, y así se
+> declara en su nota; complementa al mapa real del Anexo A, no lo sustituye.
+> Si el mapa base de una figura procede de OpenStreetMap, la atribución
+> «© OpenStreetMap contributors» es obligatoria por licencia ODbL (ya incluida
+> en el pie de la Figura A.1).
 
 ## Bibliografía
 
@@ -153,8 +156,32 @@ aporta los datos duros que sostienen el hallazgo central del capítulo 6: línea
 solo 8–9 meses, dos manantiales muestreados y potencial «moderado a alto» de generar
 acidez.
 
-## Tipografía
+## Formato: clase `report`, estilo libro
 
-El preámbulo usa `mathptmx` (Times New Roman) y `\onehalfspacing` (interlineado 1,5).
-Ambos se cambian en un solo lugar: `config/preambulo.tex`. Si la universidad exigiera Arial,
-hay que pasar el compilador a **XeLaTeX** y usar `fontspec` con `\setmainfont{Arial}`.
+Desde el 2 de agosto de 2026 el informe usa la clase `report` (antes: `article` con
+una carátula simulando capítulos). El cambio es puramente de presentación — el
+contenido de los diez capítulos no se tocó — pero afecta a cómo se escribe cualquier
+archivo nuevo de `secciones/`:
+
+- **Los archivos de `secciones/` siguen escribiéndose exactamente igual**: `\section{}`
+  para el título del capítulo, `\subsection{}` para sección y `\subsubsection{}` para
+  subsección. `config/preambulo.tex` redirige cada uno al nivel real de la clase
+  (`\chapter`, `\section`, `\subsection`). **No escribas `\chapter` directamente** en un
+  archivo de sección: rompería la numeración.
+- **No hace falta ningún `\newpage` manual entre capítulos.** Cada `\chapter` (real, vía
+  el adaptador) inicia página nueva por sí solo; lo mismo `\tableofcontents`,
+  `\listoffigures`, `\listoftables` y los anexos. Si ves un `\newpage` seguido
+  inmediatamente de un `\section{}` en algún archivo, sóbra: produce una página en
+  blanco.
+- Los capítulos sin numerar (Resumen ejecutivo, Referencias) se escriben con
+  `\section*{}` → `\chapter*{}` real. Si alguno de estos llega a ocupar más de una
+  página, hay que fijar el encabezado a mano con `\markboth{Título}{Título}` justo
+  después (ver `secciones/00_resumen.tex` o el bloque de la bibliografía en `main.tex`):
+  `\chapter*` no actualiza el encabezado de página automáticamente, a diferencia de
+  `\chapter` numerado.
+- Tipografía: `newtxtext`/`newtxmath` (variante de Times New Roman) e interlineado
+  `\setstretch{1.2}` vía `setspace`. Ambos se cambian en `config/preambulo.tex`. Si la
+  universidad exigiera Arial, hay que pasar el compilador a **XeLaTeX** y usar
+  `fontspec` con `\setmainfont{Arial}`.
+- Los anexos usan `\appendix`, que numera los capítulos con letras (A, B, C…) y cambia
+  automáticamente la palabra «Capítulo» por «Anexo» en el título y en el índice.

@@ -1,134 +1,246 @@
 % =====================================================================
-%  PREÁMBULO — paquetes y configuración global
+%  PREÁMBULO — formato tipo libro/reporte académico (report + titlesec)
 %  El \documentclass va en main.tex, NO aquí.
-%  Stack probado en Overleaf: compilador pdfLaTeX + motor Biber.
+%
+%  Base: plantilla aportada por el usuario. Se conserva casi literal;
+%  las únicas modificaciones respecto del original son las marcadas con
+%  «AJUSTE» en los comentarios, todas necesarias para que compile con el
+%  contenido del informe (bibliografía, tablas largas, columnas propias)
+%  o para corregir un choque de opciones del paquete xcolor.
 % =====================================================================
 
-% --- Codificación de entrada y de fuente -----------------------------
-% utf8 permite escribir acentos y ñ directamente en los .tex.
-% T1 evita que las palabras con acento se partan mal al final de línea.
+% ==========================================
+% 1. CONFIGURACIÓN DE PÁGINA (MÁRGENES)
+% ==========================================
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+
+% ==========================================
+% 2. FUENTES Y TIPOGRAFÍA (ESTILO LIBRO)
+% ==========================================
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
-% --- Tipografía: Times New Roman -------------------------------------
-% mathptmx sustituye la fuente por Times (requisito típico de informes
-% universitarios). Si la universidad exige ARIAL, hay que cambiar el
-% compilador a XeLaTeX y usar fontspec con \setmainfont{Arial}.
-\usepackage{mathptmx}
+% IMPORTANTE: cargar amsmath ANTES de las fuentes para evitar conflictos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 
-% --- Márgenes --------------------------------------------------------
-% 3 cm a la izquierda (para el anillado/empastado), 2,5 cm el resto.
-\usepackage[a4paper,left=3cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+% PAQUETE CLAVE: Times New Roman para texto y matemáticas
+\usepackage{newtxtext, newtxmath}
 
-% --- Idioma español --------------------------------------------------
-% es-tabla        -> los flotantes se rotulan «Tabla», no «Cuadro».
-% es-nodecimaldot -> no fuerza la coma decimal en modo matemático.
-% es-lcroman      -> numera los preliminares en romanos MINÚSCULOS (i, ii,
-%                    iii), que es la convención académica. Sin esta opción,
-%                    babel-spanish los pone en mayúsculas (I, II, III).
-\usepackage[spanish,es-tabla,es-nodecimaldot,es-lcroman]{babel}
+% Microtype: mejora sutilmente el espaciado.
+% AJUSTE: expansion=false. La expansión automática de fuente de microtype
+% requiere tablas específicas que la familia newtxtext no declara, lo que
+% producía un error fatal («font expansion... only possible with
+% scalable...»). El protrusion (ajuste de márgenes en signos de puntuación),
+% que sí es compatible, se mantiene activo.
+\usepackage[expansion=false]{microtype}
 
-% --- Interlineado ----------------------------------------------------
-% ÚNICO lugar donde se controla el interlineado de todo el documento.
-% \onehalfspacing = 1,5 líneas (el que estamos usando).
-% Si el docente pidiera interlineado doble, cambia a \doublespacing.
-% Si necesitas comprimir para entrar en un límite de páginas, \singlespacing.
+% Interlineado elegante (1.2)
 \usepackage{setspace}
-\onehalfspacing
+\setstretch{1.2}
 
-% --- Imágenes --------------------------------------------------------
-% graphicspath evita tener que escribir la ruta completa en \includegraphics:
-% basta con \includegraphics{mapa_ubicacion.png}.
-\usepackage{graphicx}
-\graphicspath{{imagenes/}{imagenes/mapas/}{imagenes/diagramas/}{imagenes/fotos/}{imagenes/logos/}}
+% Sangría en primer párrafo
+\usepackage{indentfirst}
 
-% --- Tablas ----------------------------------------------------------
-% booktabs  -> líneas horizontales de calidad (\toprule, \midrule, \bottomrule).
-% longtable -> tablas que se parten en varias páginas (la matriz de no
-%              conformidades del Anexo B seguro la necesita).
-% tabularx  -> columnas de ancho automático que ajustan al ancho de página.
-% multirow  -> celdas que ocupan varias filas.
-% array     -> tipos de columna personalizados (ver config/comandos.tex).
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{tabularx}
-\usepackage{multirow}
-\usepackage{array}
+% AJUSTE: xcolor se cargaba dos veces en la plantilla original, con
+% opciones distintas («table» y luego «dvipsnames»), lo que produce un
+% error de «Option clash for package xcolor». Se unifica en una sola
+% carga con ambas opciones.
+\usepackage[table,dvipsnames]{xcolor}
 
-% --- Leyendas de tablas y figuras ------------------------------------
-% Norma APA / uso académico: el rótulo de la TABLA va ARRIBA y el de la
-% FIGURA va ABAJO. Aquí se fija ese comportamiento para todo el documento.
-\usepackage{caption}
-\captionsetup[table]{position=top,labelsep=period,font=small,labelfont=bf}
-\captionsetup[figure]{position=bottom,labelsep=period,font=small,labelfont=bf}
-
-% --- Listas ----------------------------------------------------------
-% enumitem permite controlar sangrías y separación de itemize/enumerate.
-\usepackage{enumitem}
-\setlist{itemsep=2pt,parsep=0pt,topsep=4pt}
-
-% --- Posicionamiento de flotantes ------------------------------------
-% float habilita el especificador [H] = «aquí exactamente, sin discutir».
-\usepackage{float}
-
-% --- Páginas apaisadas -----------------------------------------------
-% pdflscape gira una página completa en el PDF. Imprescindible para la
-% Tabla 3 (matriz de no conformidades) y la Tabla 4 (plan de acción).
 \usepackage{pdflscape}
+\usepackage{rotating}
 
-% --- Color (necesario para los enlaces de hyperref) ------------------
-\usepackage{xcolor}
-\definecolor{azuloscuro}{RGB}{0,51,102}
+% ==========================================
+% 3. IDIOMA Y TABLAS
+% ==========================================
+\usepackage[spanish,es-nodecimaldot,es-lcroman]{babel}
+% es-lcroman: numera los preliminares en romanos minúsculos (i, ii, iii),
+% convención académica habitual.
+\addto\captionsspanish{
+  \renewcommand{\tablename}{Tabla}
+  \renewcommand{\listtablename}{Índice de tablas}
+  \renewcommand{\contentsname}{Índice General}
+  \renewcommand{\chaptername}{Capítulo}
+  \renewcommand{\bibname}{Referencias Bibliográficas}
+  % AJUSTE: sin esta línea, \appendix mostraría «Apéndice A» (traducción
+  % por defecto de babel-spanish) en lugar de «Anexo A».
+  \renewcommand{\appendixname}{Anexo}
+}
+
+% ==========================================
+% 4. ESTILO DE TÍTULOS (TITLESEC)
+% ==========================================
+\usepackage{titlesec}
+
+% -- Estilo de Capítulos --
+\titleformat{\chapter}[display]
+  {\bfseries\Large}
+  {\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+  {1ex}
+  {\titlerule\vspace{1ex}\filleft}
+  [\vspace{1ex}\titlerule]
+
+\titlespacing*{\chapter}{0pt}{-30pt}{30pt}
+
+% -- Estilo de Secciones --
+\titleformat{\section}
+  {\normalfont\large\bfseries}{\thesection}{1em}{}
+
+% ==========================================
+% 5. GRÁFICOS Y DIAGRAMAS (TIKZ)
+% ==========================================
+% AJUSTE: la plantilla original cargaba tikz y sus librerías tres veces
+% en bloques distintos (con paquetes de opciones ligeramente diferentes).
+% Se consolida en una sola carga con todas las librerías necesarias:
+%   - shapes.geometric, arrows, positioning, shadows, arrows.meta: las
+%     que pedía la plantilla original.
+%   - babel: IMPRESCINDIBLE. babel-spanish activa los caracteres < y >
+%     (para las comillas angulares «texto»), lo que rompe la sintaxis de
+%     flechas de TikZ (->, -{Stealth[...]}) si no se carga esta librería.
+%   - decorations.pathmorphing: dibuja los ríos como línea ondulada en
+%     el croquis de ubicación (Figura 1).
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usetikzlibrary{shapes.geometric,arrows,arrows.meta,positioning,shadows}
+\usetikzlibrary{decorations.pathmorphing}
+
+% Definición de estilos para el flujograma (por si se usan en el futuro;
+% las Figuras 2, 3 y 4 del informe son imágenes ya elaboradas, no TikZ)
+\tikzstyle{block} = [rectangle, draw, fill=white,
+    text width=10em, text centered, rounded corners, minimum height=3em, drop shadow]
+\tikzstyle{line} = [draw, -latex', thick]
+\tikzstyle{cloud} = [draw, ellipse, fill=white, node distance=3cm,
+    minimum height=2em, drop shadow]
+
+% Colores propios del croquis de ubicación (Figura 1, sección 4.2)
 \definecolor{grisclaro}{RGB}{240,240,240}
 \definecolor{grismedio}{RGB}{120,120,120}
 
-% --- Dibujo de figuras -----------------------------------------------
-% Las Figuras 1 a 4 están dibujadas en TikZ, es decir, en código LaTeX y no
-% como archivos de imagen. Ventaja: se editan como texto, no se pixelan al
-% imprimir y no dependen de que nadie olvide subir un .png al repositorio.
-\usepackage{tikz}
-% OJO con la librería «babel»: babel-spanish convierte < y > en caracteres
-% activos, lo que rompe la sintaxis de flechas de TikZ (->, >=Stealth).
-% Esta librería desactiva esos atajos dentro de cada tikzpicture.
-% Sin ella, las Figuras 1 a 4 no compilan.
-\usetikzlibrary{babel}
-\usetikzlibrary{shapes.geometric,arrows.meta,positioning,calc,fit,backgrounds}
-% decorations.pathmorphing dibuja los cauces de los ríos como línea ondulada
-% en la Figura 1.
-\usetikzlibrary{decorations.pathmorphing}
+% ==========================================
+% 6. OTROS PAQUETES
+% ==========================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\itshape\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
 
-% =====================================================================
-%  BIBLIOGRAFÍA — biblatex en estilo APA 7 con motor Biber
-% =====================================================================
-% csquotes es OBLIGATORIO antes de biblatex (gestiona las comillas).
+\usepackage{graphicx} % Para imágenes normales
+% AJUSTE: rutas base para \includegraphics; el informe siempre usa rutas
+% completas («imagenes/diagramas/...»), así que esto es solo una comodidad.
+\graphicspath{{imagenes/}{imagenes/mapas/}{imagenes/diagramas/}{imagenes/fotos/}{imagenes/logos/}}
+
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\setlist{nosep}
+% Nota: xcolor con [dvipsnames] ya se cargó en el bloque 2; no se repite.
 \usepackage{csquotes}
+\usepackage{rotating}
+
+% AJUSTE — PAQUETES QUE FALTABAN EN LA PLANTILLA ORIGINAL
+% El informe usa tablas de ancho automático (tabularx), tablas que se
+% parten en varias páginas (longtable, en los anexos y en las matrices
+% de los capítulos 6 y 8) y tipos de columna propios (definidos en
+% config/comandos.tex mediante \newcolumntype, que requiere el paquete
+% array). Sin estos tres paquetes el documento no compila.
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+
+% AJUSTE — leyendas de tablas y figuras
+% La plantilla original no fijaba un formato de \caption. Se añade uno
+% mínimo y coherente con el resto del documento (etiqueta en negrita).
+\usepackage{caption}
+\captionsetup{labelfont=bf,font=small}
+
+% Hipervínculos elegantes
+\usepackage{hyperref}
+\definecolor{darkblue}{rgb}{0.0, 0.0, 0.55}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    citecolor=darkblue,
+    urlcolor=darkblue,
+    pdfauthor={Quispe Tapia, Brandon Gabriel},
+    pdftitle={Auditoría socioambiental de la Mina Marlin --- Informe EVI. 6},
+    pdfsubject={Auditoría ambiental}
+}
+
+% ==========================================
+% AJUSTE — BIBLIOGRAFÍA (APA 7 vía biblatex + Biber)
+% La plantilla original no incluía motor de bibliografía; sin este
+% bloque, \parencite, \textcite y \printbibliography no existirían y el
+% documento no compilaría. csquotes ya se cargó arriba (requisito previo
+% de biblatex).
+% ==========================================
 \usepackage[backend=biber,style=apa,sortlocale=es_ES,natbib=true]{biblatex}
-% Traduce al español los elementos fijos de las citas («y», «et al.», «s. f.»).
 \DeclareLanguageMapping{spanish}{spanish-apa}
-% Archivo con TODAS las referencias del informe.
 \addbibresource{referencias.bib}
 
-% =====================================================================
-%  HYPERREF — SIEMPRE EL ÚLTIMO PAQUETE EN CARGARSE
-% =====================================================================
-% Convierte en enlaces clicables el índice, las referencias cruzadas y
-% las URLs, y genera los marcadores (bookmarks) del PDF.
-\usepackage[
-  colorlinks=true,
-  linkcolor=azuloscuro,     % enlaces internos (índice, \ref)
-  citecolor=azuloscuro,     % citas bibliográficas
-  urlcolor=azuloscuro,      % URLs externas
-  bookmarks=true,
-  bookmarksnumbered=true,
-  breaklinks=true,
-  % plainpages=false hace que las anclas del PDF usen el número de página tal
-  % como se imprime (i, ii, 1, 2...). Junto con el \pagenumbering{roman} que
-  % main.tex activa desde la portada, evita anclas duplicadas.
-  plainpages=false,
-  pdftitle={Auditoría socioambiental de la Mina Marlin — Informe EVI. 6},
-  pdfsubject={Auditoría ambiental},
-  pdfkeywords={auditoría socioambiental, Mina Marlin, Goldcorp, ISO 14001, ISO 19011, PHVA}
-]{hyperref}
-% Rompe las URLs largas de la bibliografía para que no se salgan del margen.
-\usepackage{url}
-\urlstyle{same}
+% ==========================================
+% PAQUETES PARA CÓDIGO Y CAJAS
+% (no se usan en el contenido actual del informe; se conservan de la
+% plantilla original por si hicieran falta más adelante)
+% ==========================================
+\usepackage{listings}
+\usepackage{tcolorbox}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% ==========================================
+% AJUSTE — ADAPTADOR DE JERARQUÍA DE TÍTULOS
+%
+% Los archivos de secciones/ se escriben con \section para el título de
+% capítulo, \subsection para las secciones y \subsubsection para las
+% subsecciones (así se redactaron los diez capítulos del informe). Esta
+% clase (report) ya tiene un \chapter nativo, así que aquí NO se crea
+% ningún comando nuevo: se redirige un nivel cada uno de los que ya usan
+% los archivos hacia el nivel real que le corresponde. Los formatos
+% definidos arriba con titlesec (para \chapter y \section reales) se
+% aplican automáticamente a través de este adaptador.
+% ==========================================
+\makeatletter
+\let\ArchivoSection\section
+\let\ArchivoSubsection\subsection
+\let\ArchivoSubsubsection\subsubsection
+
+\renewcommand{\section}{\chapter}
+\renewcommand{\subsection}{\ArchivoSection}
+\renewcommand{\subsubsection}{\ArchivoSubsection}
+\makeatother
+
+% Profundidad de numeración: capítulo.sección.subsección (3 niveles).
+\setcounter{secnumdepth}{2}
+% Profundidad del índice: solo hasta «sección» (no baja a subsección).
+\setcounter{tocdepth}{1}
+
+% ==========================================
+% INICIO DEL DOCUMENTO
+% ==========================================

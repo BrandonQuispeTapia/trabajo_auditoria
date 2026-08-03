@@ -8,9 +8,16 @@
 %
 %  ATENCIÓN AL GRUPO: este archivo y config/preambulo.tex los toca UNA
 %  SOLA PERSONA. Cada integrante edita únicamente su archivo de secciones/.
+%
+%  FORMATO: clase report, estilo libro (capítulos con salto de página
+%  automático). Los archivos de secciones/ escriben \section para el
+%  título de capítulo, \subsection para sección y \subsubsection para
+%  subsección; el adaptador de config/preambulo.tex los redirige al
+%  nivel real (\chapter / \section / \subsection). No hace falta ningún
+%  \newpage manual entre capítulos: \chapter ya inicia página nueva.
 % =====================================================================
 
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{report}
 
 % --- Configuración (no editar sin avisar al grupo) -------------------
 \input{config/preambulo}
@@ -26,19 +33,17 @@
 \pagenumbering{roman}
 \input{config/portada}
 
-% --- Preliminares (índices y resumen) --------------------------------
+% --- Preliminares (índices y resumen) ---------------------------------
+% \tableofcontents, \listoffigures y \listoftables inician capítulo (con
+% salto de página) por sí solos en la clase report: no hace falta \newpage.
 \setcounter{page}{2}
 
 \tableofcontents
-\newpage
-
 \listoffigures
 \listoftables
-\newpage
 
 % Resumen ejecutivo — SE ESCRIBE AL FINAL, entre todos
 \input{secciones/00_resumen}
-\newpage
 
 % --- Cuerpo del informe (numeración arábiga) -------------------------
 \pagenumbering{arabic}
@@ -62,8 +67,21 @@
 % redactas, descomenta la línea siguiente y recuerda volver a comentarla.
 %\nocite{*}
 
-\newpage
-\printbibliography[heading=bibintoc,title={Referencias}]
+% AJUSTE: heading=bibintoc delega en un mecanismo interno de biblatex que
+% NO respeta el formato de \chapter definido con titlesec (sale con un
+% título genérico «Bibliografía», sin la regla ni el estilo del resto de
+% capítulos). Se controla manualmente para que quede igual que cualquier
+% otro capítulo del informe.
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Referencias Bibliográficas}
+\chapter*{Referencias Bibliográficas}
+% \chapter* no actualiza el encabezado de página (\chaptermark solo se
+% dispara con \chapter numerado): sin esta línea, las páginas de
+% continuación de la bibliografía seguirían mostrando el encabezado del
+% último capítulo numerado («Capítulo 10. Recomendaciones»).
+\markboth{Referencias Bibliográficas}{Referencias Bibliográficas}
+\printbibliography[heading=none]
 
 % --- Anexos ----------------------------------------------------------
 \input{secciones/11_anexos}            % Integrante 2 y 4
